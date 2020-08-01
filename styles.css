@@ -8,11 +8,11 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  font-family: IBM Plex Mono;
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 body, .quote-input {
-  font-family: IBM Plex Mono;
+  font-family: Monaco;
   font-weight: 600;
 }
 
