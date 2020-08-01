@@ -1,2 +1,3 @@
 # typifyi
-time to type
+
+simple typing practice
