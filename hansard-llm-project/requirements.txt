@@ -1,0 +1,45 @@
+# Tasmania Parliament Hansard LLM Project - Python Dependencies
+
+# Web scraping and automation
+selenium>=4.15.0
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# PDF processing
+pdfplumber>=0.10.0
+PyPDF2>=3.0.0
+pdf2image>=1.16.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# LLM training and fine-tuning
+torch>=2.1.0
+transformers>=4.35.0
+peft>=0.7.0
+datasets>=2.15.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0
+sentencepiece>=0.1.99
+protobuf>=4.25.0
+
+# Optional: RAG and vector storage
+langchain>=0.0.340
+chromadb>=0.4.18
+sentence-transformers>=2.2.2
+faiss-cpu>=1.7.4
+
+# Utilities
+numpy>=1.24.0
+pandas>=2.1.0
+tqdm>=4.66.0
+wandb>=0.16.0  # For experiment tracking (optional)
+
+# Data processing
+jsonlines>=4.0.0
+pyarrow>=14.0.0  # For Parquet support
+
+# Development
+jupyter>=1.0.0
+ipython>=8.17.0
+black>=23.11.0
+flake8>=6.1.0

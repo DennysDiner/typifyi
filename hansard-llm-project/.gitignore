@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data directories (too large for git)
+pdfs/
+extracted_text/
+cleaned_data/
+models/
+vector_index/
+
+# Temporary files
+*.txt
+*.pdf
+*.json
+!requirements.txt
+!package.json
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Model checkpoints
+checkpoint-*/
+runs/
+wandb/
+
+# Keep example files
+!example_*.txt
+!example_*.json
