@@ -1,0 +1,18 @@
+# tasmon crontab — edit paths, then install with:  crontab scripts/crontab.example
+# Times are local to the machine; set TZ if the box isn't on Hobart time.
+TZ=Australia/Hobart
+
+# SMTP password for alert/digest email (or put it in /etc/environment)
+TASMON_SMTP_PASS=changeme
+
+# Tier 1 (news + government + parliament): twice daily
+0 6,15 * * *   cd /home/YOU/tasmon && python3 -m tasmon run --schedule tier1 >> data/cron.log 2>&1
+
+# Tier 2 (paywalled headlines): daily
+15 6 * * *     cd /home/YOU/tasmon && python3 -m tasmon run --schedule tier2 >> data/cron.log 2>&1
+
+# Tier 3 (ASIC / EPBC / FSC / Trafigura / Vic forestry): weekly, Monday
+30 6 * * 1     cd /home/YOU/tasmon && python3 -m tasmon run --schedule tier3 >> data/cron.log 2>&1
+
+# Daily digest (writes digests/YYYY-MM-DD.md and emails it if configured)
+45 6 * * *     cd /home/YOU/tasmon && python3 -m tasmon digest >> data/cron.log 2>&1

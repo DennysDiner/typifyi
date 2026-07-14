@@ -1,0 +1,512 @@
+# tasmon configuration — everything user-editable lives in this file.
+# Edit freely; nothing here requires code changes.
+
+storage:
+  db_path: data/tasmon.db
+  digest_dir: digests
+
+fetching:
+  user_agent: "tasmon/0.1 (personal Tasmanian politics monitor; kurttjoyce@gmail.com)"
+  timeout_seconds: 30
+  respect_robots: true
+
+# ---------------------------------------------------------------------------
+# Scoring: score = tier_weight x recency x (1 + watchlist sum) x (1 + salience sum)
+# ---------------------------------------------------------------------------
+scoring:
+  tier_weights: {1: 1.0, 2: 0.6, 3: 0.5}
+  recency_half_life_hours: 48
+  near_duplicate_threshold: 0.8   # title Jaccard similarity; wire-copy suppression
+  salience_terms:
+    minister: 1.0
+    premier: 1.2
+    cabinet: 1.0
+    treasurer: 1.0
+    inquiry: 1.5
+    "royal commission": 2.0
+    resign*: 2.0
+    sacked: 2.0
+    reshuffle: 1.5
+    charged: 2.0
+    corruption: 2.0
+    "integrity commission": 1.5
+    auditor-general: 1.5
+    ombudsman: 1.2
+    "right to information": 1.0
+    "report tabled": 1.5
+    tabled: 1.0
+    bill: 1.0
+    legislation: 0.8
+    amendment: 0.6
+    estimates: 1.2
+    "question time": 0.6
+    committee: 0.6
+    funding: 0.8
+    budget: 1.0
+    deficit: 1.0
+    "credit rating": 1.5
+    election: 1.2
+    poll*: 0.8
+    preselect*: 1.2
+    by-election: 1.5
+    countback: 1.5
+    "legislative council": 1.2
+    crossbench*: 1.0
+    independent*: 0.5
+    amalgamation: 1.0
+
+# ---------------------------------------------------------------------------
+# Watchlist: boosts ranking, never gates ingestion. Aliases matter — keep the
+# alias map current ("STT" == "Sustainable Timber Tasmania" == old "Forestry
+# Tasmania"). weight is added into the score multiplier when the entity appears.
+# ---------------------------------------------------------------------------
+watchlist:
+  # Forestry / RFA cluster
+  - entity: Sustainable Timber Tasmania
+    aliases: [STT, "Forestry Tasmania"]
+    weight: 4
+  - entity: RFA / EPBC exemption
+    aliases: ["Regional Forest Agreement", RFA, "EPBC exemption", "EPBC Act"]
+    weight: 3
+  - entity: Forest Practices Authority
+    aliases: [FPA, "forest practices code"]
+    weight: 3
+  - entity: Swift parrot
+    aliases: [SPIBA, "swift parrot important breeding area"]
+    weight: 4
+  - entity: Ta Ann
+    weight: 3
+  - entity: FSC
+    aliases: ["Forest Stewardship Council", "FSC certification"]
+    weight: 2
+  - entity: Forest Economics Congress
+    weight: 2
+  - entity: Wilderness Society
+    weight: 2
+  # Nyrstar / smelter
+  - entity: Nyrstar
+    aliases: ["Hobart smelter", "Hobart zinc smelter", "zinc works", Lutana]
+    weight: 5
+  - entity: Trafigura
+    weight: 4
+  # Energy / data centres
+  - entity: Firmus
+    aliases: ["Firmus Technologies", "Firmus Grid"]
+    weight: 4
+  - entity: Data centres
+    aliases: ["data centre", "data center", "sovereign AI"]
+    weight: 3
+  - entity: Marinus Link
+    aliases: [Marinus, "Project Marinus", "North West Transmission"]
+    weight: 3
+  # Gambling
+  - entity: Federal Group
+    aliases: ["Federal Hotels", "Wrest Point", "Country Club Casino"]
+    weight: 3
+  - entity: TLGC
+    aliases: ["Liquor and Gaming Commission", "gaming commission", "EGM", "poker machine", pokies]
+    weight: 3
+  # Fiscal
+  - entity: Budget Repair Panel
+    aliases: ["budget repair", "Revised Estimates", "fiscal sustainability"]
+    weight: 3
+  - entity: Credit rating
+    aliases: ["Moody's", "S&P Global Ratings"]
+    weight: 3
+  # Justice
+  - entity: Supreme Court backlog
+    aliases: ["court backlog", "court delays"]
+    weight: 3
+  - entity: Tasmania Legal Aid
+    aliases: ["legal aid"]
+    weight: 3
+  # Interstate (weekly sweep covers these)
+  - entity: Victorian forestry transition
+    aliases: [VicForests, ForestWorks]
+    weight: 2
+
+# ---------------------------------------------------------------------------
+# Immediate alert rules. A rule fires when EVERY group matches (each group is
+# an any-of list; '*' is a wildcard). Delivered per alerts.channel.
+# ---------------------------------------------------------------------------
+alerts:
+  channel: email          # email | terminal
+  rules:
+    - name: nyrstar-insolvency
+      all_of:
+        - [Nyrstar, "Hobart smelter", Trafigura]
+        - [liquidat*, administrat*, receiver*, insolven*, "wind down", closure]
+    - name: swift-parrot-designation
+      all_of:
+        - ["swift parrot", SPIBA]
+        - [designat*, list*, "critical habitat", declar*, uplift*]
+    - name: integrity-commission-report
+      all_of:
+        - ["Integrity Commission"]
+        - [report, tabled, investigation, findings]
+    - name: rfa-epbc-exemption
+      all_of:
+        - [RFA, "Regional Forest Agreement", "EPBC exemption"]
+        - [expir*, review, court, challenge, invalid*, amend*]
+
+email:
+  smtp_host: smtp.gmail.com      # for Gmail use an App Password
+  smtp_port: 587
+  use_ssl: false                 # true = SMTPS (port 465); false = STARTTLS (587)
+  username: kurttjoyce@gmail.com
+  password_env: TASMON_SMTP_PASS # password read from this environment variable
+  from: kurttjoyce@gmail.com
+  to: kurttjoyce@gmail.com
+
+digest:
+  email: true            # email the daily digest markdown via the SMTP settings
+  source_stale_days: 3   # flag sources with no successful fetch for N days
+
+# Optional v3: Anthropic API relevance notes on high-ranking Tier 1 items.
+# Requires `pip install anthropic` and ANTHROPIC_API_KEY in the environment.
+summarization:
+  enabled: false
+  model: claude-haiku-4-5   # cheapest current model; bump to claude-opus-4-8 for quality
+  daily_cap: 15             # hard cap on API calls per day
+  context: >
+    The reader is a Tasmanian policy analyst briefing Legislative Council
+    crossbench members. Active files: forestry/RFA, Nyrstar smelter, energy
+    transactions and data centres, gambling regulation, state budget repair,
+    courts and legal aid.
+
+# ---------------------------------------------------------------------------
+# Portfolio clusters for the digest's general-news section. First match (in
+# this order) wins.
+# ---------------------------------------------------------------------------
+portfolios:
+  Health: [health, hospital, ambulance, ramping, "elective surgery", mental health]
+  Education: [education, school*, TasTAFE, university, UTAS]
+  Housing: [housing, "Homes Tasmania", homeless*, rental*, "social housing"]
+  Justice & police: [court*, police, prison, corrections, "legal aid", justice, DPP]
+  Environment & parks: [environment, EPA, "national park", wilderness, salmon, "fish farm*", aquaculture]
+  Forestry: [forest*, timber, logging, "native forest", swift parrot]
+  Energy: [energy, hydro, electricity, TasNetworks, Marinus, wind farm*, transmission]
+  Primary industries: [agriculture, farm*, fisher*, biosecurity, GMO]
+  Treasury & economy: [budget, treasury, GST, econom*, payroll tax, stamp duty, debt]
+  State development: ["state development", stadium, Macquarie Point, tourism, "major project*"]
+  Local government: [council*, mayor, alderman, LGAT, amalgamat*, planning scheme]
+  Federal-Tasmanian: [senat*, "federal government", Canberra, EPBC, "federal funding", NDIS, Medicare]
+  Elections & parties: [election, preselect*, Liberal*, Labor, Greens, "Jacqui Lambie", JLN, poll*]
+  Gambling: [pokies, "poker machine*", casino, gambling, wagering, TLGC]
+
+# ---------------------------------------------------------------------------
+# Sources. type: rss | google_news | page_diff.
+#   schedule: tier1 (twice daily) | tier2 (daily) | tier3 (weekly)
+#   tier drives scoring weight; category drives digest section
+#     (news | government | parliament | agency | gbe | party)
+#   fulltext: true -> fetch and extract article text (Tier 1 only)
+# Page-diff sources hash the listing page and emit newly appearing links that
+# match link_include. The first run only baselines the page (no back-catalogue
+# flood). URLs rot: watch section 5 of the digest and fix here when they do.
+# ---------------------------------------------------------------------------
+sources:
+  # ---- Tier 1: news, full text ----
+  - id: abc-tas
+    name: ABC News Tasmania
+    type: rss
+    url: https://www.abc.net.au/news/feed/2942460/rss.xml
+    tier: 1
+    category: news
+    fulltext: true
+    schedule: tier1
+
+  - id: pulse-tas
+    name: Pulse Tasmania
+    type: rss
+    url: https://pulsetasmania.com.au/feed/
+    tier: 1
+    category: news
+    fulltext: true
+    schedule: tier1
+
+  - id: tasmanian-times
+    name: Tasmanian Times
+    type: rss
+    url: https://tasmaniantimes.com/feed/
+    tier: 1
+    category: news
+    fulltext: true
+    schedule: tier1
+
+  - id: guardian-tas
+    name: The Guardian (Tasmania)
+    type: rss
+    url: https://www.theguardian.com/australia-news/tasmania/rss
+    tier: 1
+    category: news
+    fulltext: true
+    schedule: tier1
+
+  - id: mirage-tas
+    name: Mirage News (Tasmania filter)
+    type: rss
+    url: https://www.miragenews.com/feed/
+    require_terms: [Tasmania*, Hobart, Launceston, Devonport, Burnie]
+    tier: 1
+    category: news
+    fulltext: true
+    max_entries: 200
+    schedule: tier1
+
+  # ---- Tier 1: government & party media releases (page-diff) ----
+  - id: tasgov-releases
+    name: Tasmanian Government media releases
+    type: page_diff
+    url: https://www.premier.tas.gov.au/latest-news
+    link_include: ["/latest-news/", "/media-release"]
+    tier: 1
+    category: government
+    fulltext: true
+    schedule: tier1
+
+  - id: taslabor-media
+    name: Tasmanian Labor media releases
+    type: page_diff
+    url: https://www.taslabor.com/media
+    link_include: ["/media", "/news"]
+    tier: 1
+    category: party
+    fulltext: true
+    schedule: tier1
+
+  - id: greens-media
+    name: Tasmanian Greens media releases
+    type: page_diff
+    url: https://tasmps.greens.org.au/media
+    link_include: ["/media", "/news"]
+    tier: 1
+    category: party
+    fulltext: true
+    schedule: tier1
+
+  # ---- Tier 1: parliament (page-diff) ----
+  - id: parl-bills
+    name: Parliament of Tasmania — bills
+    type: page_diff
+    url: https://www.parliament.tas.gov.au/bills
+    link_include: ["/bills/"]
+    tier: 1
+    category: parliament
+    schedule: tier1
+
+  - id: parl-tabled-papers
+    name: Parliament of Tasmania — tabled papers
+    type: page_diff
+    url: https://www.parliament.tas.gov.au/tabled-papers
+    link_include: ["/tabled"]
+    tier: 1
+    category: parliament
+    schedule: tier1
+
+  - id: parl-committees
+    name: Parliament of Tasmania — committees
+    type: page_diff
+    url: https://www.parliament.tas.gov.au/committees
+    link_include: ["/committee"]
+    tier: 1
+    category: parliament
+    schedule: tier1
+
+  # ---- Tier 1: agencies & regulators (page-diff) ----
+  - id: audit-office
+    name: Tasmanian Audit Office reports
+    type: page_diff
+    url: https://www.audit.tas.gov.au/publications/
+    link_include: ["/publication", "/report"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: integrity-commission
+    name: Integrity Commission
+    type: page_diff
+    url: https://www.integrity.tas.gov.au/news-and-education/media-releases
+    link_include: ["/news", "/media", "/report"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: treasury
+    name: Department of Treasury and Finance
+    type: page_diff
+    url: https://www.treasury.tas.gov.au/
+    link_include: ["publication", "budget", "economic"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: fpa
+    name: Forest Practices Authority
+    type: page_diff
+    url: https://fpa.tas.gov.au/news
+    link_include: ["/news"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: epa
+    name: EPA Tasmania
+    type: page_diff
+    url: https://epa.tas.gov.au/news-and-community/news
+    link_include: ["/news"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: planning-commission
+    name: Tasmanian Planning Commission
+    type: page_diff
+    url: https://www.planning.tas.gov.au/
+    link_include: ["assessment", "news", "project"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  - id: tec
+    name: Tasmanian Electoral Commission
+    type: page_diff
+    url: https://www.tec.tas.gov.au/
+    link_include: ["news", "media", "election"]
+    tier: 1
+    category: agency
+    schedule: tier1
+
+  # ---- Tier 1: GBEs (page-diff; add more as needed) ----
+  - id: hydro
+    name: Hydro Tasmania news
+    type: page_diff
+    url: https://www.hydro.com.au/news
+    link_include: ["/news"]
+    tier: 1
+    category: gbe
+    schedule: tier1
+
+  - id: tasnetworks
+    name: TasNetworks news
+    type: page_diff
+    url: https://www.tasnetworks.com.au/news
+    link_include: ["/news"]
+    tier: 1
+    category: gbe
+    schedule: tier1
+
+  - id: stt
+    name: Sustainable Timber Tasmania news
+    type: page_diff
+    url: https://www.sttas.com.au/news-views
+    link_include: ["/news"]
+    tier: 1
+    category: gbe
+    schedule: tier1
+
+  - id: tasports
+    name: TasPorts media
+    type: page_diff
+    url: https://www.tasports.com.au/media
+    link_include: ["/media", "/news"]
+    tier: 1
+    category: gbe
+    schedule: tier1
+
+  - id: homes-tasmania
+    name: Homes Tasmania news
+    type: page_diff
+    url: https://www.homestasmania.com.au/News
+    link_include: ["/News", "/news"]
+    tier: 1
+    category: gbe
+    schedule: tier1
+
+  # ---- Tier 2: paywalled — headline/metadata only, flagged in digest ----
+  - id: mercury
+    name: The Mercury (paywalled)
+    type: google_news
+    query: "site:themercury.com.au"
+    tier: 2
+    category: news
+    paywalled: true
+    schedule: tier2
+
+  - id: examiner
+    name: The Examiner (paywalled)
+    type: google_news
+    query: "site:examiner.com.au"
+    tier: 2
+    category: news
+    paywalled: true
+    schedule: tier2
+
+  - id: advocate
+    name: The Advocate (paywalled)
+    type: google_news
+    query: "site:theadvocate.com.au"
+    tier: 2
+    category: news
+    paywalled: true
+    schedule: tier2
+
+  - id: afr-tas
+    name: AFR — Tasmania & watchlist topics (paywalled)
+    type: google_news
+    query: 'site:afr.com (Tasmania OR Nyrstar OR Trafigura OR "Marinus Link" OR Firmus OR "Federal Group")'
+    tier: 2
+    category: news
+    paywalled: true
+    schedule: tier2
+
+  - id: australian-tas
+    name: The Australian — Tasmania & watchlist topics (paywalled)
+    type: google_news
+    query: 'site:theaustralian.com.au (Tasmania OR Nyrstar OR "swift parrot" OR "Marinus Link")'
+    tier: 2
+    category: news
+    paywalled: true
+    schedule: tier2
+
+  # ---- Tier 3: weekly sweep ----
+  - id: asic-nyrstar
+    name: ASIC published notices — Nyrstar
+    type: page_diff
+    url: "https://publishednotices.asic.gov.au/browsesearch-notices/?searchQuery=nyrstar"
+    tier: 3
+    category: agency
+    schedule: tier3
+
+  - id: epbc-referrals
+    name: EPBC referrals (Tasmania)
+    type: page_diff
+    url: "https://epbcpublicportal.environment.gov.au/all-referrals/"
+    link_include: ["referral"]
+    tier: 3
+    category: agency
+    schedule: tier3
+
+  - id: fsc-anz
+    name: FSC Australia & New Zealand news
+    type: page_diff
+    url: https://anz.fsc.org/newsfeed
+    link_include: ["/newsfeed", "/news"]
+    tier: 3
+    category: news
+    schedule: tier3
+
+  - id: trafigura-intl
+    name: Trafigura international coverage
+    type: google_news
+    query: "Trafigura"
+    tier: 3
+    category: news
+    schedule: tier3
+
+  - id: vic-forestry
+    name: Victorian forestry transition
+    type: google_news
+    query: '"Victorian forestry" OR VicForests OR ForestWorks transition'
+    tier: 3
+    category: news
+    schedule: tier3

@@ -1,0 +1,6 @@
+feedparser>=6.0
+requests>=2.31
+trafilatura>=1.8
+PyYAML>=6.0
+# Optional, only if summarization.enabled: true in config.yaml
+# anthropic>=0.40
