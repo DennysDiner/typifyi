@@ -33,6 +33,11 @@ the Integrity Commission host is the one to trust.
   client list changes on the detail page while the index stays byte-identical.
   Conditional GET keeps that cheap, and a `304` re-uses the stored content hash
   rather than manufacturing a change.
+* If the *register index itself* returns `304`, the adapter does **not** stop
+  there: it rebuilds the item list from stored state and re-checks every detail
+  page. Stopping at the index would hide exactly the change this source exists
+  to catch. (Covered by
+  `tests/test_adapter_listing.py::test_a_304_on_the_register_still_re_checks_the_detail_pages`.)
 * Fields pulled by label: trading name, ABN, address, owners/office holders,
   clients, employees. `published_at` is set only from a stated registration or
   update date; otherwise null and flagged.

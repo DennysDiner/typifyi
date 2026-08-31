@@ -225,3 +225,48 @@ def test_a_304_on_a_detail_page_reuses_the_stored_hash(tmp_path):
     assert font.content_hash == "c" * 64
     assert font.http_status == 304
     assert font.archive_path == "archive/2026/08/lobbyists/old.html.gz"
+
+
+def test_a_304_on_the_register_still_re_checks_the_detail_pages(tmp_path):
+    """The change that matters here happens where the index cannot show it."""
+    adapter = LobbyistsAdapter()
+    routes = lobbyist_routes()
+    routes[REGISTER] = Route.html("lobbyists", "register.html", etag='"register-v1"')
+    ctx, fetcher = context(tmp_path, routes, source="lobbyists")
+    first = {item.id: item for item in adapter.collect(ctx).items}
+
+    changed_routes = lobbyist_routes("detail-font-changed.html")
+    changed_routes[REGISTER] = Route.html("lobbyists", "register.html", etag='"register-v1"')
+    changed_routes[FONT] = Route.html("lobbyists", "detail-font-changed.html", etag='"font-v2"')
+    ctx2, fetcher2 = context(tmp_path, changed_routes, source="lobbyists", state=ctx.state)
+    for item in first.values():
+        ctx2.state.items[item.id] = ItemState(
+            content_hash=item.content_hash, title=item.title, url=item.url,
+            published_at=item.published_at, archive_path=item.archive_path,
+            first_seen_at=NOW, last_seen_at=NOW,
+        )
+    result = adapter.collect(ctx2)
+    second = {item.id: item for item in result.items}
+
+    assert result.listing_unchanged is False
+    assert any("detail pages re-checked" in note for note in result.notes)
+    assert len(second) == 4
+    assert second["lobbyists:font_public_relations"].content_hash != (
+        first["lobbyists:font_public_relations"].content_hash
+    )
+
+
+def test_a_304_listing_on_a_source_with_no_known_items_is_simply_unchanged(tmp_path):
+    adapter = TendersAdapter()
+    routes = tender_routes()
+    routes[TENDER_LIST] = Route.html("tenders", "tender-list.html", etag='"list-v1"')
+    state = SourceState(source="tenders")
+    state.endpoint = TENDER_LIST
+    state.record_validator(TENDER_LIST, {"ETag": '"list-v1"'})
+    ctx, fetcher = context(tmp_path, routes, source="tenders", state=state)
+
+    result = adapter.collect(ctx)
+    assert result.listing_unchanged is True
+    assert result.items == []
+    # The other candidates must not be probed once the working endpoint says 304.
+    assert [url for url, _ in fetcher.calls] == [TENDER_LIST]

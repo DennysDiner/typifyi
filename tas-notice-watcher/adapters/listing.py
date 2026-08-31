@@ -97,7 +97,7 @@ class ListingAdapter(Adapter):
             candidates.remove(ctx.state.endpoint)
             candidates.insert(0, ctx.state.endpoint)
 
-        for url in candidates:
+        for index, url in enumerate(candidates):
             try:
                 extracted, page_bytes, unchanged = self._walk_listing(ctx, url, result)
             except Exception as exc:
@@ -107,6 +107,10 @@ class ListingAdapter(Adapter):
             result.page_bytes += page_bytes
             if unchanged:
                 unchanged_endpoints += 1
+                # A 304 from the endpoint that worked last time is authoritative:
+                # stop, rather than spending requests on the other candidates.
+                if index == 0 or url == ctx.state.endpoint:
+                    break
                 continue
             if extracted:
                 result.endpoint = url
@@ -114,8 +118,19 @@ class ListingAdapter(Adapter):
                 break
             errors.append(f"{url}: fetched but no rows matched {self.config.detail_link_pattern.pattern}")
 
+        if not rows and unchanged_endpoints and self.config.always_fetch_detail:
+            # The index is unchanged, but for this source the change that matters
+            # happens on the detail pages (a client added to a lobbyist's list),
+            # which the index cannot show. Re-check them from what we already know.
+            rows = self._rows_from_state(ctx)
+            if rows:
+                result.endpoint = ctx.state.endpoint
+                result.notes.append(
+                    "listing unchanged (304); detail pages re-checked from stored state"
+                )
+
         if not rows:
-            if unchanged_endpoints and not errors:
+            if unchanged_endpoints:
                 result.listing_unchanged = True
                 result.endpoint = ctx.state.endpoint
                 return result
@@ -154,6 +169,27 @@ class ListingAdapter(Adapter):
             result.items.append(self._item_with_detail(ctx, row, result, previous))
 
         return result
+
+    def _rows_from_state(self, ctx: AdapterContext) -> list[dict[str, Any]]:
+        """Rebuild the row set from state, for a 304 listing on a detail source."""
+        rows: list[dict[str, Any]] = []
+        for item_id, previous in sorted(ctx.state.items.items()):
+            if previous.removed_at or not previous.url:
+                continue
+            rows.append(
+                {
+                    "id": item_id,
+                    "native_id": item_id.split(":", 1)[-1],
+                    "title": previous.title,
+                    "url": previous.url,
+                    "row_text": "",
+                    "fields": {},
+                    "cells": {},
+                    "published_at": previous.published_at,
+                    "listing_hash": previous.listing_hash,
+                }
+            )
+        return rows
 
     # -- listing walking ----------------------------------------------------
 
