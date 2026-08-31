@@ -1,0 +1,159 @@
+# Watchlist (§4).
+#
+# Each entity maps a canonical name to literal patterns and/or regexes, plus a
+# priority tier:
+#
+#   tier 1  campaign-critical: a hit belongs in the issue title
+#   tier 2  actively tracked
+#   tier 3  background interest
+#
+# Literal patterns are matched case-insensitively with word-boundary anchoring
+# and flexible internal whitespace (so a name broken across lines by PDF
+# extraction still matches). Regexes are used as written, case-insensitively.
+#
+# This is a living file. Corporate entities rename themselves and trade through
+# special-purpose vehicles, so near misses are logged to
+# records/review/near-misses.ndjson rather than discarded — read that file
+# periodically and promote what belongs here.
+
+version: 1
+
+settings:
+  # Similarity at or above this (and below an exact match) is logged as a near
+  # miss for human review.
+  near_miss_threshold: 0.86
+
+entities:
+  - name: Nyrstar
+    tier: 1
+    patterns:
+      - Nyrstar
+      - Nyrstar Hobart
+      - Nyrstar Australia
+      - Nyrstar Port Pirie
+      - Hobart Smelter
+    notes: Zinc smelter at Lutana; Trafigura-controlled.
+
+  - name: Trafigura
+    tier: 1
+    patterns:
+      - Trafigura
+      - Trafigura Group
+      - Trafigura Beheer
+      - Urion Holdings
+    notes: Nyrstar's ultimate owner.
+
+  - name: Liberty Bell Bay
+    tier: 1
+    patterns:
+      - Liberty Bell Bay
+      - Bell Bay Manganese
+      - Tasmanian Electro Metallurgical Company
+      - TEMCO
+    notes: Manganese alloy smelter at George Town.
+
+  - name: GFG Alliance
+    tier: 1
+    patterns:
+      - GFG Alliance
+      - GFG
+      - Liberty Primary Metals
+      - Liberty Steel
+      - SIMEC
+      - InfraBuild
+      - Sanjeev Gupta
+    regexes:
+      - '\bLiberty\s+(?:Primary|Industrial|Steel|Bell)\b'
+    notes: Parent group of Liberty Bell Bay.
+
+  - name: Group 6 Metals
+    tier: 1
+    patterns:
+      - Group 6 Metals
+      - Dolphin Tungsten
+      - Dolphin Mine
+      - King Island Scheelite
+    notes: Tungsten mine, King Island.
+
+  - name: Sustainable Timber Tasmania
+    tier: 1
+    patterns:
+      - Sustainable Timber Tasmania
+      - Forestry Tasmania
+      - STT
+    regexes:
+      - '\bSustainable\s+Timbers?\s+Tas(?:mania)?\b'
+    notes: Government business enterprise; formerly Forestry Tasmania.
+
+  - name: Forestry contractors
+    tier: 2
+    patterns:
+      - Forico
+      - Reliance Forest Fibre
+      - Timberlands Pacific
+      - SFM Environmental Solutions
+      - Neville Smith Forest Products
+      - Britton Timbers
+      - TA Ann Tasmania
+      - Ta Ann
+    notes: Plantation managers and processors contracting to STT.
+
+  - name: Data centre and sovereign AI proponents
+    tier: 1
+    patterns:
+      - sovereign AI
+      - sovereign artificial intelligence
+      - data centre
+      - data center
+      - hyperscale
+      - AI gigafactory
+      - Firmus
+      - DUG Technology
+    regexes:
+      - '\bdata\s+centres?\b'
+    notes: >-
+      Deliberately broad: this is a live proposal space where the entity names
+      are not yet known. Expect noise and refine as the proponents surface.
+
+  - name: Legal Aid and justice agencies
+    tier: 2
+    patterns:
+      - Legal Aid Commission of Tasmania
+      - Legal Aid Tasmania
+      - Community Legal Centres Tasmania
+      - Tasmania Legal Aid
+      - Office of the Director of Public Prosecutions
+      - Department of Justice
+    notes: Funding, contracts and appointments.
+
+  - name: Gaming licensees and venue operators
+    tier: 1
+    patterns:
+      - Federal Group
+      - Federal Hotels
+      - Network Gaming
+      - Vantage Group
+      - Vantage Hotels
+      - MONA
+      - Moorilla
+      - Wrest Point
+      - Country Club Tasmania
+      - Tasmanian Liquor and Gaming Commission
+      - Tasmanian Gaming Commission
+      - Treasury Casino
+    regexes:
+      - '\bgaming\s+licen[cs]e\b'
+      - '\bkeno\b'
+    notes: Post-2023 individual venue licensing regime.
+
+  - name: Major project proponents
+    tier: 3
+    patterns:
+      - Marinus Link
+      - Battery of the Nation
+      - Hydro Tasmania
+      - TasNetworks
+      - TasPorts
+      - Macquarie Point Development Corporation
+      - Stadiums Tasmania
+    notes: Background interest; large public spends and frequent gazettal.

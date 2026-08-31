@@ -1,0 +1,19 @@
+[project]
+name = "tas-notice-watcher"
+version = "0.1.0"
+description = "Change detection for Tasmanian government publication surfaces"
+requires-python = ">=3.12"
+dynamic = ["dependencies"]
+
+[project.scripts]
+tnw = "tnw.cli:main"
+
+[tool.setuptools]
+packages = ["tnw", "adapters", "adapters.gazette", "adapters.tenders", "adapters.contracts", "adapters.lobbyists"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.in"] }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["error::DeprecationWarning:tnw.*"]

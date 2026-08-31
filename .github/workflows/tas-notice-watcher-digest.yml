@@ -1,0 +1,57 @@
+# Weekly digest and static feed (M4). Timing is deliberately loose: unlike the
+# twice-daily watch, nothing depends on this landing at an exact local hour.
+name: tas-notice-watcher digest
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # ~07:00 Monday Hobart (AEST) / 08:00 (AEDT)
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days to cover"
+        type: string
+        default: "7"
+
+concurrency:
+  group: tas-notice-watcher-digest
+
+permissions:
+  contents: write
+  issues: write
+
+defaults:
+  run:
+    working-directory: tas-notice-watcher
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --require-hashes -r requirements.txt
+
+      - name: Weekly digest issue
+        env:
+          DAYS: ${{ github.event.inputs.days || '7' }}
+        run: python -m tnw digest --days "$DAYS"
+
+      - name: Rebuild feed and export
+        run: |
+          python -m tnw feed
+          python -m tnw export
+
+      - name: Commit outputs
+        run: |
+          git config user.name "tas-notice-watcher"
+          git config user.email "tas-notice-watcher@users.noreply.github.com"
+          git add -A outputs
+          git diff --cached --quiet || git commit -m "watcher: weekly outputs $(date -u +%Y-%m-%d)"
+          git push || (git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push)

@@ -1,0 +1,8 @@
+# Runtime dependencies for tas-notice-watcher.
+# Compile with:  uv pip compile requirements.in --generate-hashes -o requirements.txt
+requests
+beautifulsoup4
+lxml
+pdfplumber
+PyYAML
+tzdata

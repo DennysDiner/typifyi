@@ -1,0 +1,134 @@
+# tas-notice-watcher — scheduled change detection for Tasmanian government
+# publication surfaces.
+#
+# Cadence: 07:00 and 17:00 Australia/Hobart. Actions cron is UTC and Hobart
+# moves between UTC+10 (AEST) and UTC+11 (AEDT), so all four UTC candidates are
+# scheduled and the duplicates are dropped in code (tnw/schedule.py) rather than
+# trusting one cron expression to be right year-round.
+name: tas-notice-watcher
+
+on:
+  schedule:
+    - cron: "0 20 * * *"   # 07:00 Hobart during AEDT
+    - cron: "0 21 * * *"   # 07:00 Hobart during AEST
+    - cron: "0 6 * * *"    # 17:00 Hobart during AEDT
+    - cron: "0 7 * * *"    # 17:00 Hobart during AEST
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to run"
+        type: choice
+        default: run
+        options: [run, discover, check, digest]
+      sources:
+        description: "Comma-separated sources (blank = all)"
+        type: string
+        default: ""
+      dry_run:
+        description: "Dry run: no writes, no issues"
+        type: boolean
+        default: false
+
+concurrency:
+  group: tas-notice-watcher
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+defaults:
+  run:
+    working-directory: tas-notice-watcher
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TNW_CONTACT: ${{ vars.TNW_CONTACT || 'tas-notice-watcher@users.noreply.github.com' }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned dependencies
+        run: pip install --require-hashes -r requirements.txt
+
+      - name: Watch
+        id: watch
+        # A non-zero exit means at least one source failed; the failure has
+        # already been reported as an issue, and the state commit below must
+        # still happen, so the status is captured rather than thrown.
+        continue-on-error: true
+        # Inputs are passed through the environment, never interpolated into the
+        # shell, so a crafted dispatch input cannot become a command.
+        env:
+          MODE: ${{ github.event.inputs.mode || 'run' }}
+          SOURCES: ${{ github.event.inputs.sources }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -o pipefail
+          ARGS=()
+          # Each subcommand takes different flags; only pass what it accepts.
+          case "$MODE" in
+            run|discover)
+              if [ -n "$SOURCES" ]; then ARGS+=(--sources "$SOURCES"); fi
+              ;;
+          esac
+          case "$MODE" in
+            run|check|digest)
+              if [ "$DRY_RUN" = "true" ]; then ARGS+=(--dry-run); fi
+              ;;
+          esac
+          if [ "$MODE" = "run" ] && [ "$EVENT" = "workflow_dispatch" ]; then
+            # A manual dispatch is always intentional: run regardless of slot.
+            ARGS+=(--force)
+          fi
+          echo "running: python -m tnw $MODE ${ARGS[*]}"
+          python -m tnw "$MODE" "${ARGS[@]}"
+
+      - name: Check archive size
+        if: always()
+        run: |
+          ARCHIVE_MB=$(du -sm archive 2>/dev/null | cut -f1 || echo 0)
+          REPO_MB=$(du -sm ../.git 2>/dev/null | cut -f1 || echo 0)
+          echo "archive: ${ARCHIVE_MB} MB, git objects: ${REPO_MB} MB" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${ARCHIVE_MB}" -gt 400 ]; then
+            echo "::warning::archive is ${ARCHIVE_MB} MB — plan the move to object storage (see docs/OPERATIONS.md)"
+          fi
+
+      - name: Commit state, records and archive
+        if: always()
+        env:
+          MODE: ${{ github.event.inputs.mode || 'run' }}
+        run: |
+          git config user.name "tas-notice-watcher"
+          git config user.email "tas-notice-watcher@users.noreply.github.com"
+          git add -A state records archive outputs
+          git add adapters/*/DISCOVERY.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "no state changes to commit" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "watcher: ${MODE:-run} $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for attempt in 1 2 3 4; do
+            if git push; then
+              exit 0
+            fi
+            echo "push failed (attempt $attempt); rebasing and retrying"
+            sleep $((2 ** attempt))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done
+          echo "::error::could not push watcher state after 4 attempts"
+          exit 1
+
+      - name: Fail the job if a source failed
+        if: steps.watch.outcome == 'failure'
+        run: |
+          echo "::error::at least one source failed; see the FAILURE issue(s) and the summary above"
+          exit 1

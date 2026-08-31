@@ -1,0 +1,4 @@
+# Development/test dependencies for tas-notice-watcher.
+# Compile with:  uv pip compile requirements-dev.in --generate-hashes -o requirements-dev.txt
+-r requirements.in
+pytest

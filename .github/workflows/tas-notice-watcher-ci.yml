@@ -1,0 +1,39 @@
+name: tas-notice-watcher CI
+
+on:
+  push:
+    paths:
+      - "tas-notice-watcher/**"
+      - ".github/workflows/tas-notice-watcher*.yml"
+  pull_request:
+    paths:
+      - "tas-notice-watcher/**"
+      - ".github/workflows/tas-notice-watcher*.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: tas-notice-watcher
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned dependencies
+        run: pip install --require-hashes -r requirements-dev.txt
+
+      - name: Tests (no network is used)
+        run: python -m pytest -q
+
+      - name: Validate the watchlist and any committed records
+        run: python -m tnw validate
