@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import UTC, date, datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 import click
