@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block body %}
+<h2>Authorities &amp; log health</h2>
+<p>{% for k,v in summary.items() %}<span class="tag">{{k}}: {{v}}</span>{% endfor %}</p>
+<table><tr><th>Authority</th><th>Tier</th><th>Format</th><th>State</th><th>Last success</th><th>Last change</th><th>Error</th></tr>
+{% for r in rows %}<tr><td><a href="/authority/{{r.authority_id}}">{{r.name}}</a></td><td>{{r.tier}}</td><td>{{r.disclosure_log_format}}</td>
+<td class="{{'ok' if r.state=='ok' else ('bad' if r.state in ('failing_24h','blocked','never_succeeded') else 'warn')}}">{{r.state}}</td>
+<td class="muted">{{(r.last_success_at or '')[:16]}}</td><td class="muted">{{(r.last_change_at or '')[:16]}}</td><td class="muted">{{(r.last_error or r.blocked_reason or '')[:80]}}</td></tr>{% endfor %}
+</table>{% endblock %}

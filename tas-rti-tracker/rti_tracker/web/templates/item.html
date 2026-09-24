@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% block body %}
+<h2>{{it.title}}</h2>
+<p><a href="/authority/{{it.authority_id}}">{{it.authority_name or it.authority_id}}</a> · published {{it.published_date or '?'}} · ref {{it.reference or '—'}} · status <b class="{{'bad' if it.status=='removed' else 'ok'}}">{{it.status}}</b>{% if it.removed_at %} (removed {{it.removed_at}}){% endif %}</p>
+<p>Listing URL: <a href="{{it.url}}" class="mono">{{it.url}}</a> · first seen {{it.first_seen_at}} · last seen {{it.last_seen_at}}</p>
+<h3>Documents &amp; provenance</h3>
+{% for d in docs %}<div class="card">
+<div><a href="{{d.url}}" class="mono">{{d.url}}</a></div>
+<div class="mono">sha256 {{d.sha256}} · retrieved {{d.retrieved_at}} · HTTP {{d.http_status}} · <a href="/archive/{{d.sha256}}">archived copy</a> ({{d.path}}){% if d.superseded_by %} · <span class="warn">superseded by document #{{d.superseded_by}}</span>{% endif %}</div>
+<div class="muted">extraction: {{d.extraction_method or 'pending'}}{% if d.ocr_applied %} (OCR){% endif %} · pages {{d.page_count or '?'}} · chars {{d.text_chars or 0}}</div>
+{% if meta[d.id] %}<table><tr><th>Field</th><th>Value</th><th>Verified</th><th>Note</th></tr>
+{% for m in meta[d.id] %}<tr><td>{{m.field}}</td><td>{{m.value or ''}}</td><td class="{{'ok' if m.verified else 'warn'}}">{{'verified' if m.verified else 'unverified'}}</td><td class="muted">{{m.verification_note}}</td></tr>{% endfor %}</table>{% endif %}
+</div>{% else %}<p class="muted">No documents fetched for this item.</p>{% endfor %}
+<h3>Listing fields</h3><pre class="mono">{{fields|tojson(indent=1)}}</pre>
+<h3>Versions seen ({{versions|length}})</h3>
+<ul>{% for v in versions %}<li class="mono">{{v.seen_at}} {{v.fingerprint[:12]}}</li>{% endfor %}</ul>
+<h3>Campaign tags</h3>
+<p>{% for t in tags %}<span class="tag">{{t.name}} ({{t.tagged_by}}{% if t.note %}: {{t.note}}{% endif %})</span>{% endfor %}</p>
+<form method="post" action="/item/{{it.id}}/tag" class="filters"><select name="campaign_id">{% for c in campaigns %}<option value="{{c.id}}">{{c.name}}</option>{% endfor %}</select><input name="note" placeholder="note"><button>Tag</button></form>
+{% endblock %}

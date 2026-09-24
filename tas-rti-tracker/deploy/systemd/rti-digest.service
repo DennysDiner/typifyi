@@ -1,0 +1,10 @@
+[Unit]
+Description=Tas RTI tracker daily digest
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/tas-rti-tracker
+EnvironmentFile=/etc/rti-tracker.env
+Environment=TZ=Australia/Hobart
+ExecStart=/opt/tas-rti-tracker/.venv/bin/rti alerts --digest
+User=rti

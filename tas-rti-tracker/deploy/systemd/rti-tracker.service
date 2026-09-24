@@ -1,0 +1,10 @@
+[Unit]
+Description=Tas RTI tracker scheduler tick
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/tas-rti-tracker
+EnvironmentFile=/etc/rti-tracker.env
+ExecStart=/opt/tas-rti-tracker/.venv/bin/rti run
+User=rti

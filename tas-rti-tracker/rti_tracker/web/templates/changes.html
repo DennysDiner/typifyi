@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block body %}
+<h2>Alerts &amp; changes log</h2>
+<form class="filters" method="get"><select name="kind"><option value="">all kinds</option>{% for k in kinds %}<option {% if k==kind %}selected{% endif %}>{{k}}</option>{% endfor %}</select><button>Filter</button></form>
+<table><tr><th>When</th><th>Kind</th><th>Authority</th><th>Detail</th><th>Alerted</th></tr>
+{% for r in rows %}<tr class="{{'bad' if r.severity=='high' else ''}}"><td class="muted">{{r.detected_at[:16]}}</td><td><span class="tag">{{r.kind}}</span></td><td>{{r.authority_name or ''}}</td>
+<td>{% if r.item_id %}<a href="/item/{{r.item_id}}">{{r.detail_obj.title or r.detail_obj.url or ''}}</a>{% else %}{{r.detail_obj.title or r.detail_obj.url or r.detail_obj.error or r.detail_obj.reason or ''}}{% endif %}
+{% if r.detail_obj.diff %}<div class="mono">{{r.detail_obj.diff|tojson}}</div>{% endif %}{% if r.detail_obj.archived_documents %}<div class="mono">archived: {{r.detail_obj.archived_documents}}</div>{% endif %}</td>
+<td class="muted">{{(r.alerted_at or r.digested_at or '')[:16]}}</td></tr>{% endfor %}</table>
+{% endblock %}

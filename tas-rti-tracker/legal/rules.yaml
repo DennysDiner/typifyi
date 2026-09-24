@@ -1,0 +1,358 @@
+# Machine-readable legal model: Right to Information Act 2009 (Tas)
+# Companion to ../LEGAL_MODEL.md. Evidence labels follow research/AGENT_CONSTRAINTS.md.
+# `uncertain: true` means the day count or the operation of the rule is not established.
+# `pinpoint_uncertain: true` means the number or operation is evidenced but the exact subsection is not.
+# `days: null` means no number could be established; the engine must not invent one.
+
+version: "2026-09-24"
+source_currency: >-
+  UNCERTAIN. Reflects the Act as described by Tasmanian agency, DPAC and Ombudsman web pages current
+  to about mid-2026 (fee figure effective 1 July 2026). No primary text of any consolidation was read
+  (network blocked). Authorised consolidations seen: 2019-09-18, 2024-08-30. The Act was reportedly
+  amended by No. 28 of 2024 (content unknown). No 2025-26 amending Act found. Evidence: snippet_verified
+  (secondary sources) / inferred.
+
+working_day:
+  excludes: [saturday, sunday, statutory_holiday]
+  regional_holidays: UNCERTAIN
+  section: "s 5 (definition of 'working day')"
+  evidence: memory
+  uncertain: true
+  notes: >-
+    The definition text was NOT seen in any search result. Memory: "a day other than a Saturday, a
+    Sunday or a statutory holiday", with statutory holiday tied to the Statutory Holidays Act 2000.
+    Regatta Day (south) and Recreation Day (north) are part-State holidays, and local show and cup days
+    are area-declared; whether they count, and by reference to which location (authority, applicant or
+    statewide), is unresolved. No evidence that the Christmas–New Year period is excluded beyond the
+    statutory holidays themselves, so christmas_shutdown is deliberately NOT listed. Easter Tuesday
+    (State Service holiday) is unresolved. Engine: compute deadlines under both the statewide_only and
+    the authority_region readings and report a range when they differ.
+
+acceptance:
+  id: application_accepted
+  description: >-
+    Application in writing (s 13(2)) with the 25 fee-unit fee paid or a waiver decided (s 16).
+    Once either has happened, the application is taken to have been accepted when it was received.
+  section: "s 13(2); s 16 (acceptance precondition, likely s 16(3))"
+  evidence: snippet_verified
+  uncertain: true
+  pinpoint_uncertain: true
+  notes: >-
+    The receipt-date deeming comes from a single secondary source. It is unclear whether acceptance is
+    backdated to receipt when the waiver decision comes later. The engine should flag cases where the
+    waiver decision date is after the receipt date.
+
+rules:
+  - id: negotiation_period
+    description: Negotiation to clarify or refine the application must be completed within 10 working days of receipt.
+    trigger: application_received
+    days: 10
+    unit: working_days
+    section: "s 13(7)"
+    evidence: snippet_verified
+    uncertain: false
+    notes: >-
+      No evidence that the s 15 decision clock stops during negotiation (inferred: it does not). An
+      application still lacking definition after negotiation may be refused under s 20(b).
+
+  - id: decision_due
+    description: Notify the decision on assessed disclosure as soon as practicable, and no later than 20 working days after acceptance.
+    trigger: application_accepted
+    days: 20
+    unit: working_days
+    section: "s 15(1)"
+    evidence: snippet_verified
+    uncertain: false
+    notes: Applies to public authorities and Ministers alike.
+
+  - id: negotiation_extended_decision_due
+    description: Possible 30 working-day period where negotiation under s 13(7) has taken place.
+    trigger: application_accepted
+    days: 30
+    unit: working_days
+    section: "s 15(3)?"
+    evidence: snippet_verified
+    uncertain: true
+    pinpoint_uncertain: true
+    notes: >-
+      A single digest said "Where negotiation takes place under section 13(7), that period is extended
+      to 30 working days under section 15(3)". This conflicts with other digests that put the
+      third-party +20 wd in the subsection after s 15(1). It is unclear whether 30 wd counts from
+      receipt (10 + 20) or from acceptance. Do NOT apply automatically. Show it as an alternative
+      deadline only.
+
+  - id: third_party_consultation_extension
+    description: Where the authority or Minister has decided to consult a third party under s 36 or s 37, a further 20 working days is allowed.
+    trigger: application_accepted
+    extends: decision_due
+    by: 20
+    days: 40
+    unit: working_days
+    section: "s 15 (subsection 2 or 3)"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: >-
+      The 40 wd total is confirmed by several agency pages. Applies only once a consultation decision is
+      made. Record the event third_party_consultation_decided.
+
+  - id: third_party_response_window
+    description: A consulted third party is asked for views within 15 working days; afterwards the authority may decide without its input.
+    trigger: third_party_notified
+    days: 15
+    unit: working_days
+    section: "s 36 / s 37 (subsections unknown)"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: Third-party review rights and any deferral of release after a decision to release are UNCERTAIN (memory).
+
+  - id: extension_by_agreement
+    description: The time for decision may be extended by agreement with the applicant.
+    trigger: extension_agreed
+    days: null
+    unit: working_days
+    section: "s 15(4)(a)"
+    evidence: snippet_verified
+    uncertain: false
+    notes: The length is whatever is agreed; the engine takes the new due date from the agreement record.
+
+  - id: ombudsman_extension
+    description: The Ombudsman may allow a public authority or Minister further time, subject to conditions.
+    trigger: ombudsman_extension_granted
+    days: null
+    unit: working_days
+    section: "s 15(4)(b)?"
+    evidence: snippet_verified
+    uncertain: true
+    pinpoint_uncertain: true
+    notes: >-
+      Operative words were seen. One digest said "in accordance with subsection (3)". Whether the
+      route is available only when the applicant refuses to agree is memory. No cap on the length was found.
+
+  - id: transfer_deemed_receipt
+    description: On transfer, the receiving authority or Minister is taken to have received the application at the earlier of the date of transfer and 10 working days after the original application.
+    trigger: application_transferred
+    days: 10
+    unit: working_days
+    anchor: original_application_received
+    rule: earlier_of(transfer_date, original_received + 10 working_days)
+    section: "s 14"
+    evidence: snippet_verified
+    uncertain: true
+    notes: >-
+      It is UNCERTAIN whether the receiving body's s 15(1) clock runs from this deemed receipt or from
+      its own acceptance (fee handling). Default: use the deemed receipt as application_accepted where
+      the fee was already paid or waived.
+
+  - id: deemed_refusal
+    description: If notice of decision is not received within the relevant period, the principal officer or Minister is taken to have refused on the last day of that period. This enables an Ombudsman application under s 45(1)(f).
+    trigger: decision_due_passed
+    days: 0
+    unit: working_days
+    section: "s 15 (late subsection; 15(5) or 15(6) per memory); s 45(1)(f)"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: >-
+      Deemed on the last day of whichever period applies (20, 40, agreed or Ombudsman-extended). Goes
+      directly to the Ombudsman; internal review is not the route (inferred from s 45(1)(f)).
+
+  - id: internal_review_window
+    description: Applicant may seek internal review within 20 working days of the day notice of the decision was received.
+    trigger: decision_notified
+    days: 20
+    unit: working_days
+    section: "s 43"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: >-
+      Only for decisions of delegated officers. A decision by a Minister or principal officer goes
+      straight to the Ombudsman (s 45(1)(a)). A deemed refusal goes to the Ombudsman under s 45(1)(f).
+      The trigger is RECEIPT of the notice, not the date on the letter.
+
+  - id: internal_review_decision_due
+    description: Internal review decision due.
+    trigger: internal_review_lodged
+    days: 15
+    candidate_values: [15, 20]
+    unit: working_days
+    section: "s 43 (subsection unknown)"
+    evidence: snippet_verified
+    uncertain: true
+    pinpoint_uncertain: true
+    notes: >-
+      CONFLICT. The Ombudsman page says "must be made within 20 working days" and also "you can seek
+      external review ... if a decision has not been received after 15 working days". Hobart Community
+      Legal Service says 15 wd. Memory also favours 15. The engine should mark overdue at 15 and show
+      20 as the alternative.
+
+  - id: internal_review_deemed_refusal
+    description: Failure to decide an internal review in time allows an application to the Ombudsman.
+    trigger: internal_review_decision_due_passed
+    days: 0
+    unit: working_days
+    section: "s 44(1)(b)? / s 45?"
+    evidence: inferred
+    uncertain: true
+    pinpoint_uncertain: true
+    notes: That external review is then available is snippet_verified. The deeming mechanism and its section are not.
+
+  - id: external_review_after_internal_review
+    description: Apply to the Ombudsman within 20 working days of an event in s 44(1)(b), e.g. notice of the internal review decision.
+    trigger: internal_review_decision_notified
+    days: 20
+    unit: working_days
+    section: "s 44"
+    evidence: snippet_verified
+    uncertain: false
+    notes: >-
+      That the (1)(b) events also include expiry of the internal review period without a decision is
+      inferred. If so, apply the same 20 wd from internal_review_decision_due_passed and mark it uncertain.
+
+  - id: external_review_window
+    description: Direct application to the Ombudsman where internal review is unavailable (s 45(1)(a) Minister or principal-officer decision; other paragraphs).
+    trigger: decision_notified
+    applies_when: decision_maker in [minister, principal_officer]
+    days: 20
+    unit: working_days
+    section: "s 45"
+    evidence: snippet_verified
+    uncertain: true
+    pinpoint_uncertain: true
+    notes: >-
+      A digest said applications "must be made within 20 working days of an event", but it is unclear
+      whether that was s 44 or s 45 text. s 45(1) paragraphs (b)–(e) not seen.
+
+  - id: external_review_deemed_refusal_window
+    description: Time limit, if any, for applying to the Ombudsman after a deemed refusal under s 45(1)(f).
+    trigger: deemed_refusal
+    days: null
+    unit: working_days
+    section: "s 45(1)(f); time-limit subsection unknown"
+    evidence: memory
+    uncertain: true
+    notes: Not established. Do not show a lapse date. Show "may apply now".
+
+  - id: ombudsman_decision
+    description: Ombudsman to complete the review as soon as practicable after receiving the application; no fixed statutory period found.
+    trigger: external_review_lodged
+    days: null
+    unit: working_days
+    section: "s 46/47? (unknown)"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: >-
+      Reviews have historically taken years (ABC 2017, 2018). Effect of the decision and any appeal or
+      judicial review route is memory only (ss 47–48?). Ombudsman described as the "only and final"
+      external review.
+
+  - id: resources_refusal_consultation
+    description: Before refusing under s 19 (substantial and unreasonable diversion of resources, Sch 3), give the applicant a reasonable opportunity to consult and reframe.
+    trigger: s19_refusal_contemplated
+    days: null
+    unit: working_days
+    section: "s 19 (consultation subsection unknown); Sch 3"
+    evidence: snippet_verified
+    uncertain: false
+    pinpoint_uncertain: true
+    notes: No statutory period for the consultation was found.
+
+fees:
+  application_fee_units: 25
+  application_fee_section: "s 16(1)"
+  application_fee_evidence: snippet_verified
+  fee_unit_value_aud:
+    "2025-26": 1.91   # snippet_verified: fee unit $1.91 from 1 July 2025, application fee $47.75
+    "2026-27": 1.96   # inferred: DPAC says fee $49.00 from 1 July 2026 (snippet_verified); 49 / 25 = 1.96
+  application_fee_aud:
+    "2025-26": 47.75  # snippet_verified
+    "2026-27": 49.00  # snippet_verified
+  indexation: "Fee Units Act 1997, indexed 1 July annually (snippet_verified)"
+  waiver_discretionary: true   # s 16(2) "may", snippet_verified
+  waivers:
+    - ground: impecunious / financial hardship
+      section: "s 16(2)(a)"
+      evidence: snippet_verified
+      uncertain: false
+    - ground: Member of Parliament acting in connection with official duty
+      section: "s 16(2)(b)"
+      evidence: snippet_verified
+      uncertain: false
+    - ground: journalist acting in connection with professional duties
+      section: "s 16(2)(ba)?"
+      evidence: snippet_verified
+      uncertain: true
+      notes: >-
+        Listed on current agency pages. Older pages list three grounds only. Statutory basis and
+        paragraph number UNCERTAIN; possibly inserted by Act No. 28 of 2024.
+    - ground: information to be used for a purpose of general public interest or benefit
+      section: "s 16(2)(c)"
+      evidence: snippet_verified
+      uncertain: false
+  processing_charges:
+    exist: false
+    evidence: memory
+    uncertain: true
+    notes: No search result mentioned processing or access charges beyond the application fee.
+
+exemptions:
+  # Division 1: no public interest test
+  - {section: "s 25", heading: "Executive Council information", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 26", heading: "Cabinet information", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 27", heading: "Internal briefing information of a Minister", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 28", heading: "Information not relating to official business", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 29", heading: "Information affecting national or State security, defence or international relations", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 30", heading: "Information relating to enforcement of the law", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 31", heading: "Legal professional privilege", public_interest_test: false, evidence: snippet_verified}
+  - {section: "s 32", heading: "Information relating to closed meetings of council", public_interest_test: false, evidence: snippet_verified}
+  # s 33 is the public interest test itself (Sch 1 relevant matters, Sch 2 irrelevant matters), not an exemption
+  - {section: "s 33", heading: "Public interest test", public_interest_test: null, is_exemption: false, evidence: snippet_verified}
+  # Division 2: subject to public interest test
+  - {section: "s 34", heading: "Information communicated by other jurisdictions", public_interest_test: true, evidence: snippet_verified}
+  - {section: "s 35", heading: "Internal deliberative information", public_interest_test: true, evidence: snippet_verified, notes: "purely factual information excluded; ceases to apply after 10 years"}
+  - {section: "s 36", heading: "Personal information of person", public_interest_test: true, evidence: snippet_verified, notes: "third-party consultation trigger"}
+  - {section: "s 37", heading: "Information relating to business affairs of third party", public_interest_test: true, evidence: snippet_verified, notes: "third-party consultation trigger"}
+  - {section: "s 38", heading: "Information relating to business affairs of public authority", public_interest_test: true, evidence: snippet_verified}
+  - {section: "s 39", heading: "Information obtained in confidence", public_interest_test: true, evidence: snippet_verified}
+  - {section: "s 40", heading: "Information on procedures and criteria used in certain negotiations of public authority", public_interest_test: true, evidence: snippet_verified}
+  - {section: "s 41", heading: "Information likely to affect State economy", public_interest_test: true, evidence: snippet_verified}
+  - {section: "s 42", heading: "Information likely to affect cultural, heritage and natural resources of the State", public_interest_test: true, evidence: memory, uncertain: true, notes: "content (endangered flora/fauna; significant sites) snippet_verified; exact heading wording not seen"}
+
+other_refusal_grounds:
+  - {section: "s 19", heading: "Substantial and unreasonable diversion of resources (voluminous)", schedule: "Sch 3", evidence: snippet_verified}
+  - {section: "s 20", heading: "Repeat or vexatious applications / lacking definition after negotiation", evidence: snippet_verified}
+
+citation_normalisation:
+  patterns: ["s 35", "s.35", "s35", "sec 35", "section 35(1)(a)", "ss 36 and 37", "ss 36-37", "ss 36–37"]
+  output: "{section: <int>, sub: '<(n)(x)...>' | null}"
+  notes: Map s 33 to public_interest_test, not to an exemption. Expand ranges ss 36–37 into each section.
+
+publication:
+  disclosure_log_statutory: false
+  disclosure_log_evidence: >-
+    snippet_verified (Department of Health: publication "is not a statutory requirement"); no provision
+    requiring a log was found (inferred negative).
+  uncertain: true
+  policy:
+    - rule: Publish certain released information online within 48 hours of release to the applicant
+      applies_to: departments/agencies (stated on NRE Tas, Tasmania Police, DECYP, Justice pages)
+      source: government policy / agency practice (not the Act)
+      evidence: snippet_verified
+    - rule: Premier's April 2026 request that GBEs and state-owned companies publish RTI releases within 48 hours
+      applies_to: GBEs and SOCs
+      source: Premier's letter (ABC 2026-05-20)
+      evidence: snippet_verified
+  notes: Non-publication is a policy departure, not a breach of the Act.
+
+annual_reporting:
+  section: "s 53"
+  reporter: Secretary, Department of Justice (reports on all public authorities)
+  inputs: returns from each public authority (template issued around 1 July)
+  tabled: as soon as practicable after the financial year
+  published_at: https://www.justice.tas.gov.au/about-us/reports-publications/reports/annual-reports/right-to-information-annual-reports
+  evidence: snippet_verified
+  uncertain: true
+  notes: Whether Ministers report separately and whether s 54 exists as a separate reporting section is unresolved (memory).

@@ -1,0 +1,32 @@
+title: Tas RTI tracker — data (private)
+description: Faceted search over the RTI tracker store. Run with `datasette data/rti.db -m rti_tracker/web/datasette_metadata.yaml`.
+databases:
+  rti:
+    tables:
+      items:
+        facets: [authority_id, status, published_date]
+        sort_desc: first_seen_at
+      documents:
+        facets: [authority_id, content_type, extraction_method]
+      document_metadata:
+        facets: [field, verified]
+      changes:
+        facets: [kind, severity, authority_id]
+        sort_desc: detected_at
+      authorities:
+        facets: [type, rti_status, tier, disclosure_log_format]
+      applications:
+        hidden: true      # Kurt's applications are never exposed via Datasette
+      application_events:
+        hidden: true
+      application_attachments:
+        hidden: true
+      application_links:
+        hidden: true
+    queries:
+      releases_by_authority_month:
+        sql: SELECT authority_id, substr(COALESCE(published_date, first_seen_at),1,7) AS month, count(*) AS n FROM items GROUP BY 1,2 ORDER BY 2 DESC
+      exemptions_cited:
+        sql: SELECT d.authority_id, m.value AS exemptions, count(*) AS n FROM document_metadata m JOIN documents d ON d.id=m.document_id WHERE m.field='exemptions_cited' AND m.verified=1 GROUP BY 1,2 ORDER BY 3 DESC
+      removals:
+        sql: SELECT * FROM changes WHERE kind IN ('item_removed','item_edited','document_changed') ORDER BY detected_at DESC

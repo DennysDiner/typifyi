@@ -1,0 +1,1417 @@
+# Slice (c): Tasmanian councils, council entities, joint authorities, TasWater, UTAS, other.
+# All URLs were seen verbatim in WebSearch results unless null. See AGENT_CONSTRAINTS.md.
+meta:
+  slice: c_local_government_and_other
+  generated: '2026-09-24'
+  verification_status: network_blocked_search_only
+  search_count_completed: 35
+  search_budget_note: The shared session WebSearch budget (200/200) ran out after 35 searches from this agent. The brief asked
+    for at least 70. Every disclosure-log and 'assessed disclosure' query per council, and all entity-specific queries, are
+    listed under queries_not_run for re-running.
+  disclosure_logs_snippet_verified: 0
+  evidence_labels: snippet_verified | inferred | memory (see research/AGENT_CONSTRAINTS.md)
+  website_field_note: website is the scheme+host of a snippet_verified result URL for that body. The host is verified; the
+    bare root page itself is inferred.
+  region_scheme: north_west = Cradle Coast 9; north = 8 northern councils; south = 12 southern councils (memory)
+authorities:
+- id: break_oday_c
+  name: Break O'Day Council
+  aliases:
+  - BODC
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: Act gives right to obtain information held by ''public authorities,
+    such as Break O''Day Council'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.bodc.tas.gov.au/council/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - BODC')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.bodc.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.bodc.tas.gov.au/council/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'St Helens. East coast; grouped with the north for regional purposes (memory). ABS LGA code (memory, unverified):
+    60210. No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Break O''Day Council" "right to information"'
+  queries_not_run:
+  - '"Break O''Day Council" "disclosure log"'
+  - '"Break O''Day Council" RTI "assessed disclosure"'
+- id: brighton_c
+  name: Brighton Council
+  aliases:
+  - Brighton Council (Tasmania)
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: Brighton RTI page gives a 2025-26 RTI form and $47.75 fee (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.brighton.tas.gov.au/council/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Brighton council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.brighton.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.brighton.tas.gov.au/council/right-to-information/ (snippet_verified)
+  - https://www.righttoknow.org.au/body/brighton_council (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Listed on the Right to Know (righttoknow.org.au) platform. ABS LGA code (memory, unverified): 60410. No disclosure
+    log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Brighton Council" Tasmania "right to information"'
+  queries_not_run:
+  - '"Brighton Council" "disclosure log"'
+  - '"Brighton Council" RTI "assessed disclosure"'
+- id: burnie_cc
+  name: Burnie City Council
+  aliases:
+  - City of Burnie
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''The Right to Information Act 2009 allows for a person to
+    obtain certain information that is held by the Council'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.burnie.net/Council/Governance-Information/How-to-request-Council-information
+  rti_page_url_evidence: snippet_verified (result title 'How to request Council information Burnie City Council'; note the
+    burnie.net domain, not burnie.tas.gov.au. UNCERTAIN which domain is canonical)
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.burnie.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.burnie.net/Council/Governance-Information/How-to-request-Council-information (snippet_verified)
+  - https://www.burnie.tas.gov.au/Council/Governance (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'The RTI page result was on burnie.net; other Burnie results were on burnie.tas.gov.au. Confirm the canonical domain
+    when the network opens. ABS LGA code (memory, unverified): 60610. No disclosure log seen in any snippet; the dedicated
+    disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Burnie City Council" "right to information"'
+  queries_not_run:
+  - '"Burnie City Council" "disclosure log"'
+  - '"Burnie City Council" RTI "assessed disclosure"'
+- id: central_coast_c
+  name: Central Coast Council
+  aliases:
+  - Central Coast Council (Tasmania)
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Central Coast Council, as a public authority, abides by the
+    Right to Information Act 2009'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.centralcoast.tas.gov.au/council/governance/strategies-plans-policies/right-to-information/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.centralcoast.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.centralcoast.tas.gov.au/council/governance/strategies-plans-policies/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Ulverstone. Postal RTI contact: Principal Officer Right to Information, PO Box 220, Ulverstone TAS 7315 (snippet_verified).
+    Do not confuse with Central Coast Council NSW (centralcoast.nsw.gov.au). ABS LGA code (memory, unverified): 60810. No
+    disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Central Coast Council" Tasmania "right to information"'
+  queries_not_run:
+  - '"Central Coast Council" "disclosure log"'
+  - '"Central Coast Council" RTI "assessed disclosure"'
+- id: central_highlands_c
+  name: Central Highlands Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: s 5 'public authority' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); no council-specific RTI snippet; the search summary said an RTI section
+    appears among its council policies (weak, not verbatim)
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://centralhighlands.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://centralhighlands.tas.gov.au/council/council-policies/ (snippet_verified as site URL only)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Hamilton/Bothwell. No RTI page URL was seen. Most results were for Central Highlands Regional Council (Qld, chrc.qld.gov.au),
+    a different body. Council policies page: https://centralhighlands.tas.gov.au/council/council-policies/ (snippet_verified).
+    ABS LGA code (memory, unverified): 61010. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"Central Highlands Council" "right to information"'
+  queries_not_run:
+  - '"Central Highlands Council" "disclosure log"'
+  - '"Central Highlands Council" RTI "assessed disclosure"'
+- id: circular_head_c
+  name: Circular Head Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: council provides an ''Application for Assessed Disclosure -
+    Right to Information RTI'' form (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.circularhead.tas.gov.au/our-council/right-to-information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information | Circular Head Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.circularhead.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.circularhead.tas.gov.au/our-council/right-to-information (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Smithton. ABS LGA code (memory, unverified): 61210. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"Circular Head Council" "right to information"'
+  queries_not_run:
+  - '"Circular Head Council" "disclosure log"'
+  - '"Circular Head Council" RTI "assessed disclosure"'
+- id: clarence_cc
+  name: Clarence City Council
+  aliases:
+  - City of Clarence
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Under the Act the City of Clarence is required to make information
+    available to the public'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.ccc.tas.gov.au/your-council/governance/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - City of Clarence')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: governance@ccc.tas.gov.au
+  annual_report_url: null
+  website: https://www.ccc.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.ccc.tas.gov.au/your-council/governance/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Rosny Park. The snippet says it releases information through Annual and Quarterly reports. rti_contact_email governance@ccc.tas.gov.au
+    is snippet_verified (snippet says the Application for Assessed Disclosure form is emailed to this address). ABS LGA code
+    (memory, unverified): 61410. No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be
+    run (search budget exhausted).'
+  queries:
+  - '"Clarence City Council" "right to information"'
+  queries_not_run:
+  - '"Clarence City Council" "disclosure log"'
+  - '"Clarence City Council" RTI "assessed disclosure"'
+- id: derwent_valley_c
+  name: Derwent Valley Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Derwent Valley Council is a public authority that is required
+    by the Right to Information Act 2009 to make information available'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.derwentvalley.tas.gov.au/council/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: dvcouncil@dvc.tas.gov.au
+  annual_report_url: null
+  website: https://www.derwentvalley.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.derwentvalley.tas.gov.au/council/right-to-information (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'New Norfolk. RTI Officer, PO Box 595, New Norfolk TAS 7140 (snippet_verified). rti_contact_email dvcouncil@dvc.tas.gov.au
+    is snippet_verified (snippet gives it as the Right to Information Officer''s email; it is a general council mailbox).
+    ABS LGA code (memory, unverified): 61610. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"Derwent Valley Council" "right to information"'
+  queries_not_run:
+  - '"Derwent Valley Council" "disclosure log"'
+  - '"Derwent Valley Council" RTI "assessed disclosure"'
+- id: devonport_cc
+  name: Devonport City Council
+  aliases:
+  - City of Devonport
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''An Officer will assess your application against the Right
+    to Information Act 2009'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.devonport.tas.gov.au/council/governance/transparency-accountability/access-to-council-information/
+  rti_page_url_evidence: snippet_verified (result title 'Access to Council information | Devonport City Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.devonport.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.devonport.tas.gov.au/council/governance/transparency-accountability/access-to-council-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'ABS LGA code (memory, unverified): 61810. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"Devonport City Council" "right to information"'
+  queries_not_run:
+  - '"Devonport City Council" "disclosure log"'
+  - '"Devonport City Council" RTI "assessed disclosure"'
+- id: dorset_c
+  name: Dorset Council
+  aliases:
+  - Dorset Council (Tasmania)
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Dorset Council is a public authority'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.dorset.tas.gov.au/right-to-information-act-2009
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information Act 2009 - Dorset Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: dorset@dorset.tas.gov.au
+  annual_report_url: null
+  website: https://www.dorset.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.dorset.tas.gov.au/right-to-information-act-2009 (snippet_verified)
+  - https://www.righttoknow.org.au/body/dorset_council (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Scottsdale. RTI Officer, PO Box 21 Scottsdale TAS 7260 (snippet_verified). Do not confuse with Dorset Council UK.
+    rti_contact_email dorset@dorset.tas.gov.au is snippet_verified (snippet says requests can be made to the RTI Officer at
+    this address; it is a general mailbox). ABS LGA code (memory, unverified): 62010. No disclosure log seen in any snippet;
+    the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Dorset Council" Tasmania "right to information"'
+  queries_not_run:
+  - '"Dorset Council" "disclosure log"'
+  - '"Dorset Council" RTI "assessed disclosure"'
+- id: flinders_c
+  name: Flinders Council
+  aliases:
+  - Flinders Island Council
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Flinders Council is a public authority. Under the Right to
+    Information Act 2009 Flinders Council is required to make information available'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.flinders.tas.gov.au/right-to-information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Flinders Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.flinders.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.flinders.tas.gov.au/right-to-information (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Whitemark, Flinders Island. WARNING: Flinders Shire Council (Qld, flinders.qld.gov.au) has a disclosure log at https://www.flinders.qld.gov.au/our-governance/right-to-information/disclosure-log.
+    That is a DIFFERENT body and must not be attributed to Flinders Council (Tas). ABS LGA code (memory, unverified): 62210.
+    No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Flinders Council" "right to information"'
+  queries_not_run:
+  - '"Flinders Council" "disclosure log"'
+  - '"Flinders Council" RTI "assessed disclosure"'
+- id: george_town_c
+  name: George Town Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''George Town Council is bound by the provisions of the Right
+    to Information Act'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://georgetown.tas.gov.au/right-to-information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://georgetown.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://georgetown.tas.gov.au/right-to-information (snippet_verified)
+  - https://georgetown.tas.gov.au/policies-and-governance (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Do not confuse with George Town City Council (Penang, Malaysia). ABS LGA code (memory, unverified): 62410. No disclosure
+    log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"George Town Council" "right to information"'
+  queries_not_run:
+  - '"George Town Council" "disclosure log"'
+  - '"George Town Council" RTI "assessed disclosure"'
+- id: glamorgan_spring_bay_c
+  name: Glamorgan Spring Bay Council
+  aliases:
+  - Glamorgan-Spring Bay Council
+  - GSBC
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: RTI page cites the Right to Information Act 2009 (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://gsbc.tas.gov.au/council/council-governance/right-to-information/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: admin@freycinet.tas.gov.au
+  annual_report_url: https://gsbc.tas.gov.au/council/annual-reports/
+  website: https://gsbc.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://gsbc.tas.gov.au/council/council-governance/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Triabunna. annual_report_url is the annual reports listing page (snippet_verified), not a single report. rti_contact_email
+    admin@freycinet.tas.gov.au is snippet_verified (given on the RTI page as a general enquiries address, not a dedicated
+    RTI address). ABS LGA code (memory, unverified): 62610. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"Glamorgan Spring Bay Council" "right to information"'
+  queries_not_run:
+  - '"Glamorgan Spring Bay Council" "disclosure log"'
+  - '"Glamorgan Spring Bay Council" RTI "assessed disclosure"'
+- id: glenorchy_cc
+  name: Glenorchy City Council
+  aliases:
+  - City of Glenorchy
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''The Right to Information Act gives you the right to ask for
+    information about Glenorchy City Council''s operations'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.gcc.tas.gov.au/council/governance-and-operations/privacy-and-rti/
+  rti_page_url_evidence: snippet_verified (result title 'Privacy and RTI | Glenorchy City Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: gccmail@gcc.tas.gov.au
+  annual_report_url: null
+  website: https://www.gcc.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.gcc.tas.gov.au/council/governance-and-operations/privacy-and-rti/ (snippet_verified)
+  - https://www.righttoknow.org.au/body/glenorchy_city_council (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: '374 Main Road Glenorchy; PO Box 103 Glenorchy TAS 7010 (snippet_verified). rti_contact_email gccmail@gcc.tas.gov.au
+    is snippet_verified (snippet says Application for Assessed Disclosure forms may be emailed here; it is a general mailbox).
+    ABS LGA code (memory, unverified): 62810. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"Glenorchy City Council" "right to information"'
+  queries_not_run:
+  - '"Glenorchy City Council" "disclosure log"'
+  - '"Glenorchy City Council" RTI "assessed disclosure"'
+- id: hobart_cc
+  name: Hobart City Council
+  aliases:
+  - City of Hobart
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''The Council is a public authority as defined under the Right
+    to Information Act 2009'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.hobartcity.com.au/Council/About-Council/Governance-and-transparency/Right-to-Information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - City of Hobart, Tasmania Australia')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.hobartcity.com.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.hobartcity.com.au/Council/About-Council/Governance-and-transparency/Right-to-Information (snippet_verified)
+  - https://www.hobartcity.com.au/Council/Legislation-and-by-laws/Right-to-Information-Act-2009 (snippet_verified)
+  - https://www.hobartcity.com.au/Council/Contact-us/Forms/Right-to-information-request (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'A DRAFT City of Hobart Information Disclosure Policy and Procedures was a council agenda attachment in October 2024:
+    https://hobart.infocouncil.biz/Open/2024/10/CO_14102024_AGN_1907_AT_files/CO_14102024_AGN_1907_AT_Attachment_12405_2.PDF
+    (snippet_verified). It may set out disclosure-log practice (not checked). Do not confuse with hobartok.gov (City of Hobart,
+    Oklahoma). ABS LGA code (memory, unverified): 63010. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"City of Hobart" "right to information"'
+  queries_not_run:
+  - '"City of Hobart" "disclosure log"'
+  - '"City of Hobart" RTI "assessed disclosure"'
+- id: huon_valley_c
+  name: Huon Valley Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: Ombudsman Tasmania 2024 decisions page records an application
+    for assessed disclosure made to Huon Valley Council, which applied ss 30 and 36 (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.huonvalley.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.ombudsman.tas.gov.au/right-to-information/reasons-for-decisions/decisions-2016-current/2024 (snippet_verified)
+  - https://www.huonvalley.tas.gov.au/council/forms/ (snippet_verified as site URL only)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Huonville. No dedicated RTI page URL was seen. The snippet summary mentions an ''Access to Information Policy (CORP
+    GOV 011)'', but no URL was shown. ABS LGA code (memory, unverified): 63210. No disclosure log seen in any snippet; the
+    dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Huon Valley Council" "right to information"'
+  - '"Huon Valley" council "application for assessed disclosure"'
+  queries_not_run:
+  - '"Huon Valley Council" "disclosure log"'
+  - '"Huon Valley Council" RTI "assessed disclosure"'
+- id: kentish_c
+  name: Kentish Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: Tasmanian Times (Sept 2025) reports that Kentish Council cited
+    s 36(1) of the RTI Act 2009 to refuse release of a report (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://tasmaniantimes.com/2025/09/kentish-council-refuses-to-release-report-on-employees-termination/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Sheffield. No Kentish Council web page appeared in the results, so website is null (memory suggests kentish.tas.gov.au,
+    unverified). Results were swamped by Kent County Council (UK). ABS LGA code (memory, unverified): 63410. No disclosure
+    log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Kentish Council" "right to information"'
+  queries_not_run:
+  - '"Kentish Council" "disclosure log"'
+  - '"Kentish Council" RTI "assessed disclosure"'
+- id: king_island_c
+  name: King Island Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''King Island Council is a public authority'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://kingisland.tas.gov.au/council/access-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Access to Information - King Island Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: https://kingisland.tas.gov.au/wp-content/uploads/20251117-REP-Annual-Report-Full-document-2024-25-reduced-size-1.pdf
+  website: https://kingisland.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://kingisland.tas.gov.au/council/access-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Currie. annual_report_url is the 2024/25 Annual Report PDF (snippet_verified). A 2023/24 draft is also indexed at
+    https://kingisland.tas.gov.au/wp-content/uploads/20241119-REP-Annual-Report-Combined-2023-24-1.pdf. King Island is often
+    grouped with the Cradle Coast/north-west region (memory). ABS LGA code (memory, unverified): 63810. No disclosure log
+    seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"King Island Council" "right to information"'
+  queries_not_run:
+  - '"King Island Council" "disclosure log"'
+  - '"King Island Council" RTI "assessed disclosure"'
+- id: kingborough_c
+  name: Kingborough Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: RTI page describes the Act''s legally enforceable right to
+    Council information (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.kingborough.tas.gov.au/council/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Kingborough Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.kingborough.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.kingborough.tas.gov.au/council/right-to-information/ (snippet_verified)
+  - https://www.kingborough.tas.gov.au/wp-content/uploads/2022/01/Policy-3.22-Release-of-Documents.pdf (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Kingston. Release of Documents Policy 3.22 (Jan 2022) is indexed. An ABC article (28 Nov 2024) reported emails about
+    the Kingston bus interchange; whether they were released under RTI was not confirmed. ABS LGA code (memory, unverified):
+    63610. No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Kingborough Council" "right to information"'
+  queries_not_run:
+  - '"Kingborough Council" "disclosure log"'
+  - '"Kingborough Council" RTI "assessed disclosure"'
+- id: latrobe_c
+  name: Latrobe Council
+  aliases:
+  - Latrobe Council (Tasmania)
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: council RTI publication PDF ''Right to Information Act 2009
+    - Latrobe Council'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.latrobe.tas.gov.au/council/publications/rof
+  rti_page_url_evidence: snippet_verified (result title 'Right To Information | Latrobe Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.latrobe.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.latrobe.tas.gov.au/council/publications/rof (snippet_verified)
+  - https://www.righttoknow.org.au/body/latrobe_council_tasmania (snippet_verified)
+  - https://www.latrobe.tas.gov.au/__data/assets/pdf_file/0035/927467/Latrobe-Council-Right-to-Information-Publication-updated-to-reflect-2023-fee-of-$44.50.pdf
+    (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Its RTI information sheet PDF still reflects the 2023 fee of $44.50. ABS LGA code (memory, unverified): 64010. No
+    disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Latrobe Council" Tasmania "right to information"'
+  queries_not_run:
+  - '"Latrobe Council" "disclosure log"'
+  - '"Latrobe Council" RTI "assessed disclosure"'
+- id: launceston_cc
+  name: City of Launceston
+  aliases:
+  - Launceston City Council
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: Act applies to ''public authorities, such as the City of Launceston''
+    (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.launceston.tas.gov.au/Council-Region/Access-to-Information
+  rti_page_url_evidence: snippet_verified (result title 'Access to Information - City of Launceston')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.launceston.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.launceston.tas.gov.au/Council-Region/Access-to-Information (snippet_verified)
+  - https://www.launceston.tas.gov.au/files/assets/public/v/1/council/legislation-amp-policy/disclosure-of-information-policy.pdf
+    (snippet_verified)
+  - https://www.launceston.tas.gov.au/files/assets/public/v/5/forms-and-applications/application-for-assessed-disclosure-17-fmx-016-rti.pdf
+    (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'The Disclosure of Information Policy PDF is indexed. It is a policy, not a disclosure log. ABS LGA code (memory,
+    unverified): 64210. No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search
+    budget exhausted).'
+  queries:
+  - '"City of Launceston" "right to information"'
+  queries_not_run:
+  - '"City of Launceston" "disclosure log"'
+  - '"City of Launceston" RTI "assessed disclosure"'
+- id: meander_valley_c
+  name: Meander Valley Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''You have the right to lodge an application for assessed disclosure
+    under the Right to Information Act 2009'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.meander.tas.gov.au/right-to-information-privacy
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information & Privacy - Meander Valley Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: mail@mvc.tas.gov.au
+  annual_report_url: null
+  website: https://www.meander.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.meander.tas.gov.au/right-to-information-privacy (snippet_verified)
+  - https://www.meander.tas.gov.au/assets/docs/Minutes-Agendas/2024/MVC-Right-to-Information-Application-for-Assessed-Disclosure-2024-25.pdf
+    (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Westbury. rti_contact_email mail@mvc.tas.gov.au is snippet_verified (general contact address given on the RTI &
+    Privacy page). ABS LGA code (memory, unverified): 64610. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"Meander Valley Council" "right to information"'
+  queries_not_run:
+  - '"Meander Valley Council" "disclosure log"'
+  - '"Meander Valley Council" RTI "assessed disclosure"'
+- id: northern_midlands_c
+  name: Northern Midlands Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Northern Midlands Council is required by the Right to Information
+    Act 2009 to make information available to the public through proactive disclosure'' (snippet_verified; source result not
+    identified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://northernmidlands.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://northernmidlands.tas.gov.au/council/your-council/council-information (snippet_verified as site URL; may hold RTI
+    content, UNCERTAIN)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Longford. No result was titled as an RTI page. The proactive-disclosure text probably comes from the ''Council Information''
+    page, but that is UNCERTAIN, so rti_page_url is null. ABS LGA code (memory, unverified): 64810. No disclosure log seen
+    in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Northern Midlands Council" "right to information"'
+  queries_not_run:
+  - '"Northern Midlands Council" "disclosure log"'
+  - '"Northern Midlands Council" RTI "assessed disclosure"'
+- id: sorell_c
+  name: Sorell Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Sorell Council is required by the Right to Information Act
+    2009 to make information available to the public through proactive disclosure'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.sorell.tas.gov.au/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Sorell Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.sorell.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.sorell.tas.gov.au/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'ABS LGA code (memory, unverified): 65010. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"Sorell Council" "right to information"'
+  queries_not_run:
+  - '"Sorell Council" "disclosure log"'
+  - '"Sorell Council" RTI "assessed disclosure"'
+- id: southern_midlands_c
+  name: Southern Midlands Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''The Southern Midlands Council is a public authority'' (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.southernmidlands.tas.gov.au/right-to-information-act/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information | Southern Midlands Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.southernmidlands.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.southernmidlands.tas.gov.au/right-to-information-act/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Oatlands. ABS LGA code (memory, unverified): 65210. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"Southern Midlands Council" "right to information"'
+  queries_not_run:
+  - '"Southern Midlands Council" "disclosure log"'
+  - '"Southern Midlands Council" RTI "assessed disclosure"'
+- id: tasman_c
+  name: Tasman Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: ''Tasman Council is a public authority'' / required by the
+    RTI Act 2009 to make proactive disclosure (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.tasman.tas.gov.au/council-documents/right-to-information/
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Tasman Council')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.tasman.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.tasman.tas.gov.au/council-documents/right-to-information/ (snippet_verified)
+  - https://www.righttoknow.org.au/body/tasman_council (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Nubeena. Do not confuse with Tasman District Council (NZ, tasman.govt.nz). ABS LGA code (memory, unverified): 65410.
+    No disclosure log seen in any snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"Tasman Council" "right to information"'
+  - Tasmania councils "right to information" disclosure log
+  queries_not_run:
+  - '"Tasman Council" "disclosure log"'
+  - '"Tasman Council" RTI "assessed disclosure"'
+- id: waratah_wynyard_c
+  name: Waratah-Wynyard Council
+  aliases:
+  - Waratah–Wynyard Council
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: council says members of the community have a right to access
+    information; the RTI framework applies (snippet_verified, paraphrased by the search summary)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.warwyn.tas.gov.au/governance/transparency-and-accountability/
+  rti_page_url_evidence: snippet_verified (result title 'Transparency and Accountability - Waratah-Wynyard Council'; it is
+    a transparency page, and whether it is the RTI page is UNCERTAIN)
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.warwyn.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.warwyn.tas.gov.au/governance/transparency-and-accountability/ (snippet_verified)
+  - https://www.righttoknow.org.au/body/waratah_wynyard_council (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Wynyard. ABS LGA code (memory, unverified): 65610. No disclosure log seen in any snippet; the dedicated disclosure-log
+    queries could not be run (search budget exhausted).'
+  queries:
+  - '"Waratah-Wynyard Council" "right to information"'
+  queries_not_run:
+  - '"Waratah-Wynyard Council" "disclosure log"'
+  - '"Waratah-Wynyard Council" RTI "assessed disclosure"'
+- id: west_coast_c
+  name: West Coast Council
+  aliases:
+  - West Coast Council (Tasmania)
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: the Forms and Applications page lists ''Right to Information''
+    (snippet_verified, per the search summary)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: wcc@westcoast.tas.gov.au
+  annual_report_url: null
+  website: https://www.westcoast.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.westcoast.tas.gov.au/council/governance/forms-and-applications/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Queenstown. No dedicated RTI page URL was seen. The RTI form is probably on the forms-and-applications page (UNCERTAIN).
+    rti_contact_email wcc@westcoast.tas.gov.au is snippet_verified (general council contact address, not a dedicated RTI address).
+    ABS LGA code (memory, unverified): 65810. No disclosure log seen in any snippet; the dedicated disclosure-log queries
+    could not be run (search budget exhausted).'
+  queries:
+  - '"West Coast Council" Tasmania "right to information"'
+  queries_not_run:
+  - '"West Coast Council" "disclosure log"'
+  - '"West Coast Council" RTI "assessed disclosure"'
+- id: west_tamar_c
+  name: West Tamar Council
+  aliases: []
+  type: council
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' includes a council within the meaning of the Local Government Act 1993 (memory
+    - s 5 text not seen in any snippet this session); snippet: council assesses each application against the RTI Act 2009
+    exemptions; reviews go to the RTI Officer, PO Box 16, Riverside TAS 7250 (snippet_verified)'
+  portfolio_minister: Minister for Local Government (memory)
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.wtc.tas.gov.au
+  source_of_listing:
+  - Local Government Act 1993 Sch 1 list of municipal areas (memory)
+  - https://www.wtc.tas.gov.au/council/governance/ (snippet_verified as site URL; may hold RTI content, UNCERTAIN)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Riverside. The RTI text probably comes from the Governance page (https://www.wtc.tas.gov.au/council/governance/),
+    but that is UNCERTAIN, so rti_page_url is null. ABS LGA code (memory, unverified): 66010. No disclosure log seen in any
+    snippet; the dedicated disclosure-log queries could not be run (search budget exhausted).'
+  queries:
+  - '"West Tamar Council" "right to information"'
+  queries_not_run:
+  - '"West Tamar Council" "disclosure log"'
+  - '"West Tamar Council" RTI "assessed disclosure"'
+- id: lgat
+  name: Local Government Association of Tasmania
+  aliases:
+  - LGAT
+  - LGA Tasmania
+  type: other
+  rti_status: full
+  rti_status_basis: 'LGAT''s own RTI page says it ''is required by the Right to Information Act 2009 to make information available
+    to the public through proactive disclosure'' (snippet_verified). Which s 5 limb applies is inferred: LGAT is established
+    under the Local Government Act 1993 (memory), so it probably falls under the ''body established by or under an Act for
+    a public purpose'' limb (inferred).'
+  portfolio_minister: Minister for Local Government (memory; LGAT is a member association, not in a portfolio. UNCERTAIN)
+  region: south
+  region_basis: memory (Hobart office); statewide body
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.lgat.tas.gov.au/about-us/right-to-information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information | LGA Tasmania')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.lgat.tas.gov.au
+  source_of_listing:
+  - https://www.lgat.tas.gov.au/about-us/right-to-information (snippet_verified)
+  - 'Local Government Act 1993 (memory: LGAT established under the LG Act)'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: The brief expected LGAT to be UNCERTAIN, but its own page says the RTI Act applies to it, so it is recorded as full.
+    The statutory limb is still unverified. The snippet says LGAT discloses only information about its own operations.
+  queries:
+  - LGAT "right to information"
+  - Tasmania councils "right to information" disclosure log
+  - '"Right to Information Regulations" Tasmania prescribed'
+  queries_not_run:
+  - LGAT "disclosure log"
+  - '"Local Government Association of Tasmania" "public authority" "Right to Information"'
+- id: taswater
+  name: Tasmanian Water and Sewerage Corporation Pty Ltd
+  aliases:
+  - TasWater
+  type: council_entity
+  rti_status: full
+  rti_status_basis: 'TasWater''s RTI guidance page says it ''assesses applications against the exemptions in the Right to
+    Information Act 2009'' and decides assessed-disclosure applications within 20 working days (snippet_verified). Which s
+    5 limb applies is UNCERTAIN: it is a Corporations Act company created under the Water and Sewerage Corporation Act 2012,
+    owned by the 29 councils plus the State as preference/ordinary shareholder since 2019 (all memory). It might be caught
+    as a body ''established by or under an Act'', or by express naming (not verified).'
+  portfolio_minister: Treasurer / Minister for Local Government (memory; UNCERTAIN)
+  region: south
+  region_basis: memory (Hobart HQ); statewide body
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.taswater.com.au/about-us/governance-and-policies/right-to-information-guidance
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information guidance | TasWater')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.taswater.com.au
+  source_of_listing:
+  - https://www.taswater.com.au/about-us/governance-and-policies/right-to-information-guidance (snippet_verified)
+  - Water and Sewerage Corporation Act 2012 (memory)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: Slice (b) may also claim TasWater because the State is a shareholder, so dedupe across slices. It is placed here
+    as council-owned. The ownership split and the Act's name are from memory.
+  queries:
+  - TasWater "Right to Information Act"
+  queries_not_run:
+  - TasWater "disclosure log"
+  - TasWater RTI "assessed disclosure" annual report
+- id: utas
+  name: University of Tasmania
+  aliases:
+  - UTAS
+  type: university
+  rti_status: full
+  rti_status_basis: 'UTAS''s own RTI page: ''The University of Tasmania is a public authority under the Right to Information
+    Act 2009, despite not being a government owned or run entity, having been established by an Act of the Tasmanian Parliament''
+    (snippet_verified). The Ombudsman reviewed a UTAS RTI decision in 2023 (''N and University of Tasmania'', snippet_verified).
+    Limb: the self-description points to the ''body established by or under an Act for a public purpose'' limb. The exact
+    s 5 paragraph was not verified (UNCERTAIN). The establishing Act is the University of Tasmania Act 1992 (memory).'
+  portfolio_minister: Minister for Education (memory; UNCERTAIN)
+  region: south
+  region_basis: memory (Sandy Bay/Hobart HQ); multi-campus statewide
+  lga_code: null
+  parent_id: null
+  rti_page_url: https://www.utas.edu.au/legal-services/compliance/right-to-information
+  rti_page_url_evidence: snippet_verified (result title 'Right to Information - Legal and Audit | University of Tasmania')
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.utas.edu.au
+  source_of_listing:
+  - https://www.utas.edu.au/legal-services/compliance/right-to-information (snippet_verified)
+  - https://www.utas.edu.au/about/governance-leadership-and-strategy/public-reporting/right-to-information (snippet_verified)
+  - https://www.ombudsman.tas.gov.au/right-to-information/reasons-for-decisions/decisions-2016-current/2023/2023-decisions/n-and-university-of-tasmania
+    (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'There is a second RTI page under public reporting: https://www.utas.edu.au/about/governance-leadership-and-strategy/public-reporting/right-to-information
+    (snippet_verified). A UTAS Legal Services letter on an RTI review (8 May 2025) is indexed at https://www.utas.edu.au/__data/assets/pdf_file/0009/1817451/Letter-RTI-review-8.5.25.pdf.
+    The snippet gives the fee as 25 fee units ($47.75 as at 1 July 2025). Controlled entities (e.g. the University Foundation,
+    commercial subsidiaries) were NOT enumerated and their status is UNCERTAIN. Menzies Institute and Australian Maritime
+    College are internal institutes, not separate authorities (memory).'
+  queries:
+  - University of Tasmania "Right to Information Act 2009"
+  queries_not_run:
+  - '"University of Tasmania" "disclosure log"'
+  - '"University of Tasmania" controlled entities annual report'
+  - UTAS RTI "assessed disclosure" statistics
+- id: cradle_coast_authority
+  name: Cradle Coast Authority
+  aliases:
+  - CCA
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: Joint authorities are established under Part 3 Division 4 of the Local Government Act 1993 (memory). As
+    bodies established under an Act for a public purpose they are probably 'public authorities' under s 5 (inferred). Not
+    verified by any snippet.
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory: joint authority of the nine north-west councils'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Owners per memory: Burnie, Central Coast, Circular Head, Devonport, Kentish, King Island, Latrobe, Waratah-Wynyard,
+    West Coast. It also hosts Cradle Coast NRM (memory). No search could be run (budget exhausted). A multi-council body,
+    so parent_id is null.'
+  queries: []
+  queries_not_run:
+  - '"Cradle Coast Authority" "right to information"'
+  - '"Cradle Coast Authority" joint authority annual report'
+- id: southern_tasmanian_councils_authority
+  name: Southern Tasmanian Councils Authority
+  aliases:
+  - STCA
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: Joint authorities are established under Part 3 Division 4 of the Local Government Act 1993 (memory). As
+    bodies established under an Act for a public purpose they are probably 'public authorities' under s 5 (inferred). Not
+    verified by any snippet.
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory: joint authority of southern councils'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: false
+  notes: UNCERTAIN whether it still exists. Memory suggests it was wound up around 2020-21, but this was not verified. active
+    is set to false only on memory. No search could be run (budget exhausted).
+  queries: []
+  queries_not_run:
+  - '"Southern Tasmanian Councils Authority" dissolved'
+  - '"Southern Tasmanian Councils Authority" "right to information"'
+- id: dulverton_waste
+  name: Dulverton Regional Waste Management Authority
+  aliases:
+  - Dulverton Waste Management
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: Joint authorities are established under Part 3 Division 4 of the Local Government Act 1993 (memory). As
+    bodies established under an Act for a public purpose they are probably 'public authorities' under s 5 (inferred). Not
+    verified by any snippet.
+  portfolio_minister: Minister for Local Government (memory)
+  region: north_west
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory: joint authority owned by Devonport, Central Coast, Kentish and Latrobe councils'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: The exact legal name and whether it is a joint authority or a company are UNCERTAIN (memory only). No search could
+    be run (budget exhausted).
+  queries: []
+  queries_not_run:
+  - '"Dulverton Waste Management" "joint authority"'
+  - '"Dulverton" waste "right to information"'
+- id: copping_jointauth
+  name: Copping Refuse Disposal Site Joint Authority
+  aliases:
+  - Southern Waste Solutions
+  - SWS
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: Joint authorities are established under Part 3 Division 4 of the Local Government Act 1993 (memory). As
+    bodies established under an Act for a public purpose they are probably 'public authorities' under s 5 (inferred). Not
+    verified by any snippet.
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory: joint authority owned by Clarence, Sorell, Tasman and Kingborough councils, trading as Southern Waste Solutions'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: Owners and trading name are from memory. Whether it was restructured into a regional waste body after the Waste and
+    Resource Recovery Act 2022 is UNCERTAIN. No search could be run (budget exhausted).
+  queries: []
+  queries_not_run:
+  - '"Copping Refuse Disposal Site Joint Authority" "right to information"'
+  - '"Southern Waste Solutions" joint authority'
+- id: ntdc
+  name: Northern Tasmania Development Corporation Ltd
+  aliases:
+  - NTDC
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: 'Memory: a company limited by guarantee owned by the northern councils, not established by or under an
+    Act. It would be a public authority only through a funding/appointment limb or by prescription in the regulations. Not
+    verified. UNCERTAIN, possibly excluded.'
+  portfolio_minister: null
+  region: north
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory: regional economic development company of the northern councils'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: 'Its existence, members (memory: Launceston, West Tamar, George Town, Meander Valley, Northern Midlands, Dorset,
+    Break O''Day, Flinders) and legal form are unverified. No search could be run (budget exhausted).'
+  queries: []
+  queries_not_run:
+  - '"Northern Tasmania Development Corporation" "right to information"'
+  - '"Northern Tasmania Development Corporation" members councils'
+- id: southern_tas_regional_waste_authority
+  name: Southern Tasmanian Regional Waste Authority
+  aliases:
+  - STRWA
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: Joint authorities are established under Part 3 Division 4 of the Local Government Act 1993 (memory). As
+    bodies established under an Act for a public purpose they are probably 'public authorities' under s 5 (inferred). Not
+    verified by any snippet. Its existence is also unverified.
+  portfolio_minister: Minister for Local Government (memory)
+  region: south
+  region_basis: memory
+  lga_code: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - 'memory (low confidence): regional waste joint authority of southern councils formed c. 2022-23'
+  last_verified: null
+  verification_status: network_blocked_search_only
+  active: true
+  notes: LOW CONFIDENCE, memory only. Included so a verifier checks it. Delete if it does not exist. active=true is not verified.
+    No search could be run (budget exhausted).
+  queries: []
+  queries_not_run:
+  - '"Southern Tasmanian Regional Waste Authority"'
+  - Tasmania "regional waste authority" councils joint authority
+considered_not_included:
+- name: Tasmanian Community Fund
+  decision: not_included_here
+  reason: Established by the Tasmanian Community Fund Act 2005 (memory), so it is a statutory authority that belongs in slice
+    (a). Dedupe there.
+- name: Hobart International Airport
+  decision: excluded
+  reason: Privately owned (memory). Not a public authority.
+- name: Tasmanian University Union
+  decision: excluded
+  reason: Student body, not a public authority (memory). UNCERTAIN only if prescribed.
+- name: Doone Kennedy Hobart Aquatic Centre
+  decision: excluded
+  reason: Internal business unit of Hobart City Council, covered by hobart_cc.
+- name: Northern Midlands Business Association
+  decision: excluded
+  reason: Private incorporated association.
+- name: Menzies Institute for Medical Research / Australian Maritime College
+  decision: covered_by_parent
+  reason: Institutes within UTAS (memory). Covered by utas.
+- name: Former regional water corporations (Southern Water, Ben Lomond Water, Cradle Mountain Water, Onstream)
+  decision: excluded_inactive
+  reason: Merged into TasWater on 1 July 2013 (memory).
+- name: Regional NRM bodies (NRM North, NRM South)
+  decision: not_assessed
+  reason: Incorporated associations. Their RTI status is UNCERTAIN and no search could be run.
+- name: Bodies prescribed under the Right to Information Regulations 2021
+  decision: not_assessed
+  reason: A snippet confirms the Right to Information Regulations 2021 exist (dpac/nre result), but no snippet showed any
+    prescribed public authorities. Needs the regulations text (legislation.tas.gov.au, blocked).

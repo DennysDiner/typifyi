@@ -1,0 +1,55 @@
+# Polling tiers. Tier 1 hourly, Tier 2 six-hourly (brief §2). Edit freely.
+tier1_interval_minutes: 60
+tier2_interval_minutes: 360
+failure_backoff_minutes: 30
+max_failure_backoff_minutes: 720
+
+tier1_authorities:
+  - dpac
+  - treasury
+  - state_growth        # legacy log; successor:
+  - building_tas
+  - nre
+  - justice
+  - dpfem               # Tasmania Police log is polled under DPFEM
+  - tas_police
+  - health
+  - stt
+  - hydro
+  - tasnetworks
+  - tasports
+  - tasrail
+  - ttline
+  - tas_irrigation
+  - maib
+  - launceston_cc
+  - ministers_dpac_log  # shared ministerial log
+  # Ministers holding campaign-relevant portfolios (see registry minister_portfolios)
+  - min_rockliff
+  - min_abetz
+  - min_ellis
+  - min_duigan
+  - min_jaensch
+  - min_barnett
+  - min_archer
+  - min_vincent
+
+# Adjacent sources (not disclosure logs) polled by their own adapters. URLs are from the research
+# record; each is verified on first successful poll.
+adjacent_sources:
+  - kind: ombudsman_decisions
+    adapter: ombudsman_decisions
+    url: https://www.ombudsman.tas.gov.au/right-to-information/decisions
+    tier: 2
+    config: {}
+  - kind: annual_report
+    adapter: annual_report
+    url: https://www.justice.tas.gov.au/about-us/reports-publications/reports/annual-reports/right-to-information-annual-reports
+    tier: 2
+    config: {}
+  - kind: hansard
+    adapter: hansard
+    url: https://www.parliament.tas.gov.au/hansard
+    tier: 2
+    enabled: false      # stubbed; enable once search endpoint is confirmed (brief §2: optional)
+    config: {terms: ["right to information", "RTI"]}

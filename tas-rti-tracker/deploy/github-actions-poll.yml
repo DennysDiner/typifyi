@@ -1,0 +1,36 @@
+# Copy to .github/workflows/rti-poll.yml if hosting the poller on GitHub Actions.
+# Caveats (see DECISIONS.md D12): Actions cron is best-effort (often 5–15 min late), the DB + archive must be
+# persisted (this example commits them to a data branch; use an artifact store or rclone for large archives),
+# and GitHub-hosted runners' egress IPs may be rate-limited by some hosts. Secrets: set repository secrets
+# RTI_CONTACT_EMAIL, RTI_NTFY_URL / SMTP vars, ANTHROPIC_API_KEY.
+name: rti-poll
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    concurrency: rti-poll
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: data }          # data branch holds data/rti.db + data/archive
+      - uses: actions/checkout@v4
+        with: { path: src }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get install -y ocrmypdf tesseract-ocr
+      - run: pip install -e ./src
+      - env:
+          RTI_ROOT: ${{ github.workspace }}/src
+          RTI_DATA_DIR: ${{ github.workspace }}/data
+          RTI_CONTACT_EMAIL: ${{ secrets.RTI_CONTACT_EMAIL }}
+          RTI_NTFY_URL: ${{ secrets.RTI_NTFY_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          rti init
+          rti run
+      - run: |
+          git config user.name rti-bot && git config user.email rti-bot@users.noreply.github.com
+          git add data && git commit -m "poll $(date -u +%FT%TZ)" || true
+          git push

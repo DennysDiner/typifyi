@@ -1,0 +1,18 @@
+authorities:
+- id: state_growth
+  active: true
+  tier: 1
+  notes_override: Kept active for polling of the legacy stategrowth.tas.gov.au log until building_tas has its own log URL.
+- id: tas_police
+  shares_source_with: dpfem
+- id: entura
+  rti_status: partial
+  parent_id: hydro
+  active: false
+- id: hydro
+  disclosure_log_format: html_list
+  notes_override: Slice b recorded format 'html_page_with_pdf_attachments' (snippet-derived); mapped to the html_list generic
+    adapter. Verify on first poll.
+- id: ttline
+  disclosure_log_format: none
+  notes_override: 'Slice b recorded ''none_known''; normalised to none. Finding: no public log discovered.'

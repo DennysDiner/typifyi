@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block body %}
+<h2>New releases</h2>
+<form class="filters" method="get" hx-get="/" hx-target="#rows" hx-select="#rows" hx-swap="outerHTML">
+<select name="authority"><option value="">any authority</option>{% for a in auths %}<option value="{{a.id}}" {% if filters.authority==a.id %}selected{% endif %}>{{a.name}}</option>{% endfor %}</select>
+<select name="type_"><option value="">any type</option>{% for t in ['agency','minister','gbe','soc','statutory','council','council_entity','university','other'] %}<option {% if filters.type_==t %}selected{% endif %}>{{t}}</option>{% endfor %}</select>
+<input name="portfolio" placeholder="portfolio minister" value="{{filters.portfolio}}">
+<input name="since" type="date" value="{{filters.since}}">
+<input name="exemption" placeholder="exemption e.g. s 35" value="{{filters.exemption}}">
+<input name="q" placeholder="title contains" value="{{filters.q}}">
+<button>Filter</button>
+</form>
+<div id="rows">
+<table><tr><th>Seen</th><th>Authority</th><th>Title</th><th>Published</th><th>Docs</th></tr>
+{% for r in rows %}<tr><td class="muted">{{r.first_seen_at[:16]}}</td><td><a href="/authority/{{r.authority_id}}">{{r.authority_name or r.authority_id}}</a></td>
+<td><a href="/item/{{r.id}}">{{r.title}}</a></td><td>{{r.published_date or ''}}</td><td>{{r.ndocs}}</td></tr>{% else %}
+<tr><td colspan="5" class="muted">No items yet. Run <code>rti poll --force</code> once the network can reach the disclosure logs.</td></tr>{% endfor %}
+</table>
+<p><a href="?page={{page+1}}">next page →</a></p>
+</div>
+{% endblock %}

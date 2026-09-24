@@ -1,0 +1,2 @@
+[console_scripts]
+rti = rti_tracker.cli:main

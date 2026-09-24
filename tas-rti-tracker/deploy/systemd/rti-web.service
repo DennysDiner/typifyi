@@ -1,0 +1,13 @@
+[Unit]
+Description=Tas RTI tracker private web UI (localhost only)
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/tas-rti-tracker
+EnvironmentFile=/etc/rti-tracker.env
+ExecStart=/opt/tas-rti-tracker/.venv/bin/rti web --host 127.0.0.1 --port 8765
+Restart=on-failure
+User=rti
+
+[Install]
+WantedBy=multi-user.target

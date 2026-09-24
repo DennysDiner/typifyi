@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block body %}
+<h2>Full-text search</h2>
+<form class="filters" method="get"><input name="q" value="{{q}}" placeholder='FTS5 query, e.g. "Nyrstar" OR Trafigura' size="60"><button>Search</button></form>
+{% for r in rows %}<div class="card"><a href="/item/{{r.item_id}}">{{r.title or r.url}}</a> <span class="muted">{{r.authority_name}}</span><div>{{r.snip|safe}}</div><div class="mono">{{r.sha256}}</div></div>{% else %}{% if q %}<p class="muted">No matches.</p>{% endif %}{% endfor %}
+{% endblock %}

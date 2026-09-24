@@ -1,0 +1,4133 @@
+# Slice (a): Tasmanian State bodies with obligations under the Right to Information Act 2009 (Tas)
+# Research constraints: research/AGENT_CONSTRAINTS.md. Nothing was fetched; evidence = search snippets only.
+meta:
+  slice: a_state_bodies
+  generated: '2026-09-24'
+  verification_status: network_blocked_search_only
+  evidence_policy: URLs recorded only if seen verbatim in a WebSearch result/URL; everything else memory or inferred as labelled
+  search_budget_note: Agent ran 51 WebSearch queries before the session-wide cap (200) was hit; 4 further queries failed and are listed in failed_queries. Target of 60 not reached.
+  failed_queries:
+  - '"State Service (Restructuring) Order" 2026 Building Tasmania'
+  - DPIPWE renamed Department of Natural Resources and Environment Tasmania date 2021 OR 2022
+  - Department of Education renamed "Department for Education, Children and Young People" effective date October 2022
+  - Department of Health and Human Services Tasmania renamed Department of Health 2018 Tasmanian Health Service merged
+  all_queries:
+  - Rockliff ministry portfolios 2026
+  - Tasmanian Government departments list 2026
+  - Tasmania "machinery of government" 2025 department renamed
+  - site:tas.gov.au "right to information" disclosure log
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - '"Tourism, Events and Creative Tasmania" established'
+  - Third Rockliff ministry sworn in 2025 portfolios list
+  - dpac.tas.gov.au machinery of government changes in the State Service message Head of State Service
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+  - '"Building Tasmania" Wikipedia department formerly Department of State Growth secretary'
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+  - Roger Jaensch returns to Tasmanian cabinet Jane Howlett portfolios June 2026
+  - premier.tas.gov.au "New Cabinet announced" June 2026 ministers portfolios
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+  - Tasmania Treasurer 2026 Eric Abetz Treasurer Minister for Police Felix Ellis Attorney-General Guy Barnett
+  - '"Abetz in, Barnett out as treasurer" cabinet portfolios Health Resources Justice Corrections'
+  - Tasmania "Minister for Health" 2026 Bridget Archer OR "Minister for Health" Tasmania August 2025
+  - Tasmania Minister for Corrections and Rehabilitation 2026
+  - Tasmania "Minister for Resources" "Minister for Business, Industry" 2026 Eric Abetz
+  - Felix Ellis Minister for Police Fire Emergency Management Business Industry Resources Forestry 2026
+  - Tasmania "Minister for Hospitality and Events" gaming 2026
+  - Kerry Vincent Minister for Local Government Housing Planning Infrastructure 2026 Tasmania
+  - Third Rockliff ministry Wikipedia table ministers Duigan Energy Renewables Parks Sport Heritage Jaensch
+  - Tasmania forestry minister 2026 "Minister for Resources" forestry Sustainable Timber Tasmania
+  - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
+  - Tasmania "Minister for Primary Industries and Water" 2026
+  - '"New Tasmanian Ministry And Cabinet Announced" Tasmanian Times August 2025 full list'
+  - Rockliff August 2025 ministry "Minister for Finance" OR "Minister for Tasmanian Partnerships" Premier portfolios
+  - Madeleine Ogilvie "Minister for Environment" August 2025 portfolios Innovation Science Digital Economy Arts Heritage
+  - Jo Palmer Minister for Education Children Youth Disability Services Tasmania 2025 2026 portfolios
+  - '"Rockliff announces two new ministers as he heads back to parliament" Examiner'
+  - '"Right to Information Act 2009" Tasmania section 5 "public authority" means agency council Government Business Enterprise'
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Tasmania Right to Information Act "section 6" exempt bodies "judicial functions" "Legislative Council"
+  - Ombudsman Tasmania "right to information" annual report public authorities list agencies councils GBEs statutory
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+  - '"Right to Information" Tasmania "Parliament" "not covered" "House of Assembly" information requests parliamentary privilege RTI Act does not apply'
+  - '"Department of Premier and Cabinet" Tasmania "disclosure log" right to information'
+  - nre.tas.gov.au right to information disclosure log
+  - Department of Justice Tasmania "disclosure log" right to information
+  - Tasmania Police "right to information" disclosure log police.tas.gov.au
+  - dpac.tas.gov.au "Ministerial and Parliamentary Support" right to information Ministers disclosure log
+  - health.tas.gov.au right to information disclosure log
+  - Homes Tasmania "right to information" disclosure log
+  - '"Building Tasmania" "right to information"'
+  - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
+  - '"Getting Back on Track" review Right to Information framework Tasmania 2026 recommendations'
+  - homestasmania.com.au right to information
+  - Communities Tasmania abolished 1 December 2022 functions transferred Homes Tasmania DECYP Department of Health
+authorities:
+- id: dpac
+  name: Department of Premier and Cabinet
+  aliases:
+  - DPAC
+  - Premier and Cabinet
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Premier (Jeremy Rockliff); also Community and Multicultural Affairs, Aboriginal Affairs, Veterans' Affairs, Women, Innovation/Science/Digital Economy (functions partly moved Jul 2026
+    - see mog_changes)
+  parent_id: null
+  rti_page_url: https://www.dpac.tas.gov.au/government-information/rti
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_departmental
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.dpac.tas.gov.au/
+  source_of_listing:
+  - 'https://en.wikipedia.org/wiki/Tasmanian_Government (snippet_verified: 8 departments since 2022 reorganisation)'
+  - https://www.dpac.tas.gov.au/government-information/rti (snippet_verified)
+  - https://www.dpac.tas.gov.au/government-information/rti/making-a-rti-request (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Disclosure-log URL is an OLD-SITE path seen as result ''Information released under assessed disclosures (DPAC)'' (Q44); DPAC migrated to a new CMS (/government-information/rti) so the log may
+    now live under the new tree - UNCERTAIN which is current. Also seen: https://www.dpac.tas.gov.au/rti-archive (RTI archive), https://www.dpac.tas.gov.au/rti/what_is_right_to_information, RTI Information
+    Disclosure Policy 2025 PDF https://www.dpac.tas.gov.au/__data/assets/pdf_file/0028/464068/Right-to-Information-Information-Disclosure-Policy-2025-4.PDF, and review page https://www.dpac.tas.gov.au/government-information/rti/review-of-the-right-to-information-framework
+    (Getting Back on Track review, 43 recs, govt backs 32; released Mar 2026). DPAC also hosts the Ministers'' (MPS) logs - see minister records. TasALERT RTI page https://alert.tas.gov.au/right-information-rti
+    seen (Q40) - TasALERT is a whole-of-govt emergency site, owner agency UNCERTAIN (memory: DPAC). 2026 MoG: DPAC functions moved to Health (2 Jul), Justice (16 Jul), DECYP (30 Jul) - which functions is
+    NOT stated in snippets; DPAC is to gain economic development incl. industry, energy and resources from Building Tasmania and to provide shared corporate services to Building Tasmania and TECT from 3
+    Dec 2026.'
+  queries:
+  - Tasmanian Government departments list 2026
+  - site:tas.gov.au "right to information" disclosure log
+  - dpac.tas.gov.au machinery of government changes in the State Service message Head of State Service
+  - '"Department of Premier and Cabinet" Tasmania "disclosure log" right to information'
+  - dpac.tas.gov.au "Ministerial and Parliamentary Support" right to information Ministers disclosure log
+  - '"Getting Back on Track" review Right to Information framework Tasmania 2026 recommendations'
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: treasury
+  name: Department of Treasury and Finance
+  aliases:
+  - DTF
+  - Treasury and Finance Tasmania
+  - Treasury
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Treasurer (Eric Abetz)
+  parent_id: null
+  rti_page_url: https://www.treasury.tas.gov.au/about-us/corporate-governance/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.treasury.tas.gov.au/about-us/corporate-governance/right-to-information/right-to-information-disclosure-log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.treasury.tas.gov.au/
+  source_of_listing:
+  - https://www.treasury.tas.gov.au/ (snippet_verified, Q2)
+  - Tasmanian Government Wikipedia list (snippet_verified, Q2)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: released information in broader public interest ''may be published within 48 hours''. Treasury also administers liquor and gaming regulation (Gaming Control Act, Liquor Licensing Act)
+    and hosts TLGC material; an RTI internal-review release re TLGC player cards was seen at https://www.treasury.tas.gov.au/Documents/RTI%20-%20Internal%20Review%20-%20Meg%20Webb%20-%20Player%20Card%20Gaming%20(TLGC)%20-%20Final%20Information.pdf
+    (Q26) - suggests releases are PDFs under /Documents/, but log page format not seen.'
+  queries:
+  - Tasmanian Government departments list 2026
+  - site:tas.gov.au "right to information" disclosure log
+  - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
+- id: state_growth
+  name: Department of State Growth
+  aliases:
+  - State Growth
+  - DSG
+  type: agency
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: (historical) Infrastructure; Business, Industry and Resources; Energy and Renewables; Tourism/Hospitality and Events; Arts; Sport; Skills and Jobs; Small Business; Trade
+  parent_id: null
+  rti_page_url: https://www.stategrowth.tas.gov.au/about/right_to_information/how_to_make_an_rti_application
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.stategrowth.tas.gov.au/about/right_to_information/disclosure_log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.stategrowth.tas.gov.au/
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Department_of_State_Growth (snippet_verified)
+  - https://www.abc.net.au/news/2026-03-03/tas-department-of-state-growth-transform-into-building-tasmania/106408320 (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Renamed/transformed into Building Tasmania on 2026-07-02 (snippet_verified: Wikipedia ''Building Tasmania'' and DPAC HoSS message). Successor: building_tas. Snippet: releases published within
+    2 working days. Whether the stategrowth.tas.gov.au disclosure log remains online/redirects after 2 Jul 2026 is UNKNOWN. abolished 2026-07-02 (renamed), successor building_tas.'
+  queries:
+  - Tasmania "machinery of government" 2025 department renamed
+  - site:tas.gov.au "right to information" disclosure log
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+  - '"Building Tasmania" Wikipedia department formerly Department of State Growth secretary'
+  - nre.tas.gov.au right to information disclosure log
+- id: building_tas
+  name: Building Tasmania
+  aliases:
+  - Building Tas
+  - formerly Department of State Growth
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording) (assumed: formerly State Growth, an Agency; new name''s Schedule 1 entry not seen)'
+  portfolio_minister: Minister for Infrastructure and Transport / Housing and Planning / Local Government (Kerry Vincent); residual State Growth portfolios pending Dec 2026 split
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.building.tas.gov.au/
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Building_Tasmania (snippet_verified)
+  - https://www.building.tas.gov.au/ (snippet_verified)
+  - https://www.dpac.tas.gov.au/working-in-the-state-service/messages-from-the-head-of-the-state-service/commencement-of-building-tasmania-and-functions-transferring-to-the-department-of-health (snippet_verified)
+  - https://pulsetasmania.com.au/news/building-tasmania-to-launch-on-july-2-as-state-service-restructure-begins/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Commenced 2026-07-02. Responsible for housing, roads, infrastructure; overseen by Kerry Vincent; Shane Gregory acting secretary (Pulse) vs Wikipedia infobox ''Craig Limkin'' - UNCERTAIN. Stage
+    two 2026-09-10: capital projects transferred in from other agencies. Homes Tasmania to join in Dec 2026. State Planning Office now part of it. Economic development (industry, energy, resources) to go
+    to DPAC; tourism/events/creative/sport to TECT (3 Dec 2026). No RTI page or disclosure log found (Q47 returned nothing specific) - may still be on stategrowth domain. Also seen: https://engage.building.tas.gov.au/shaping-tasmania,
+    contact page https://www.building.tas.gov.au/about-us/contact-us.'
+  queries:
+  - Tasmania "machinery of government" 2025 department renamed
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+  - '"Building Tasmania" Wikipedia department formerly Department of State Growth secretary'
+  - '"Building Tasmania" "right to information"'
+  - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
+- id: nre
+  name: Department of Natural Resources and Environment Tasmania
+  aliases:
+  - NRE Tas
+  - NRE
+  - formerly DPIPWE
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Primary Industries and Water (Gavin Pearce); Environment and Climate Change (Guy Barnett, from Jun 2026); Parks and Heritage (Nick Duigan); Racing (Roger Jaensch)
+  parent_id: null
+  rti_page_url: https://nre.tas.gov.au/about-the-department/governance-policies-and-legislation/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://nre.tas.gov.au/about-the-department/governance-policies-and-legislation/rti-disclosure-log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: right2info@nre.tas.gov.au
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Department_of_Natural_Resources_and_Environment_Tasmania (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Email right2info@nre.tas.gov.au snippet_verified (Q41); logs for 2015-16 and 2016-17 available on request by email. Publishes within 48 hours. Application form PDF https://nre.tas.gov.au/Documents/RTI%20Application%20Form.pdf
+    seen. Gains climate change function from Building Tasmania 2026-08-13. Formerly DPIPWE (rename date memory/UNCERTAIN - see mog_changes).
+  queries:
+  - Tasmanian Government departments list 2026
+  - nre.tas.gov.au right to information disclosure log
+  - Tasmania Right to Information Act "section 6" exempt bodies "judicial functions" "Legislative Council"
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: dpipwe
+  name: Department of Primary Industries, Parks, Water and Environment
+  aliases:
+  - DPIPWE
+  type: agency
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (renamed) - date UNCERTAIN (memory: late 2021/early 2022; verification search failed on budget), successor nre. Historical releases on dpipwe.tas.gov.au may now sit under nre.tas.gov.au.
+    No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: justice
+  name: Department of Justice
+  aliases:
+  - DoJ
+  - Justice Tasmania
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Attorney-General; Minister for Justice, Corrections and Rehabilitation; Consumer Affairs (Guy Barnett)
+  parent_id: null
+  rti_page_url: https://www.justice.tas.gov.au/about-us/access-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: https://www.justice.tas.gov.au/about-us/reports-publications/reports/annual-reports
+  website: null
+  source_of_listing:
+  - https://www.justice.tas.gov.au/about-us/access-to-information (snippet_verified)
+  - Tasmanian Government Wikipedia list (snippet_verified, Q2)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: Department maintains a ''Disclosure Register'' (not ''log''), publication within 48 hours - URL of the register not seen. RTI Policy https://www.justice.tas.gov.au/about-us/policies/right-to-information-policy
+    and Procedures https://www.justice.tas.gov.au/about-us/policies/right-to-information-policy/right-to-information-procedures seen. Snippet: several independent statutory officers associated with Justice
+    are s 6-excluded (except administration). Annual reports index https://www.justice.tas.gov.au/about-us/reports-publications/reports/annual-reports seen. Received DPAC functions 2026-07-16 (which ones
+    UNCERTAIN).'
+  queries:
+  - site:tas.gov.au "right to information" disclosure log
+  - Department of Justice Tasmania "disclosure log" right to information
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: health
+  name: Department of Health
+  aliases:
+  - DoH
+  - Tasmanian Department of Health
+  - formerly DHHS
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Minister for Health, Mental Health and Wellbeing; Ageing (Bridget Archer)
+  parent_id: null
+  rti_page_url: https://www.health.tas.gov.au/about/routine-disclosures/right-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.health.tas.gov.au/about/routine-disclosures/right-information
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: per_release_pages
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Department_of_Health_(Tasmania) (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: disclosure log is on the RTI page; individual releases have their own pages (e.g. https://www.health.tas.gov.au/about/routine-disclosures/right-information/right-information-no-rti202223-171)
+    and PDFs (e.g. https://www.health.tas.gov.au/sites/default/files/2024-07/rti202324-507_-_disclosure_log.pdf) - hence per_release_pages. Publication discretionary. Legal Services contact phone (03) 6166
+    3770; email redacted in snippet. Policy PDF https://www.health.tas.gov.au/sites/default/files/2024-09/information_disclosure_under_the_right_to_information_act_2009_policy.pdf. Received DPAC functions
+    2026-07-02 (which ones UNCERTAIN - possibly Ageing).'
+  queries:
+  - Tasmanian Government departments list 2026
+  - site:tas.gov.au "right to information" disclosure log
+  - health.tas.gov.au right to information disclosure log
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+- id: decyp
+  name: Department for Education, Children and Young People
+  aliases:
+  - DECYP
+  - formerly Department of Education
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Minister for Education; Children and Youth; Disability Services (?) (Jo Palmer)
+  parent_id: null
+  rti_page_url: https://www.decyp.tas.gov.au/about-us/policies-legislation-data/legislation/rti/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://decyp.tas.gov.au/about-us/policies-legislation-data/legislation/rti/right-to-information-disclosure-log/
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Department_for_Education,_Children_and_Young_People (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: publishes within 48 hours. Responsible for govt schools, child and family learning centres, child safety/out-of-home care, youth justice, libraries and Tasmanian Archives (snippet Q31).
+    Received DPAC functions 2026-07-30 (which ones UNCERTAIN - possibly Disability Services/Women).'
+  queries:
+  - Tasmanian Government departments list 2026
+  - site:tas.gov.au "right to information" disclosure log
+  - Jo Palmer Minister for Education Children Youth Disability Services Tasmania 2025 2026 portfolios
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: dpfem
+  name: Department of Police, Fire and Emergency Management
+  aliases:
+  - DPFEM
+  type: agency
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: Minister for Police, Fire and Emergency Management (Felix Ellis)
+  parent_id: null
+  rti_page_url: https://www.police.tas.gov.au/information-disclosure/right-to-information-disclosures/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.police.tas.gov.au/information-disclosure/right-to-information-disclosures/disclosures/disclosure-log/
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - Tasmanian Government Wikipedia list (snippet_verified, Q2)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'DPFEM RTI handled via Tasmania Police site (same log recorded on tas_police). Snippet: publishes within 48 hours for applications received after 9 June 2015; application fee $49.00 as at 1 July
+    2026. Tasmanian Fire and Emergency Services Bill out for consultation Aug 2026 (may restructure TFS/SES/State Fire Commission).'
+  queries:
+  - Tasmanian Government departments list 2026
+  - Tasmania Police "right to information" disclosure log police.tas.gov.au
+  - Felix Ellis Minister for Police Fire Emergency Management Business Industry Resources Forestry 2026
+- id: communities_tas
+  name: Department of Communities Tasmania
+  aliases:
+  - Communities Tasmania
+  type: agency
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: https://www.communities.tas.gov.au/about-us/your-rights/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.communities.tas.gov.au/about-us/your-rights/right-to-information/right-to-information-disclosure-log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.findandconnect.gov.au/guide/tas/ENT0058 (snippet_verified)
+  - https://www.legislation.tas.gov.au/view/whole/html/inforce/2024-06-07/sr-2022-100 (State Service (Restructuring) Order (No. 7) 2022, snippet_verified title)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: abolished 2022-12-01 (snippet_verified, Find & Connect), successors decyp (CYF, Youth Justice), homes_tas (housing), plus other receiving agencies (DPAC per memory; Health UNCERTAIN). Legacy disclosure
+    log still indexed by search engines.
+  queries:
+  - site:tas.gov.au "right to information" disclosure log
+  - Homes Tasmania "right to information" disclosure log
+  - Communities Tasmania abolished 1 December 2022 functions transferred Homes Tasmania DECYP Department of Health
+- id: dhhs
+  name: Department of Health and Human Services
+  aliases:
+  - DHHS
+  type: agency
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished/renamed pre-2020 (memory: became Department of Health c. 2018; date UNCERTAIN, verification search failed on budget), successor health. Included for attribution of pre-2020 releases
+    only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: doe
+  name: Department of Education
+  aliases:
+  - DoE Tasmania
+  type: agency
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limb: an Agency within the meaning of the State Service Act 2000 (s 5 content seen only as a search-engine summary of legislation.tas.gov.au/austlii s 5, Q33
+    - treat as snippet_verified-summary, re-check wording)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'renamed Department for Education, Children and Young People (memory: Oct 2022; UNCERTAIN), successor decyp. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted
+    after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: min_rockliff
+  name: Jeremy Rockliff MP, Premier
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Premier
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Premier since 2022-04-08 (memory). Holds no other portfolio in 3rd ministry (Examiner snippet Q32). Third Rockliff ministry sworn in 2025-08-11. Censured by House June 2026 (snippet). Ministerial
+    RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred from the path
+    name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Rockliff ministry portfolios 2026
+  - Third Rockliff ministry sworn in 2025 portfolios list
+  - '"Rockliff announces two new ministers as he heads back to parliament" Examiner'
+- id: min_barnett
+  name: Guy Barnett MP, Deputy Premier
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Deputy Premier; Attorney-General; Justice, Corrections and Rehabilitation; Small Business; Trade; Consumer Affairs; Environment and Climate Change (from Jun 2026)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Treasurer until Aug 2025 (snippet 'Barnett out as treasurer'). AG since 2023-10-02; Justice, Corrections and Rehabilitation since 2024-04-11 (snippets). Environment and Climate Change added in
+    5 Jun 2026 reshuffle. Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers'
+    log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages
+    seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Tasmania Treasurer 2026 Eric Abetz Treasurer Minister for Police Felix Ellis Attorney-General Guy Barnett
+  - '"Abetz in, Barnett out as treasurer" cabinet portfolios Health Resources Justice Corrections'
+  - Tasmania Minister for Corrections and Rehabilitation 2026
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+  - premier.tas.gov.au "New Cabinet announced" June 2026 ministers portfolios
+- id: min_abetz
+  name: Eric Abetz MP, Treasurer
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Treasurer; Leader of the House; Macquarie Point Urban Renewal
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/eric-abetz
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Treasurer from Aug 2025 (Wikipedia snippet says 'assumed office 19 July 2025' vs ministry sworn 2025-08-11 - UNCERTAIN). Previously Business, Industry and Resources 2024-04-11 to 2025. Gaming regulation
+    ministerial responsibility since Aug 2025 NOT found - UNCERTAIN whether Treasurer. Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim
+    (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log
+    (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Tasmania Treasurer 2026 Eric Abetz Treasurer Minister for Police Felix Ellis Attorney-General Guy Barnett
+  - '"Abetz in, Barnett out as treasurer" cabinet portfolios Health Resources Justice Corrections'
+  - Tasmania "Minister for Resources" "Minister for Business, Industry" 2026 Eric Abetz
+  - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
+- id: min_archer
+  name: Bridget Archer MP
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Health, Mental Health and Wellbeing; Aboriginal Affairs; Ageing
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/bridget-archer
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Assumed office 2025-08-11 (snippet), succeeding Jacquie Petrusma. Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44)
+    at an old DPAC-site path; its role as the Ministers' log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log
+    (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - '"Abetz in, Barnett out as treasurer" cabinet portfolios Health Resources Justice Corrections'
+  - Tasmania "Minister for Health" 2026 Bridget Archer OR "Minister for Health" Tasmania August 2025
+- id: min_vincent
+  name: Kerry Vincent MLC
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Infrastructure and Transport; Local Government; Housing and Planning
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/kerry-vincent
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: MLC for Prosser. Infrastructure and Local Government since Oct 2024; Housing and Planning from 2025-08-07 (announcement date per snippet). Oversees Building Tasmania. Ministerial RTI administered
+    by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred from the path name. Quarterly
+    ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Third Rockliff ministry sworn in 2025 portfolios list
+  - Kerry Vincent Minister for Local Government Housing Planning Infrastructure 2026 Tasmania
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: min_palmer
+  name: Jo Palmer MLC
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Education; Children and Youth; Disability Services; Women and the Prevention of Family and Sexual Violence
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/jo-palmer
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Women/Prevention of Family Violence: one snippet lists it in Aug 2025 ministry, ABC snippet says she was appointed to it and sworn in 2026-06-17 - UNCERTAIN who held it Aug 2025-Jun 2026. Ministerial
+    RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers'' log is inferred from the path
+    name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.'
+  queries:
+  - Third Rockliff ministry sworn in 2025 portfolios list
+  - Jo Palmer Minister for Education Children Youth Disability Services Tasmania 2025 2026 portfolios
+  - Roger Jaensch returns to Tasmanian cabinet Jane Howlett portfolios June 2026
+- id: min_duigan
+  name: Nick Duigan MLC
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Energy and Renewables; Parks; Sport; Heritage (from Jun 2026)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Retained Energy/Parks/Sport Aug 2025 ('will remain' - held before); Heritage added 5 Jun 2026. Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log
+    URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log
+    (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Third Rockliff ministry sworn in 2025 portfolios list
+  - Third Rockliff ministry Wikipedia table ministers Duigan Energy Renewables Parks Sport Heritage Jaensch
+  - '"New Tasmanian Ministry And Cabinet Announced" Tasmanian Times August 2025 full list'
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+- id: min_ellis
+  name: Felix Ellis MP
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Police, Fire and Emergency Management; Business, Industry and Resources (incl. forestry); Skills and Jobs; Innovation, Science and the Digital Economy (from Jun 2026)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/felix-ellis
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Business, Industry and Resources from 2025-08-07 (announcement) per snippet; forestry announcements 2026 under his name (Q25). Ministerial RTI administered by DPAC Ministerial and Parliamentary
+    Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred from the path name. Quarterly ministerial diaries and April/October
+    routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Tasmania Treasurer 2026 Eric Abetz Treasurer Minister for Police Felix Ellis Attorney-General Guy Barnett
+  - Felix Ellis Minister for Police Fire Emergency Management Business Industry Resources Forestry 2026
+  - Tasmania forestry minister 2026 "Minister for Resources" forestry Sustainable Timber Tasmania
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+- id: min_pearce
+  name: Gavin Pearce MP
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Primary Industries and Water; Veterans' Affairs
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Assumed office 2025-08-11 (snippet). Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its
+    role as the Ministers' log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified).
+    Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Tasmania "Minister for Primary Industries and Water" 2026
+  - '"New Tasmanian Ministry And Cabinet Announced" Tasmanian Times August 2025 full list'
+- id: min_jaensch
+  name: Roger Jaensch MP
+  aliases: []
+  type: minister
+  active: true
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: Tourism, Hospitality and Events; Racing; Community and Multicultural Affairs; the Arts
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.premier.tas.gov.au/your-government/roger-jaensch
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Sworn in 2026-06-17 after Howlett resignation (snippet). Previously Minister for Finance incl. liquor and gaming regulation from Oct 2024 (ABC 2024-10-30 snippet) until leaving cabinet Aug 2025.
+    Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers' log is inferred
+    from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.
+  queries:
+  - Roger Jaensch returns to Tasmanian cabinet Jane Howlett portfolios June 2026
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+  - Tasmania "Minister for Hospitality and Events" gaming 2026
+  - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
+- id: min_ogilvie
+  name: Madeleine Ogilvie MP (former Minister)
+  aliases: []
+  type: minister
+  active: false
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: (former) Environment; Innovation, Science and the Digital Economy; Community and Multicultural Affairs; Arts and Heritage
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'inactive: resigned from Cabinet 2026-05-29 or 2026-05-30 (snippets disagree - UNCERTAIN) amid allegations of misleading parliament; portfolios redistributed 2026-06-05. Kept for attribution of
+    ministerial releases. Ministerial RTI administered by DPAC Ministerial and Parliamentary Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers''
+    log is inferred from the path name. Quarterly ministerial diaries and April/October routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages
+    seen under https://www.premier.tas.gov.au/your-government/.'
+  queries:
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+  - Madeleine Ogilvie "Minister for Environment" August 2025 portfolios Innovation Science Digital Economy Arts Heritage
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+- id: min_howlett
+  name: Jane Howlett MP (former Minister)
+  aliases: []
+  type: minister
+  active: false
+  rti_status: full
+  rti_status_basis: s 7 legally enforceable right to information in the possession of public authorities and Ministers (snippet_verified, Q36/Q39); Minister = member of Cabinet responsible for an agency
+    (DPAC summary, Q39)
+  portfolio_minister: (former) Tourism, Hospitality and Events; Racing; Arts and Community and Multicultural Affairs (5-16 Jun 2026)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.dpac.tas.gov.au/rti/disclosure_log_-_mps
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.premier.tas.gov.au/your-government (snippet_verified)
+  - https://en.wikipedia.org/wiki/Third_Rockliff_ministry (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'inactive: resigned 2026-06-16 (snippet) over publicly funded legal fees. Held Tourism, Hospitality and Events from 2025-08-07 (snippet). Ministerial RTI administered by DPAC Ministerial and Parliamentary
+    Support (MPS). MPS disclosure-log URL seen verbatim (Q40/Q44) at an old DPAC-site path; its role as the Ministers'' log is inferred from the path name. Quarterly ministerial diaries and April/October
+    routine disclosures at https://www.dpac.tas.gov.au/rti/MPS_routine_disclosure_log (snippet_verified). Profile pages seen under https://www.premier.tas.gov.au/your-government/.'
+  queries:
+  - Roger Jaensch returns to Tasmanian cabinet Jane Howlett portfolios June 2026
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+  - Tasmania "Minister for Hospitality and Events" gaming 2026
+- id: tas_police
+  name: Tasmania Police (Police Service)
+  aliases:
+  - Police Service
+  - Tasmania Police
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: s 5 'public authority' expressly includes 'the Police Service' (snippet summary of s 5, Q33)
+  portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
+  parent_id: dpfem
+  rti_page_url: https://www.police.tas.gov.au/information-disclosure/right-to-information-disclosures/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.police.tas.gov.au/information-disclosure/right-to-information-disclosures/disclosures/disclosure-log/
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.police.tas.gov.au/information-disclosure/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Assessed-disclosure page https://www.police.tas.gov.au/information-disclosure/right-to-information-disclosures/applications-for-assessed-disclosure/ seen. Right to Know has a body page https://www.righttoknow.org.au/body/tasmania_police.
+  queries:
+  - Tasmania Police "right to information" disclosure log police.tas.gov.au
+- id: state_fire_commission
+  name: State Fire Commission
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
+  parent_id: dpfem
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Fire Service Act 1979 body (memory). Tasmanian Fire and Emergency Services Bill consultation opened Aug 2026 (premier.tas.gov.au snippet) - may replace/restructure; UNCERTAIN. No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries:
+  - Felix Ellis Minister for Police Fire Emergency Management Business Industry Resources Forestry 2026
+- id: tfs
+  name: Tasmania Fire Service
+  aliases:
+  - TFS
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
+  parent_id: dpfem
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Operational arm of State Fire Commission within DPFEM (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts
+    here are memory unless labelled.'
+  queries: []
+- id: ses
+  name: State Emergency Service
+  aliases:
+  - SES
+  - Tasmania SES
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
+  parent_id: dpfem
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Division of DPFEM (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: fsst
+  name: Forensic Science Service Tasmania
+  aliases:
+  - FSST
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: dpfem
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: within DPFEM. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: ths
+  name: Tasmanian Health Service
+  aliases:
+  - THS
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Health, Mental Health and Wellbeing (Bridget Archer)
+  parent_id: health
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: statutory body under Tasmanian Health Service Act 2018, operationally integrated in Department of Health; RTI handled by Department of Health. Separate-authority status UNCERTAIN. No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: ambulance_tas
+  name: Ambulance Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Health, Mental Health and Wellbeing (Bridget Archer)
+  parent_id: health
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Division of Department of Health (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: hcc
+  name: Health Complaints Commissioner Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); ABC 2018 snippet: ''health complaints commissioner ...
+    already excluded from the RTI process'''
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.healthcomplaints.tas.gov.au/
+  source_of_listing:
+  - https://www.abc.net.au/news/2018-11-23/government-exempts-childrens-commissioner-from-rti/10547702 (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Website domain seen in Q45 results. Office historically co-located with Ombudsman (memory).
+  queries:
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+  - health.tas.gov.au right to information disclosure log
+- id: ombudsman
+  name: Ombudsman Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); ABC 2018 snippet lists ombudsman as excluded'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: https://www.ombudsman.tas.gov.au/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.ombudsman.tas.gov.au/right-to-information
+  source_of_listing:
+  - https://www.ombudsman.tas.gov.au/right-to-information (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Also the RTI review body (external review decisions at https://www.ombudsman.tas.gov.au/right-to-information/reasons-for-decisions; publications https://www.ombudsman.tas.gov.au/right-to-information/rti-publications).
+    Administration-only coverage for its own information.
+  queries:
+  - '"Right to Information Act 2009" Tasmania section 5 "public authority" means agency council Government Business Enterprise'
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Ombudsman Tasmania "right to information" annual report public authorities list agencies councils GBEs statutory
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+- id: integrity_commission
+  name: Integrity Commission
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); snippet Q38: ''Under section 6, the Integrity Commission
+    is an excluded body ... except for information related to the administration'''
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: https://www.integrity.tas.gov.au/about/rti
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.integrity.tas.gov.au/about/rti (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: '2026 context: former ministers Ogilvie and Howlett used taxpayer-funded legal fees in Supreme Court proceedings against the Integrity Commission (snippets Q15).'
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+- id: audit_office
+  name: Tasmanian Audit Office (Audit Tasmania) / Auditor-General
+  aliases:
+  - Audit Tasmania
+  - TAO
+  - Auditor-General
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); snippet Q34 names Auditor-General among excluded'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: https://audit.tas.gov.au/rti/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://audit.tas.gov.au/rti/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Has its own RTI page despite s 6 exclusion (administration information). One snippet claimed s 53 requires Audit Tasmania to report on RTI administration - conflicts with memory (Minister/Justice
+    reports annually) - UNCERTAIN.
+  queries:
+  - '"Right to Information Act 2009" Tasmania section 5 "public authority" means agency council Government Business Enterprise'
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Ombudsman Tasmania "right to information" annual report public authorities list agencies councils GBEs statutory
+- id: dpp
+  name: Office of the Director of Public Prosecutions
+  aliases:
+  - ODPP
+  - DPP
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); snippet Q34 names DPP among excluded'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Administration information only.
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+- id: solicitor_general
+  name: Solicitor-General of Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); snippet Q34 names Solicitor-General among excluded'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Crown Law/Office of the Solicitor-General sits in Justice (memory).
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+- id: crown_law
+  name: Crown Law (Office of the Solicitor-General / Crown Solicitor)
+  aliases: []
+  type: other
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Division of Justice; overlap with s 6 Solicitor-General exclusion and legal professional privilege exemption - UNCERTAIN
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: coroner
+  name: Coroners Court / Coroner
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); snippet Q38: Coroner excluded as to coronial proceedings'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: Coronial Division of Magistrates Court.'
+  queries:
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+- id: supreme_court
+  name: Supreme Court of Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); courts and judges excluded (snippet Q34); Ombudsman
+    applied Kline v Official Secretary to Governor-General to court ''administration'' (snippet Q38)'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Administrative support via Justice (memory).
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Ombudsman manual Tasmania RTI "Schedule 2" OR "section 6" "relates to the administration of" Integrity Commission Director of Public Prosecutions Coroner
+- id: magistrates_court
+  name: Magistrates Court of Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); magistrates/courts excluded (snippet Q34)'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ''
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+- id: tascat
+  name: Tasmanian Civil and Administrative Tribunal
+  aliases:
+  - TASCAT
+  type: other
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); tribunals excluded (snippet Q34, ''tribunals'')'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: commenced 2021-11-05 amalgamating many tribunals/boards (see mog_changes). Date UNCERTAIN.'
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+- id: tic
+  name: Tasmanian Industrial Commission
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Tribunal - may fall within s 6 'tribunals' exclusion (snippet Q34 generic); not confirmed
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: adc
+  name: Anti-Discrimination Commissioner (Equal Opportunity Tasmania)
+  aliases:
+  - Equal Opportunity Tasmania
+  - Office of the Anti-Discrimination Commissioner
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); ABC 2018 snippet: anti-discrimination commissioner already
+    excluded'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.antidiscrimination.tas.gov.au/
+  source_of_listing:
+  - https://www.antidiscrimination.tas.gov.au/exemptions (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ''
+  queries:
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+- id: custodial_inspector
+  name: Custodial Inspector
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); ABC 2018 snippet: custodial inspector already excluded'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: Office co-located with Ombudsman.'
+  queries:
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+- id: ccyp
+  name: Commissioner for Children and Young People
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38); ABC 2018-11-23 snippet: government tabled amendment
+    to exempt the Commissioner (oversight in Commissioner for Children and Young People Act drafting)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.abc.net.au/news/2018-11-23/government-exempts-childrens-commissioner-from-rti/10547702 (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Whether the 2018 amendment passed: memory says yes - UNCERTAIN. Post-Commission-of-Inquiry restructuring into a ''Commission for Children and Young People'' (memory, date UNCERTAIN) not verified.'
+  queries:
+  - Tasmania RTI Act "17 named" OR "section 6" exempt "Anti-Discrimination Commissioner" "Commissioner for Children" "Health Complaints Commissioner" administration information
+- id: cyso_regulator
+  name: Independent Regulator (Child and Youth Safe Organisations)
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Established under Child and Youth Safe Organisations Act 2023 (memory); whether listed in s 6 UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: official_visitors
+  name: Official Visitors (Mental Health / Custodial)
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Statutory office-holders; relationship to s 6 list UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: Principal Official Visitor scheme administered from Ombudsman office. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search;
+    all facts here are memory unless labelled.'
+  queries: []
+- id: energy_ombudsman
+  name: Energy Ombudsman Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Energy Ombudsman Act 1998 (memory); s 6 status UNCERTAIN
+  portfolio_minister: null
+  parent_id: ombudsman
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: public_guardian
+  name: Office of the Public Guardian
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory. (not seen in s 6 snippets; UNCERTAIN)'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Guardianship and Administration Act 1995 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.'
+  queries: []
+- id: legal_aid
+  name: Legal Aid Commission of Tasmania
+  aliases:
+  - Tasmania Legal Aid
+  - LACT
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Attorney-General (Guy Barnett)
+  parent_id: null
+  rti_page_url: https://www.legalaid.tas.gov.au/right-to-information/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.legalaid.tas.gov.au/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Legal Aid Commission Act 1990 (memory).
+  queries:
+  - Ombudsman Tasmania "right to information" annual report public authorities list agencies councils GBEs statutory
+- id: tec
+  name: Tasmanian Electoral Commission
+  aliases:
+  - TEC
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory. (not seen among s 6 names in snippets)'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Electoral Act 2004 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: legal_profession_board
+  name: Legal Profession Board of Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Legal Profession Act 2007 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: parole_board
+  name: Parole Board of Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Corrections Act 1997 body (memory); may be a 'tribunal' for s 6 - UNCERTAIN
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: sentencing_advisory
+  name: Sentencing Advisory Council
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: 'Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department (memory: ministerially established, supported by Justice)'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tas_prison_service
+  name: Tasmania Prison Service
+  aliases:
+  - TPS
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Justice, Corrections and Rehabilitation (Guy Barnett)
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: community_corrections
+  name: Community Corrections
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Justice, Corrections and Rehabilitation (Guy Barnett)
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: cbos
+  name: Consumer, Building and Occupational Services
+  aliases:
+  - CBOS
+  - Consumer Affairs and Fair Trading
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Consumer Affairs (Guy Barnett)
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.cbos.tas.gov.au/
+  source_of_listing:
+  - https://www.cbos.tas.gov.au/ (snippet_verified, Q48)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Division of Justice (memory). Building-regulation functions could be affected by Building Tasmania MoG - UNCERTAIN.
+  queries:
+  - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
+- id: worksafe
+  name: WorkSafe Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: Workplace Standards/WorkSafe within Justice. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are
+    memory unless labelled.'
+  queries: []
+- id: workcover_board
+  name: WorkCover Tasmania Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Workers Rehabilitation and Compensation Act 1988 (memory). Current name UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
+    search; all facts here are memory unless labelled.'
+  queries: []
+- id: bdm
+  name: Registry of Births, Deaths and Marriages
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: justice
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: guardianship_board
+  name: Guardianship and Administration Board
+  aliases: []
+  type: statutory
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (memory: 2021-11-05), successor tascat. Date UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts
+    here are memory unless labelled.'
+  queries: []
+- id: mental_health_tribunal
+  name: Mental Health Tribunal
+  aliases: []
+  type: statutory
+  active: false
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (memory: 2021-11-05), successor tascat. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.'
+  queries: []
+- id: adt
+  name: Anti-Discrimination Tribunal
+  aliases: []
+  type: statutory
+  active: false
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (memory: 2021-11-05), successor tascat. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.'
+  queries: []
+- id: rmpat
+  name: Resource Management and Planning Appeal Tribunal
+  aliases:
+  - RMPAT
+  type: statutory
+  active: false
+  rti_status: partial
+  rti_status_basis: 's 6 excluded body/person: Act does not apply to its information except information relating to the administration of the body (snippet_verified: Ombudsman RTI page summary ''excludes
+    information in the possession of 17 named public authorities or bodies ... unless that information relates to the administration'', Q34/Q37/Q38)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (memory: 2021-11-05), successor tascat. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.'
+  queries: []
+- id: governor
+  name: Governor of Tasmania (Office of the Governor)
+  aliases: []
+  type: other
+  active: true
+  rti_status: excluded
+  rti_status_basis: 's 6: Governor excluded (snippet Q34 ''The Tasmanian Parliament and the Governor cannot be applied to''); whether an ''administration'' carve-out applies to the Office of the Governor
+    is UNCERTAIN (cf. Kline HCA 52)'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Governor Barbara Baker (snippet Q15).
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - '"Ministers sworn in over tea" legal fees scandal Tasmania'
+- id: house_of_assembly
+  name: House of Assembly
+  aliases: []
+  type: other
+  active: true
+  rti_status: excluded
+  rti_status_basis: 'Snippets Q34/Q39: Parliament cannot be applied to under the RTI Act; exact statutory route (s 6 vs not within s 5) UNCERTAIN'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.parliament.tas.gov.au/
+  source_of_listing:
+  - https://www.parliament.tas.gov.au/house-of-assembly/currentmembers/felix-ellis (snippet_verified domain)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Only Ministers (not backbench/opposition MPs) are subject to RTI (DPAC snippet Q39). UNCERTAIN - verify s 6 text.
+  queries:
+  - '"Right to Information Act 2009" Tasmania Parliament courts excluded "not a public authority" Governor'
+  - Tasmania Right to Information Act "section 6" exempt bodies "judicial functions" "Legislative Council"
+  - '"Right to Information" Tasmania "Parliament" "not covered" "House of Assembly" information requests parliamentary privilege RTI Act does not apply'
+- id: legislative_council
+  name: Legislative Council
+  aliases: []
+  type: other
+  active: true
+  rti_status: excluded
+  rti_status_basis: As house_of_assembly - UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.parliament.tas.gov.au/
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: UNCERTAIN - verify s 6 text.
+  queries:
+  - Tasmania Right to Information Act "section 6" exempt bodies "judicial functions" "Legislative Council"
+  - '"Right to Information" Tasmania "Parliament" "not covered" "House of Assembly" information requests parliamentary privilege RTI Act does not apply'
+- id: legislature_general
+  name: Legislature-General / Tasmanian Parliamentary joint services
+  aliases: []
+  type: other
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Parliamentary support entities; likely excluded with Parliament - UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: service_tas
+  name: Service Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.service.tas.gov.au/
+  source_of_listing:
+  - https://www.service.tas.gov.au/ (snippet_verified, Q48)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: DPAC routine disclosure attachments name 'Service Tasmania activities' (snippet Q40).
+  queries:
+  - '"Department of Premier and Cabinet" Tasmania "disclosure log" right to information'
+  - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
+- id: state_planning_office
+  name: State Planning Office
+  aliases:
+  - SPO
+  - formerly Planning Policy Unit
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Housing and Planning (Kerry Vincent)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.stateplanning.tas.gov.au/
+  source_of_listing:
+  - https://www.stateplanning.tas.gov.au/news-and-events/2026/state-planning-office-now-in-building-tasmania (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Moved from DPAC to Building Tasmania in 2026 (snippet 'will become part of Building Tasmania'; exact date UNCERTAIN, likely 2026-07-02). Formerly Planning Policy Unit (planningreform.tas.gov.au
+    snippet; rename date UNCERTAIN).
+  queries:
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+- id: local_gov_division
+  name: Local Government Division / Office of Local Government
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Local Government (Kerry Vincent)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: in DPAC. Whether moved to Building Tasmania in 2026 MoG UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search;
+    all facts here are memory unless labelled.'
+  queries: []
+- id: local_government_board
+  name: Local Government Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Local Government (Kerry Vincent)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: dss
+  name: Digital Strategy and Services
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Innovation, Science and the Digital Economy (Felix Ellis)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: osem
+  name: Office of Security and Emergency Management
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: office_aboriginal_affairs
+  name: Aboriginal Affairs (DPAC)
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Aboriginal Affairs (Bridget Archer)
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Office of Aboriginal Affairs moved from Communities to DPAC Dec 2022 (Find & Connect snippet lists it among Communities functions transferred; receiving agency memory). No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries:
+  - Communities Tasmania abolished 1 December 2022 functions transferred Homes Tasmania DECYP Department of Health
+- id: climate_change_office
+  name: Tasmanian Climate Change Office
+  aliases: []
+  type: other
+  active: false
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: dpac
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: moved from DPAC into ReCFIT (State Growth) c. 2022; climate change function then moved from State Growth/Building Tasmania to NRE 2026-08-13 (snippet). abolished (absorbed), successor
+    recfit then nre. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries:
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+- id: recfit
+  name: Renewables, Climate and Future Industries Tasmania
+  aliases:
+  - ReCFIT
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Energy and Renewables (Nick Duigan)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth division. Climate change function to NRE 2026-08-13 (snippet); energy functions to DPAC economic development (timing UNCERTAIN). No body-specific search was run: the session-wide
+    WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries:
+  - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+- id: mrt
+  name: Mineral Resources Tasmania
+  aliases:
+  - MRT
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Business, Industry and Resources (Felix Ellis)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth division; ''resources functions'' to DPAC (snippet), timing UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts here are memory unless labelled.'
+  queries:
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+- id: business_tas
+  name: Business Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Small Business (Guy Barnett) / Business, Industry and Resources (Felix Ellis)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth service. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: coordinator_general
+  name: Office of the Coordinator-General
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Business, Industry and Resources (Felix Ellis) - UNCERTAIN
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth. Destination in 2026 MoG (DPAC economic development?) UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tas_development_board
+  name: Tasmanian Development Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Tasmanian Development Act 1983 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: skills_tas
+  name: Skills Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Skills and Jobs (Felix Ellis)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: jobs_tas
+  name: Jobs Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Skills and Jobs (Felix Ellis)
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: cisve
+  name: Creative Industries, Sport and Visitor Economy
+  aliases:
+  - CISVE
+  - Culture, Arts and Sport (legacy /cas path)
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: building_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: https://www.stategrowth.tas.gov.au/cas
+  source_of_listing:
+  - https://www.stategrowth.tas.gov.au/cas/about_us (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: State Growth division coordinating tourism, events, arts, screen and sport (snippet Q6). Expected to become Tourism, Events and Creative Tasmania 2026-12-03.
+  queries:
+  - '"Tourism, Events and Creative Tasmania" established'
+- id: arts_tas
+  name: Arts Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: the Arts (Roger Jaensch)
+  parent_id: cisve
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Snippet Q6 describes Arts Tasmania's role. To TECT Dec 2026.
+  queries:
+  - '"Tourism, Events and Creative Tasmania" established'
+- id: screen_tas
+  name: Screen Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: the Arts (Roger Jaensch) - UNCERTAIN
+  parent_id: cisve
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Screen_Tasmania (snippet_verified title only)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: within State Growth.'
+  queries:
+  - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
+- id: events_tas
+  name: Events Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Tourism, Hospitality and Events (Roger Jaensch)
+  parent_id: cisve
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Snippet Q6 describes Events Tasmania.
+  queries:
+  - '"Tourism, Events and Creative Tasmania" established'
+- id: sport_rec_tas
+  name: Sport and Recreation Tasmania
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Sport (Nick Duigan)
+  parent_id: cisve
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Memory. TECT to include all sport functions (snippet Q3).
+  queries:
+  - Tasmania "machinery of government" 2025 department renamed
+- id: tis
+  name: Tasmanian Institute of Sport
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Sport (Nick Duigan)
+  parent_id: sport_rec_tas
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: program of Sport and Recreation Tasmania, not separate statutory body - UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tect
+  name: Tourism, Events and Creative Tasmania
+  aliases:
+  - TECT
+  - Tourism, Creative and Events Tasmania
+  type: agency
+  active: false
+  rti_status: UNCERTAIN
+  rti_status_basis: Planned entity; legal form (Agency vs statutory) not seen
+  portfolio_minister: Tourism, Hospitality and Events; the Arts (Roger Jaensch); Sport (Nick Duigan)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.dpac.tas.gov.au/working-in-the-state-service/messages-from-the-head-of-the-state-service/machinery-of-government-changes-in-the-state-service (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'PLANNED: to be established 2026-12-03 (snippet Q9); includes all sport functions. Name appears in two orders in snippets. Set active:false until commencement confirmed.'
+  queries:
+  - Tasmania "machinery of government" 2025 department renamed
+  - '"Tourism, Events and Creative Tasmania" established'
+  - dpac.tas.gov.au machinery of government changes in the State Service message Head of State Service
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+- id: tourism_tas
+  name: Tourism Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Tourism, Hospitality and Events (Roger Jaensch)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Tourism_Tasmania (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: statutory authority since 1997; stand-alone State Authority from 1 July 2014. Relationship to TECT from Dec 2026 UNCERTAIN.'
+  queries:
+  - '"Tourism, Events and Creative Tasmania" established'
+- id: brand_tas
+  name: Brand Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Brand Tasmania Act 2018 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: mpdc
+  name: Macquarie Point Development Corporation
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Macquarie Point Urban Renewal (Eric Abetz)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://en.wikipedia.org/wiki/Minister_for_Macquarie_Point_Urban_Renewal (snippet_verified title)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Macquarie Point Development Corporation Act 2012 (memory). Portfolio created Aug 2025 (snippet Q32).
+  queries:
+  - '"Rockliff announces two new ministers as he heads back to parliament" Examiner'
+- id: stadiums_tas
+  name: Stadiums Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Sport (Nick Duigan) - UNCERTAIN
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Stadiums Tasmania Act 2022 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tastafe
+  name: TasTAFE
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Skills and Jobs (Felix Ellis)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'TasTAFE (Skills and Training Business) Act 2021 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unless labelled.'
+  queries: []
+- id: bcitb
+  name: Building and Construction Industry Training Board
+  aliases:
+  - Keystone Tasmania (trading name, memory - UNCERTAIN)
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Building and Construction Industry Training Fund Act 1990 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all
+    facts here are memory unless labelled.'
+  queries: []
+- id: mast
+  name: Marine and Safety Tasmania
+  aliases:
+  - MAST
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Infrastructure and Transport (Kerry Vincent)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Marine and Safety Authority Act 1997 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.'
+  queries: []
+- id: tpc
+  name: Tasmanian Planning Commission
+  aliases:
+  - TPC
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Housing and Planning (Kerry Vincent)
+  parent_id: null
+  rti_page_url: https://www.planning.tas.gov.au/other-resources/right-to-information
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: https://www.planning.tas.gov.au/other-resources/right-to-information/right-to-information-disclosure-log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.planning.tas.gov.au/other-resources/right-to-information (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet: log provides information of wider public interest released under the Act.'
+  queries:
+  - site:tas.gov.au "right to information" disclosure log
+  - Homes Tasmania "right to information" disclosure log
+- id: homes_tas
+  name: Homes Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Housing and Planning (Kerry Vincent)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: rti.homes@homes.tas.gov.au
+  annual_report_url: null
+  website: https://www.homestasmania.com.au/
+  source_of_listing:
+  - https://www.homestasmania.com.au/about-us/About-Homes-Tasmania/Our-organisation (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Homes Tasmania Act 2022 (memory). RTI email snippet_verified (Q50 summary); 'RTI decisions considered to be in the public interest will be published' - log URL not seen. Housing functions of Communities
+    amalgamated 2022-12-01 (snippet). To transition into Building Tasmania in Dec 2026 (snippet Q9) - legal form after transition UNCERTAIN.
+  queries:
+  - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
+  - Homes Tasmania "right to information" disclosure log
+  - homestasmania.com.au right to information
+  - Communities Tasmania abolished 1 December 2022 functions transferred Homes Tasmania DECYP Department of Health
+- id: director_of_housing
+  name: Director of Housing
+  aliases: []
+  type: statutory
+  active: false
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'abolished (memory: functions/assets to Homes Tasmania 2022-12-01; UNCERTAIN), successor homes_tas. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after
+    this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tlgc
+  name: Tasmanian Liquor and Gaming Commission
+  aliases:
+  - TLGC
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: UNCERTAIN (Finance portfolio held by Jaensch Oct 2024-Aug 2025; no Finance minister identified in 3rd ministry)
+  parent_id: treasury
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://www.treasury.tas.gov.au/about-us/corporate-governance/right-to-information/right-to-information-disclosure-log
+  disclosure_log_url_evidence: inferred
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: https://www.treasury.tas.gov.au/Documents/TLGC%20Annual%20Report%202024-25.PDF
+  website: https://www.treasury.tas.gov.au/liquor-and-gaming/regulators/tasmanian-liquor-and-gaming-commission
+  source_of_listing:
+  - https://www.treasury.tas.gov.au/liquor-and-gaming/regulators/tasmanian-liquor-and-gaming-commission (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'RTI for TLGC appears to be processed by Treasury (TLGC internal-review release hosted on treasury.tas.gov.au, Q26) - disclosure log inferred to be Treasury''s. Campaign-relevant (pokies): Greens
+    criticised ''pokies backdown'' Sep 2026 (snippet).'
+  queries:
+  - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
+- id: otter
+  name: Office of the Tasmanian Economic Regulator
+  aliases:
+  - OTTER
+  - Tasmanian Economic Regulator
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: treasury
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Economic Regulator Act 2009 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tascorp
+  name: Tasmanian Public Finance Corporation
+  aliases:
+  - Tascorp
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: treasury
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. Possible overlap with slice (b). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: rbf_board
+  name: Retirement Benefits Fund Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: 'Memory: statutory board; post-2019 Tasplan merger and 2021 Spirit Super merger status UNCERTAIN'
+  portfolio_minister: null
+  parent_id: treasury
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Tasplan/Spirit Super are private super funds - likely not public authorities (UNCERTAIN). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: public_trustee
+  name: Public Trustee
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: s 5 'public authority' includes a Government Business Enterprise within the meaning of the GBE Act 1995 (snippet summary of s 5, Q33) (GBE status from memory)
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: https://www.publictrustee.tas.gov.au/about-us/governance/right-to-information/
+  rti_page_url_evidence: snippet_verified
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://www.publictrustee.tas.gov.au/about-us/governance/right-to-information/ (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: a GBE under the GBE Act 1995 - DUPLICATE CANDIDATE with slice (b); dedupe on id.'
+  queries:
+  - '"Right to Information Act 2009" Tasmania section 5 "public authority" means agency council Government Business Enterprise'
+  - '"Building Tasmania" "right to information"'
+- id: valuer_general
+  name: Valuer-General
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: Office of the Valuer-General in NRE. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: pws
+  name: Parks and Wildlife Service
+  aliases:
+  - PWS
+  - Tasmania Parks and Wildlife
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Parks (Nick Duigan)
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: epa
+  name: Environment Protection Authority Tasmania
+  aliases:
+  - EPA Tasmania
+  - Board of the EPA
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Environment and Climate Change (Guy Barnett)
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: https://epa.tas.gov.au/about-the-epa/right-to-information/rti-disclosure-log
+  disclosure_log_url_evidence: snippet_verified
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - https://epa.tas.gov.au/about-the-epa/right-to-information/rti-disclosure-log (snippet_verified)
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Environmental Management and Pollution Control Act 1994 (memory). Has its own disclosure log.
+  queries:
+  - nre.tas.gov.au right to information disclosure log
+- id: ori
+  name: Office of Racing Integrity
+  aliases:
+  - ORI
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Racing (Roger Jaensch)
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: in NRE; Director of Racing statutory office. Tasracing is a State-owned company (slice b). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after
+    this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: heritage_council
+  name: Tasmanian Heritage Council
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Heritage (Nick Duigan, from Jun 2026)
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Historic Cultural Heritage Act 1995 (memory); Heritage Tasmania in NRE. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search;
+    all facts here are memory unless labelled.'
+  queries:
+  - Rockliff reshuffle Ogilvie June 2026 cabinet portfolios Barnett Environment Climate Change Howlett Arts
+- id: aboriginal_heritage_council
+  name: Aboriginal Heritage Council
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Aboriginal Heritage Act 1975 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: ifs
+  name: Inland Fisheries Service
+  aliases:
+  - IFS
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Primary Industries and Water (Gavin Pearce)
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory: separate agency/statutory service vs NRE division - UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all
+    facts here are memory unless labelled.'
+  queries: []
+- id: fpa
+  name: Forest Practices Authority
+  aliases:
+  - FPA
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Business, Industry and Resources (Felix Ellis) - UNCERTAIN
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Forest Practices Act 1985 (memory). Forest Practices Regulations consultation Aug 2026 (premier.tas.gov.au snippet Q25).
+  queries:
+  - Tasmania forestry minister 2026 "Minister for Resources" forestry Sustainable Timber Tasmania
+- id: private_forests_tas
+  name: Private Forests Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: Business, Industry and Resources (Felix Ellis) - UNCERTAIN
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Private Forests Act 1994 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: wellington_park
+  name: Wellington Park Management Trust
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Wellington Park Act 1993 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: talc
+  name: Tasmanian Aboriginal Land Council
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Established under Aboriginal Lands Act 1995 (memory) - 'body established by or under an Act for a public purpose'? elected membership; UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: rtbg
+  name: Royal Tasmanian Botanical Gardens
+  aliases:
+  - RTBG
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Royal Tasmanian Botanical Gardens Act 2002 (memory); Board of Directors. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search;
+    all facts here are memory unless labelled.'
+  queries: []
+- id: land_tasmania
+  name: Land Tasmania (Recorder of Titles, Surveyor-General)
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: null
+  parent_id: nre
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: libraries_tas
+  name: Libraries Tasmania (incl. Tasmanian Archives)
+  aliases: []
+  type: other
+  active: true
+  rti_status: full
+  rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to the parent department
+  portfolio_minister: Education (Jo Palmer)
+  parent_id: decyp
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Snippet Q31: DECYP covers libraries and the Tasmanian archives. Separate RTI handling not seen.'
+  queries:
+  - Jo Palmer Minister for Education Children Youth Disability Services Tasmania 2025 2026 portfolios
+- id: tasc
+  name: Office of Tasmanian Assessment, Standards and Certification
+  aliases:
+  - TASC
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: decyp
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: trb
+  name: Teachers Registration Board of Tasmania
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: decyp
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Teachers Registration Act 2000 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.'
+  queries: []
+- id: ngsrb
+  name: Non-Government Schools Registration Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: decyp
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Education Act 2016 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: teyf
+  name: Tasmanian Early Years Foundation
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Tasmanian Early Years Foundation Act 2005 (memory) - current existence UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tmag
+  name: Tasmanian Museum and Art Gallery
+  aliases:
+  - TMAG
+  - Tasmanian Museum
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: the Arts (Roger Jaensch)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Tasmanian Museum and Art Gallery Act 2017; Board of Trustees (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all
+    facts here are memory unless labelled.'
+  queries: []
+- id: theatre_royal
+  name: Theatre Royal Management Board
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: the Arts (Roger Jaensch)
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tso
+  name: Tasmanian Symphony Orchestra
+  aliases: []
+  type: other
+  active: true
+  rti_status: UNCERTAIN
+  rti_status_basis: Company limited by guarantee (memory; divested by ABC 2007); not established by an Act; State-owned-company limb unlikely - UNCERTAIN
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  queries: []
+- id: tcf
+  name: Tasmanian Community Fund
+  aliases: []
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: 's 5 ''public authority'' limbs: statutory authority / body established by or under an Act for a public purpose / body whose members are appointed by the Governor or a Minister (snippet
+    summary of s 5, Q33). Establishing Act cited from memory.'
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: 'Tasmanian Community Fund Act 2005; board appointed by Governor (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search;
+    all facts here are memory unless labelled.'
+  queries: []
+- id: utas
+  name: University of Tasmania
+  aliases:
+  - UTAS
+  type: statutory
+  active: true
+  rti_status: full
+  rti_status_basis: s 5 'public authority' expressly includes the University of Tasmania (snippet summary of s 5, Q33)
+  portfolio_minister: null
+  parent_id: null
+  rti_page_url: null
+  rti_page_url_evidence: null
+  disclosure_log_url: null
+  disclosure_log_url_evidence: null
+  disclosure_log_format: unknown
+  rti_contact_email: null
+  annual_report_url: null
+  website: null
+  source_of_listing:
+  - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
+  last_verified: null
+  verification_status: network_blocked_search_only
+  notes: Explicitly named in s 5. Probably belongs to another slice - dedupe.
+  queries:
+  - '"Right to Information Act 2009" Tasmania section 5 "public authority" means agency council Government Business Enterprise'
+minister_portfolios:
+- portfolio: Premier
+  minister: Jeremy Rockliff
+  minister_id: min_rockliff
+  department_ids:
+  - dpac
+  effective_from: '2022-04-08'
+  effective_to: null
+  campaign_relevant: true
+  evidence: 'snippet_verified: 3rd ministry sworn 2025-08-11, Rockliff holds no other portfolio (Examiner Q32). Start date 2022-04-08 = memory.'
+- portfolio: Deputy Premier
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - dpac
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740
+- portfolio: Treasurer
+  minister: Eric Abetz
+  minister_id: min_abetz
+  department_ids:
+  - treasury
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740.
+    Wikipedia snippet gives 'assumed office 19 July 2025' - UNCERTAIN (election date vs swearing-in).
+- portfolio: Treasurer
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - treasury
+  effective_from: null
+  effective_to: '2025-08-11'
+  campaign_relevant: true
+  evidence: 'snippet_verified that Barnett lost Treasury Aug 2025 (ABC 2025-08-07). Start date not found (memory: 2024) - UNCERTAIN.'
+- portfolio: Leader of the House
+  minister: Eric Abetz
+  minister_id: min_abetz
+  department_ids: []
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740
+- portfolio: Macquarie Point Urban Renewal
+  minister: Eric Abetz
+  minister_id: min_abetz
+  department_ids:
+  - mpdc
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: 'snippet_verified: new portfolio Aug 2025 (Examiner Q32)'
+- portfolio: Attorney-General
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - justice
+  effective_from: '2023-10-02'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified (Wikipedia via Q16)
+- portfolio: Justice, Corrections and Rehabilitation
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - justice
+  - tas_prison_service
+  - community_corrections
+  effective_from: '2024-04-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified (Q19); reconfirmed https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740
+- portfolio: Small Business
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - building_tas
+  - business_tas
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740;
+    department mapping post-July-2026 UNCERTAIN (DPAC economic development?)
+- portfolio: Trade
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - building_tas
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740;
+    dept mapping memory/UNCERTAIN
+- portfolio: Consumer Affairs
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - justice
+  - cbos
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740
+- portfolio: Environment and Climate Change
+  minister: Guy Barnett
+  minister_id: min_barnett
+  department_ids:
+  - nre
+  - epa
+  effective_from: '2026-06-05'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2026/june/new-cabinet-announced ; https://pulsetasmania.com.au/news/rockliff-announces-reshuffled-cabinet-after-madeleine-ogilvie-quits/.
+    2026-06-05 is announcement date; swearing-in date not found. Climate change function moved to NRE 2026-08-13 (before that in State Growth/Building Tasmania).
+- portfolio: Environment
+  minister: Madeleine Ogilvie
+  minister_id: min_ogilvie
+  department_ids:
+  - nre
+  - epa
+  effective_from: 2024-04
+  effective_to: '2026-05-30'
+  campaign_relevant: true
+  evidence: snippet_verified (Q30); end date 29 or 30 May 2026 - UNCERTAIN
+- portfolio: Health, Mental Health and Wellbeing
+  minister: Bridget Archer
+  minister_id: min_archer
+  department_ids:
+  - health
+  - ths
+  - ambulance_tas
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified (Q18); predecessor Jacquie Petrusma
+- portfolio: Health, Mental Health and Wellbeing
+  minister: Jacquie Petrusma
+  minister_id: null
+  department_ids:
+  - health
+  effective_from: null
+  effective_to: '2025-08-11'
+  campaign_relevant: true
+  evidence: snippet_verified predecessor (Q18); start date not found
+- portfolio: Aboriginal Affairs
+  minister: Bridget Archer
+  minister_id: min_archer
+  department_ids:
+  - dpac
+  - office_aboriginal_affairs
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740;
+    dept mapping memory
+- portfolio: Ageing
+  minister: Bridget Archer
+  minister_id: min_archer
+  department_ids:
+  - dpac
+  - health
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified new portfolio Aug 2025; dept UNCERTAIN (DPAC functions to Health 2026-07-02 may include ageing)
+- portfolio: Infrastructure and Transport
+  minister: Kerry Vincent
+  minister_id: min_vincent
+  department_ids:
+  - building_tas
+  - mast
+  effective_from: 2024-10
+  effective_to: null
+  campaign_relevant: false
+  evidence: 'snippet_verified (Q23): promoted Oct 2024'
+- portfolio: Local Government
+  minister: Kerry Vincent
+  minister_id: min_vincent
+  department_ids:
+  - dpac
+  - local_gov_division
+  effective_from: 2024-10
+  effective_to: null
+  campaign_relevant: true
+  evidence: 'snippet_verified (Q23): promoted Oct 2024. Whether Local Government Division moved to Building Tasmania in 2026 - UNCERTAIN.'
+- portfolio: Housing and Planning
+  minister: Kerry Vincent
+  minister_id: min_vincent
+  department_ids:
+  - building_tas
+  - homes_tas
+  - state_planning_office
+  - tpc
+  effective_from: '2025-08-07'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified (Q23; 2025-08-07 is announcement date, ministry sworn 2025-08-11)
+- portfolio: Education
+  minister: Jo Palmer
+  minister_id: min_palmer
+  department_ids:
+  - decyp
+  - libraries_tas
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified (Q31) - held earlier too (memory)
+- portfolio: Children and Youth
+  minister: Jo Palmer
+  minister_id: min_palmer
+  department_ids:
+  - decyp
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified (Q31)
+- portfolio: Disability Services
+  minister: Jo Palmer
+  minister_id: min_palmer
+  department_ids:
+  - dpac
+  - decyp
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified (Q31); dept UNCERTAIN (DPAC functions to DECYP 2026-07-30)
+- portfolio: Women and the Prevention of Family and Sexual Violence
+  minister: Jo Palmer
+  minister_id: min_palmer
+  department_ids:
+  - dpac
+  - justice
+  effective_from: '2026-06-17'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified ABC 2026-06-17 says Palmer appointed/sworn 2026-06-17; another snippet (Q7/Q31) lists Women for Palmer from Aug 2025 - UNCERTAIN
+- portfolio: Energy and Renewables
+  minister: Nick Duigan
+  minister_id: min_duigan
+  department_ids:
+  - building_tas
+  - recfit
+  - dpac
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified 'will remain' (Aug 2025), so held before 2025-08-11 (start date not found). Energy functions move to DPAC economic development (snippet Q3/Q9), date UNCERTAIN.
+- portfolio: Parks
+  minister: Nick Duigan
+  minister_id: min_duigan
+  department_ids:
+  - nre
+  - pws
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740
+- portfolio: Sport
+  minister: Nick Duigan
+  minister_id: min_duigan
+  department_ids:
+  - building_tas
+  - sport_rec_tas
+  - tect
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740;
+    sport moves to TECT 2026-12-03 (planned)
+- portfolio: Heritage
+  minister: Nick Duigan
+  minister_id: min_duigan
+  department_ids:
+  - nre
+  - heritage_council
+  effective_from: '2026-06-05'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2026/june/new-cabinet-announced ; https://pulsetasmania.com.au/news/rockliff-announces-reshuffled-cabinet-after-madeleine-ogilvie-quits/
+- portfolio: Arts and Heritage
+  minister: Madeleine Ogilvie
+  minister_id: min_ogilvie
+  department_ids:
+  - building_tas
+  - arts_tas
+  - nre
+  effective_from: 2024-04
+  effective_to: '2026-05-30'
+  campaign_relevant: false
+  evidence: snippet_verified (Q30)
+- portfolio: Innovation, Science and the Digital Economy
+  minister: Madeleine Ogilvie
+  minister_id: min_ogilvie
+  department_ids:
+  - dpac
+  effective_from: 2024-04
+  effective_to: '2026-05-30'
+  campaign_relevant: false
+  evidence: snippet_verified (Q30)
+- portfolio: Community and Multicultural Affairs
+  minister: Madeleine Ogilvie
+  minister_id: min_ogilvie
+  department_ids:
+  - dpac
+  effective_from: '2025-08-11'
+  effective_to: '2026-05-30'
+  campaign_relevant: false
+  evidence: snippet_verified (Q32)
+- portfolio: Police, Fire and Emergency Management
+  minister: Felix Ellis
+  minister_id: min_ellis
+  department_ids:
+  - dpfem
+  - tas_police
+  - state_fire_commission
+  - tfs
+  - ses
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified current (Q16/Q21). Held since 2022 per memory/LinkedIn snippet (date not shown).
+- portfolio: Business, Industry and Resources (incl. forestry)
+  minister: Felix Ellis
+  minister_id: min_ellis
+  department_ids:
+  - building_tas
+  - mrt
+  - business_tas
+  - coordinator_general
+  - dpac
+  - fpa
+  - private_forests_tas
+  effective_from: '2025-08-07'
+  effective_to: null
+  campaign_relevant: true
+  evidence: 'snippet_verified (Q20/Q25; 2025-08-07 announcement date). Forestry: Ellis fronting forestry negotiations 2026 (snippet Q25). Industry/resources functions moving to DPAC economic development
+    (Q9), date UNCERTAIN.'
+- portfolio: Business, Industry and Resources
+  minister: Eric Abetz
+  minister_id: min_abetz
+  department_ids:
+  - state_growth
+  effective_from: '2024-04-11'
+  effective_to: '2025-08-07'
+  campaign_relevant: true
+  evidence: snippet_verified (Q20; end date given as 19 July 2025 in Wikipedia snippet vs Aug 2025 ministry - UNCERTAIN)
+- portfolio: Skills and Jobs
+  minister: Felix Ellis
+  minister_id: min_ellis
+  department_ids:
+  - building_tas
+  - skills_tas
+  - jobs_tas
+  - tastafe
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified (Q21)
+- portfolio: Innovation, Science and the Digital Economy
+  minister: Felix Ellis
+  minister_id: min_ellis
+  department_ids:
+  - dpac
+  - dss
+  effective_from: '2026-06-05'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2026/june/new-cabinet-announced ; https://pulsetasmania.com.au/news/rockliff-announces-reshuffled-cabinet-after-madeleine-ogilvie-quits/
+- portfolio: Primary Industries and Water
+  minister: Gavin Pearce
+  minister_id: min_pearce
+  department_ids:
+  - nre
+  - ifs
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified (Q27)
+- portfolio: Veterans' Affairs
+  minister: Gavin Pearce
+  minister_id: min_pearce
+  department_ids:
+  - dpac
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2025/august/new-tasmanian-government-ministry-announced ; https://www.abc.net.au/news/2025-08-07/tasmanian-liberals-cabinet-announcement/105622740;
+    dept memory
+- portfolio: Tourism, Hospitality and Events
+  minister: Roger Jaensch
+  minister_id: min_jaensch
+  department_ids:
+  - tourism_tas
+  - events_tas
+  - cisve
+  - building_tas
+  - tect
+  effective_from: '2026-06-17'
+  effective_to: null
+  campaign_relevant: true
+  evidence: 'snippet_verified https://abc.net.au/news/2026-06-17/tas-jeremy-rockliff-announcement-cabinet-roger-jaensch/106807032 ; https://pulsetasmania.com.au/news/roger-jaensch-handed-racing-and-arts-ministries-in-cabinet-reshuffle/.
+    NOTE gaming: liquor/gaming regulation sits with Treasury (TLGC); which Minister administers the Gaming Control Act since Aug 2025 NOT found - UNCERTAIN.'
+- portfolio: Tourism, Hospitality and Events
+  minister: Jane Howlett
+  minister_id: min_howlett
+  department_ids:
+  - tourism_tas
+  - events_tas
+  - state_growth
+  effective_from: '2025-08-07'
+  effective_to: '2026-06-16'
+  campaign_relevant: true
+  evidence: snippet_verified (Q22)
+- portfolio: Racing
+  minister: Roger Jaensch
+  minister_id: min_jaensch
+  department_ids:
+  - nre
+  - ori
+  effective_from: '2026-06-17'
+  effective_to: null
+  campaign_relevant: true
+  evidence: snippet_verified https://abc.net.au/news/2026-06-17/tas-jeremy-rockliff-announcement-cabinet-roger-jaensch/106807032 ; https://pulsetasmania.com.au/news/roger-jaensch-handed-racing-and-arts-ministries-in-cabinet-reshuffle/
+- portfolio: Racing
+  minister: Jane Howlett
+  minister_id: min_howlett
+  department_ids:
+  - nre
+  - ori
+  effective_from: '2025-08-11'
+  effective_to: '2026-06-16'
+  campaign_relevant: true
+  evidence: snippet_verified ('former racing minister', Q13)
+- portfolio: Community and Multicultural Affairs
+  minister: Roger Jaensch
+  minister_id: min_jaensch
+  department_ids:
+  - dpac
+  effective_from: '2026-06-17'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://abc.net.au/news/2026-06-17/tas-jeremy-rockliff-announcement-cabinet-roger-jaensch/106807032 ; https://pulsetasmania.com.au/news/roger-jaensch-handed-racing-and-arts-ministries-in-cabinet-reshuffle/
+- portfolio: Community and Multicultural Affairs
+  minister: Jane Howlett
+  minister_id: min_howlett
+  department_ids:
+  - dpac
+  effective_from: '2026-06-05'
+  effective_to: '2026-06-16'
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2026/june/new-cabinet-announced ; https://pulsetasmania.com.au/news/rockliff-announces-reshuffled-cabinet-after-madeleine-ogilvie-quits/
+- portfolio: the Arts
+  minister: Roger Jaensch
+  minister_id: min_jaensch
+  department_ids:
+  - arts_tas
+  - cisve
+  - tmag
+  - theatre_royal
+  effective_from: '2026-06-17'
+  effective_to: null
+  campaign_relevant: false
+  evidence: snippet_verified https://abc.net.au/news/2026-06-17/tas-jeremy-rockliff-announcement-cabinet-roger-jaensch/106807032 ; https://pulsetasmania.com.au/news/roger-jaensch-handed-racing-and-arts-ministries-in-cabinet-reshuffle/
+- portfolio: the Arts
+  minister: Jane Howlett
+  minister_id: min_howlett
+  department_ids:
+  - arts_tas
+  effective_from: '2026-06-05'
+  effective_to: '2026-06-16'
+  campaign_relevant: false
+  evidence: snippet_verified https://www.premier.tas.gov.au/latest-news/2026/june/new-cabinet-announced ; https://pulsetasmania.com.au/news/rockliff-announces-reshuffled-cabinet-after-madeleine-ogilvie-quits/
+- portfolio: Finance (incl. liquor and gaming regulation)
+  minister: Roger Jaensch
+  minister_id: null
+  department_ids:
+  - treasury
+  - tlgc
+  effective_from: 2024-10
+  effective_to: '2025-08-11'
+  campaign_relevant: true
+  evidence: snippet_verified ABC 2024-10-30 'New Tasmanian finance minister Roger Jaensch divests shares in pokies industry'; end = left cabinet Aug 2025 (Examiner Q32). Successor for gaming UNCERTAIN.
+- portfolio: Gaming Control Act administration
+  minister: UNCERTAIN
+  minister_id: null
+  department_ids:
+  - treasury
+  - tlgc
+  effective_from: '2025-08-11'
+  effective_to: null
+  campaign_relevant: true
+  evidence: No Finance minister found in 3rd ministry (Q29). Possibly the Treasurer (Abetz) - UNCERTAIN; check Administrative Arrangements Order.
+mog_changes:
+- date: '2018-07-01'
+  status: effective
+  change: DHHS became Department of Health (pre-2020 context)
+  from_ids:
+  - dhhs
+  to_ids:
+  - health
+  evidence: memory only; date UNCERTAIN (verification search failed on budget)
+- date: '2021-11-05'
+  status: effective
+  change: TASCAT commenced, absorbing Anti-Discrimination Tribunal, Guardianship and Administration Board, Mental Health Tribunal, RMPAT and other tribunals
+  from_ids:
+  - adt
+  - guardianship_board
+  - mental_health_tribunal
+  - rmpat
+  to_ids:
+  - tascat
+  evidence: memory only; date UNCERTAIN
+- date: null
+  status: effective
+  change: DPIPWE renamed Department of Natural Resources and Environment Tasmania
+  from_ids:
+  - dpipwe
+  to_ids:
+  - nre
+  evidence: memory only (late 2021 / early 2022); date UNCERTAIN - search failed on budget
+- date: null
+  status: effective
+  change: Department of Education renamed Department for Education, Children and Young People (receiving CYF and Youth Justice from Communities)
+  from_ids:
+  - doe
+  to_ids:
+  - decyp
+  evidence: memory (c. Oct 2022); date UNCERTAIN
+- date: '2022-12-01'
+  status: effective
+  change: Department of Communities Tasmania abolished; CYF & Youth Justice to DECYP; housing amalgamated with Homes Tasmania; Wellbeing/Strategy (incl. Office of Aboriginal Affairs, Family Safety Secretariat),
+    Community Development, Veterans' Affairs, Women and corporate functions to other receiving agencies
+  from_ids:
+  - communities_tas
+  - director_of_housing
+  to_ids:
+  - decyp
+  - homes_tas
+  - dpac
+  evidence: 'snippet_verified: https://www.findandconnect.gov.au/guide/tas/ENT0058 ; State Service (Restructuring) Order (No. 7) 2022 https://www.legislation.tas.gov.au/view/whole/html/inforce/2024-06-07/sr-2022-100
+    (title seen). DPAC as receiver = memory; Health as receiver not supported by snippet.'
+- date: null
+  status: effective
+  change: Tasmanian Climate Change Office moved from DPAC into ReCFIT (State Growth)
+  from_ids:
+  - climate_change_office
+  to_ids:
+  - recfit
+  evidence: memory only; date UNCERTAIN (c. 2022)
+- date: null
+  status: effective
+  change: Planning Policy Unit renamed State Planning Office
+  from_ids: []
+  to_ids:
+  - state_planning_office
+  evidence: snippet_verified existence of page https://planningreform.tas.gov.au/updates/planning-policy-unit-now-state-planning-office ; date not shown
+- date: '2026-03-03'
+  status: announcement
+  change: 'ANNOUNCED (State of the State): State Growth to be transformed into Building Tasmania (incl. Homes Tasmania), new Tourism, Events and Creative Tasmania entity, and new economic development entity;
+    target ~250 FTE reduction'
+  from_ids: []
+  to_ids: []
+  evidence: 'snippet_verified: https://www.abc.net.au/news/2026-03-03/tas-department-of-state-growth-transform-into-building-tasmania/106408320'
+- date: '2026-07-02'
+  status: effective
+  change: Department of State Growth becomes Building Tasmania; some DPAC functions transfer to Department of Health; State Planning Office into Building Tasmania (date for SPO UNCERTAIN)
+  from_ids:
+  - state_growth
+  - dpac
+  - state_planning_office
+  to_ids:
+  - building_tas
+  - health
+  evidence: 'snippet_verified: https://www.dpac.tas.gov.au/working-in-the-state-service/messages-from-the-head-of-the-state-service/commencement-of-building-tasmania-and-functions-transferring-to-the-department-of-health
+    ; https://en.wikipedia.org/wiki/Building_Tasmania ; https://www.stateplanning.tas.gov.au/news-and-events/2026/state-planning-office-now-in-building-tasmania'
+- date: '2026-07-16'
+  status: effective
+  change: Further DPAC functions move to Department of Justice (which functions not stated)
+  from_ids:
+  - dpac
+  to_ids:
+  - justice
+  evidence: 'snippet_verified: https://pulsetasmania.com.au/news/building-tasmania-to-launch-on-july-2-as-state-service-restructure-begins/'
+- date: '2026-07-30'
+  status: effective
+  change: DPAC functions move to DECYP (which functions not stated)
+  from_ids:
+  - dpac
+  to_ids:
+  - decyp
+  evidence: 'snippet_verified: Pulse Tasmania (above) and DPAC HoSS message'
+- date: '2026-08-13'
+  status: effective
+  change: State Growth/Building Tasmania climate change function transferred to NRE Tas
+  from_ids:
+  - building_tas
+  - recfit
+  to_ids:
+  - nre
+  evidence: 'snippet_verified: DPAC HoSS message / Pulse Tasmania'
+- date: '2026-09-10'
+  status: effective
+  change: 'Stage two of Building Tasmania: capital projects transferred in from other agencies'
+  from_ids:
+  - health
+  - decyp
+  - justice
+  - dpfem
+  - nre
+  to_ids:
+  - building_tas
+  evidence: snippet_verified (DPAC message summary, Q5); source agencies not named - from_ids are a guess (inferred)
+- date: '2026-12-03'
+  status: planned
+  change: 'PLANNED: Tourism, Events and Creative Tasmania established (incl. all sport functions); DPAC begins shared corporate services for Building Tasmania and TECT'
+  from_ids:
+  - building_tas
+  - cisve
+  - arts_tas
+  - events_tas
+  - screen_tas
+  - sport_rec_tas
+  to_ids:
+  - tect
+  - dpac
+  evidence: snippet_verified (Q9 summary of DPAC update); future-dated at time of research (2026-09-24)
+- date: null
+  status: planned
+  change: 'PLANNED Dec 2026: Homes Tasmania transitions into Building Tasmania'
+  from_ids:
+  - homes_tas
+  to_ids:
+  - building_tas
+  evidence: 'snippet_verified (Q9: ''Homes Tasmania transitioning in December 2026''); exact date and legal form UNCERTAIN'
+- date: null
+  status: planned
+  change: 'PLANNED/UNDATED: DPAC takes on economic development incl. industry, energy and resources functions from Building Tasmania (new economic development entity)'
+  from_ids:
+  - building_tas
+  - recfit
+  - mrt
+  - coordinator_general
+  - business_tas
+  to_ids:
+  - dpac
+  evidence: snippet_verified (Q3, Q9); date and whether a separate entity is created UNCERTAIN

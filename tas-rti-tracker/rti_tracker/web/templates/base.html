@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{% block title %}Tas RTI tracker{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script>
+<style>
+:root{--fg:#1b1b1b;--bg:#fff;--muted:#666;--line:#ddd;--accent:#0b5;--warn:#c60;--bad:#c22;--ok:#282}
+@media (prefers-color-scheme: dark){:root{--fg:#eee;--bg:#151515;--muted:#aaa;--line:#333}}
+body{font:15px/1.45 system-ui,sans-serif;color:var(--fg);background:var(--bg);margin:0;padding:0 16px}
+nav{display:flex;gap:14px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:14px}
+nav a{color:var(--fg);text-decoration:none;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid var(--line);padding:5px 6px;text-align:left;vertical-align:top}
+.muted{color:var(--muted)}.tag{display:inline-block;padding:1px 6px;border:1px solid var(--line);border-radius:4px;font-size:12px;margin-right:4px}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}.mono{font-family:ui-monospace,monospace;font-size:12px;word-break:break-all}
+form.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}input,select{padding:4px 6px;font:inherit}
+.card{border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0}
+.banner{background:#fff4d6;color:#5a3a00;padding:8px 12px;border-radius:6px;margin:8px 0;font-size:13px}
+mark{background:#ffe38a;color:#000}
+</style>
+</head>
+<body>
+<nav>
+<a href="/">Feed</a><a href="/authorities">Authorities</a><a href="/search">Search</a><a href="/applications">My applications</a><a href="/changes">Alerts &amp; changes</a><a href="/campaigns">Campaigns</a>
+<span class="muted" style="margin-left:auto">private — local only</span>
+</nav>
+{% block body %}{% endblock %}
+</body></html>

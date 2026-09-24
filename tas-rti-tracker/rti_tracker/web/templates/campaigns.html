@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block body %}
+<h2>Campaigns</h2>
+<table><tr><th>Campaign</th><th>Keywords</th><th>Tagged</th><th>Citation pack</th></tr>
+{% for r in rows %}<tr><td>{{r.name}}</td><td class="muted">{{r.keywords}}</td><td>{{r.n}}</td><td><a href="/campaigns/{{r.id}}/pack.md">md</a> · <a href="/campaigns/{{r.id}}/pack.csv">csv</a> · <a href="/campaigns/{{r.id}}/pack.json">json</a></td></tr>{% endfor %}</table>
+<p class="muted">Edit keywords in config/watchlist.yaml, then <code>rti campaign sync</code>.</p>
+{% endblock %}

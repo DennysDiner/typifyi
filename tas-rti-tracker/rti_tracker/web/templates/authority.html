@@ -1,0 +1,24 @@
+{% extends "base.html" %}{% block body %}
+<h2>{{a.name}} <span class="tag">{{a.type}}</span> <span class="tag">tier {{a.tier}}</span> <span class="tag">RTI: {{a.rti_status}}</span></h2>
+<div class="card">
+<div><b>Portfolio minister:</b> {{a.portfolio_minister or '—'}} &nbsp; <b>Region:</b> {{a.region or '—'}}</div>
+<div><b>RTI page:</b> {% if a.rti_page_url %}<a href="{{a.rti_page_url}}">{{a.rti_page_url}}</a>{% else %}none found{% endif %}</div>
+<div><b>Disclosure log:</b> {% if a.disclosure_log_url %}<a href="{{a.disclosure_log_url}}">{{a.disclosure_log_url}}</a> ({{a.disclosure_log_format}}, evidence: {{raw.disclosure_log_url_evidence}}){% else %}<span class="bad">NO DISCOVERABLE LOG — finding</span>{% endif %}</div>
+<div><b>Basis for RTI status:</b> {{a.rti_status_basis or '—'}}</div>
+<div class="muted"><b>Verification:</b> {{a.verification_status}} · last verified: {{a.last_verified or 'never'}} · listed from: {{a.source_of_listing}}</div>
+<div class="muted"><b>Names/history:</b> {% for n in names %}{{n.name}}{% if n.effective_to %} (to {{n.effective_to}}){% endif %}; {% endfor %}</div>
+<div class="muted">{{a.notes}}</div>
+</div>
+<h3>Log health</h3>
+<table><tr><th>Kind</th><th>Adapter</th><th>URL</th><th>Last success</th><th>Last change</th><th>Failures</th><th>Blocked</th></tr>
+{% for s in sources %}<tr><td>{{s.kind}}</td><td>{{s.adapter}}</td><td class="mono">{{s.url}}</td><td>{{s.last_success_at or '—'}}</td><td>{{s.last_change_at or '—'}}</td><td>{{s.consecutive_failures}}</td><td>{{'yes: '+(s.blocked_reason or '') if s.blocked else ''}}</td></tr>{% else %}<tr><td colspan="7" class="muted">no source configured</td></tr>{% endfor %}</table>
+<h3>Annual-report statistics</h3>
+{% if years %}<table><tr><th>Year</th>{% for m in series %}<th>{{m}}</th>{% endfor %}<th>Refusal rate</th><th>Decided ≤20wd</th></tr>
+{% for y in years %}<tr><td>{{y}}</td>{% for m in series %}<td>{{series[m].get(y,'')}}</td>{% endfor %}<td>{{'%.0f%%'|format(refusal[y]*100) if refusal[y] is not none else ''}}</td><td>{{'%.0f%%'|format(timeliness[y]*100) if timeliness[y] is not none else ''}}</td></tr>{% endfor %}</table>
+{% else %}<p class="muted">No annual-report rows loaded for this authority (run <code>rti annual import</code>).</p>{% endif %}
+<h3>Release history ({{items|length}})</h3>
+<table><tr><th>Published</th><th>Title</th><th>Status</th><th>First seen</th></tr>
+{% for i in items %}<tr><td>{{i.published_date or ''}}</td><td><a href="/item/{{i.id}}">{{i.title}}</a></td><td class="{{'bad' if i.status=='removed' else ''}}">{{i.status}}{% if i.removed_at %} {{i.removed_at[:10]}}{% endif %}</td><td class="muted">{{i.first_seen_at[:10]}}</td></tr>{% endfor %}</table>
+<h3>Recent changes</h3>
+<ul>{% for c in changes %}<li><span class="tag">{{c.kind}}</span> {{c.detected_at[:16]}} <span class="mono">{{c.detail[:200]}}</span></li>{% endfor %}</ul>
+{% endblock %}

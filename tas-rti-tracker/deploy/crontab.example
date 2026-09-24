@@ -1,0 +1,7 @@
+# Cron: one scheduler tick every 10 minutes (the tick itself decides what is due: Tier 1 hourly, Tier 2 six-hourly).
+# Adjust paths. Secrets come from /etc/rti-tracker.env (never committed).
+*/10 * * * *  cd /opt/tas-rti-tracker && set -a && . /etc/rti-tracker.env && set +a && .venv/bin/rti run >> data/run.log 2>&1
+# Daily digest 07:00 Hobart time (21:00 UTC during AEST; adjust for AEDT or run under TZ=Australia/Hobart)
+0 7 * * *     cd /opt/tas-rti-tracker && set -a && . /etc/rti-tracker.env && set +a && TZ=Australia/Hobart .venv/bin/rti alerts --digest >> data/run.log 2>&1
+# Weekly archive integrity check
+0 3 * * 0     cd /opt/tas-rti-tracker && .venv/bin/rti archive verify >> data/run.log 2>&1

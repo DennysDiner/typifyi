@@ -1,0 +1,16 @@
+# Alert routing. Channels: ntfy | email | stdout. Secrets come from env vars (see README).
+# Which channel Kurt wants (ntfy vs email) was to be asked; default sends to every channel configured
+# by env vars, so set only the ones you want.
+channels: [ntfy, email, stdout]
+immediate:
+  tier1_new_release: true
+  watchlist_match: true
+  removal_or_edit: true
+  adapter_failing_24h: true
+  source_blocked: true
+  application_deadlines: true
+  deemed_refusal: true
+digest:
+  enabled: true
+  hour_utc: 21          # 07:00 AEST / 08:00 AEDT
+deadline_alert_working_days_before: [5, 2, 0]

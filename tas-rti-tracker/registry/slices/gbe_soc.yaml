@@ -1,0 +1,690 @@
+# Slice (b): Tasmanian Government Business Enterprises (GBE Act 1995), State-owned companies (SOCs)
+# and separately captured subsidiaries / edge-case bodies, for the RTI Act 2009 (Tas) registry.
+#
+# EVIDENCE NOTES (read before relying on this file)
+# - Network: all *.tas.gov.au, hydro.com.au, tasnetworks.com.au, abc.net.au etc. are egress-blocked.
+#   The ONLY evidence is WebSearch output. That tool returns result titles + URLs + a short
+#   model-written summary of the result pages (not raw page text). "snippet_verified" below means the
+#   fact or URL appeared in that WebSearch output (URLs verbatim in the result list). Facts taken only
+#   from the summary text are tagged "snippet_verified (search summary)"; treat them as weaker than a URL.
+# - Search budget: the session-wide WebSearch cap (200) was hit after 34 successful searches in this
+#   slice (the target was 50+). Searches NOT run because of this are listed at the bottom under
+#   "queries_not_run". Everything not seen in a result is tagged memory or inferred.
+# - Statutory basis for the whole slice (RTI Act 2009 s 5, "public authority"):
+#   snippet_verified (search summary; result URL
+#   https://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/tas/consol_act/rtia2009234/s5.html):
+#   the s 5 definition of "public authority" includes "a Government Business Enterprise within the meaning of
+#   the Government Business Enterprises Act 1995", "a State-owned company" and "a council-owned company".
+#   The paragraph letters of those limbs and the exact wording of the "State-owned company" definition were
+#   NOT seen -> UNCERTAIN. Whether a wholly-owned subsidiary of a GBE/SOC (e.g. Momentum Energy) meets the
+#   "State-owned company" definition was NOT seen -> UNCERTAIN.
+# - Carve-outs: s 6(1) excludes information held by listed persons/bodies (Governor, courts, tribunals,
+#   Integrity Commission, Ombudsman, Auditor-General, DPP, Solicitor-General, etc.) unless it relates to
+#   administration; a search summary stated Tascorp and MAIB are NOT in the s 6(1) list and no GBE/SOC was
+#   named among the 17 excluded bodies (snippet_verified, search summary; weak - list not seen in full).
+#   Commercial protection for GBEs/SOCs is via the s 38 exemption ("information relating to business affairs
+#   of public authority" - competitive disadvantage for a public authority engaged in trade or commerce)
+#   (snippet_verified, search summary; result URL
+#   https://www.ombudsman.tas.gov.au/right-to-information/reasons-for-decisions/reasons-for-decisions-folder-2016-current/section-37-business-affairs-of-a-third-party).
+#   That is an exemption, not an exclusion, so it does not change rti_status.
+# - Disclosure logs: a March 2026 House of Assembly motion asked GBEs/SOCs to set up RTI disclosure logs; the
+#   Premier wrote to GBEs/SOCs in mid-April 2026 asking them to publish RTI releases within 48 hours. ABC
+#   (2026-05-20, https://www.abc.net.au/news/2026-05-20/tas-government-businesses-defy-premier/106700726)
+#   reported: "TasTAFE, Hydro and Sustainable Timbers Tasmania were publishing disclosure logs, while TasRacing,
+#   Aurora Energy and the Public Trustee would set them up - the other nine did not respond"; the Premier asked
+#   Justice to draft RTI Act amendments compelling GBEs to keep a log. The same summary says the statutory
+#   requirement to keep a public disclosure register applies to departments but "does not apply to Government
+#   Business Enterprises or state-owned companies" (all snippet_verified, search summary). The names of "the
+#   other nine" were NOT seen individually.
+# - Government Business Governance Reforms Bill 2026 (second tranche) is in progress (Treasury page
+#   https://www.treasury.tas.gov.au/government-businesses/government-business-governance-reform/government-business-governance-reforms-bill-2026,
+#   snippet_verified URL). Search summary did not show any RTI content in it.
+# - Privatisation review (May 2025, then-Treasurer Barnett; snippet_verified search summary, Pulse Tasmania):
+#   retained = PAHSMA, Tascorp, Tasracing, TasRail, Entura, Public Trustee, TT-Line, Hydro Tasmania;
+#   still under assessment = STT, MAIB, Aurora Energy, Metro Tasmania, Tasmanian Irrigation, TasNetworks, TasPorts.
+#   A sale would change rti_status; re-check each record for "active".
+#
+# DEFERRED / NOT RECORDED HERE (to avoid duplicating slice a) - none of these were checked by search:
+# - Homes Tasmania: statutory authority (Homes Tasmania Act 2022) - not a GBE (memory). Leave to slice a.
+# - Macquarie Point Development Corporation: statutory authority under Macquarie Point Development Corporation
+#   Act 2012, not listed in GBE Act Sch 1 (memory). Not in the Treasury GBE/SOC lists seen this session
+#   (snippet_verified negative, weak). Leave to slice a.
+# - Stadiums Tasmania: statutory authority under Stadiums Tasmania Act 2022 (memory); not in the Treasury lists
+#   seen. Leave to slice a.
+# - ReCFIT (Renewables, Climate and Future Industries Tasmania): a division of the Department of State Growth
+#   (memory); covered by State Growth's RTI arrangements in slice a.
+# - "Tasmanian Development and Resources": no current body of this name is known (memory); the Tasmanian
+#   Development Authority / Tasmanian Development Board are statutory, not GBEs. Not searched.
+# - "Tasmanian Energy": no current GBE/SOC of this name known (memory). Not searched.
+# - TasTAFE: named in the ABC disclosure-log story alongside GBEs, but it is a statutory authority
+#   (TasTAFE (Skills and Training Business) Act 2021, memory). Leave to slice a.
+
+authorities:
+  - id: hydro
+    name: Hydro Tasmania
+    aliases: [Hydro-Electric Corporation, Hydro-Electric Commission, Hydro Tasmania Group]
+    type: gbe
+    legal_name: Hydro-Electric Corporation (ABN 48 072 377 158)
+    enabling_act: Hydro-Electric Corporation Act 1995
+    rti_status: full
+    rti_status_basis: "RTI Act 2009 s 5 'public authority' includes a GBE within the meaning of the GBE Act 1995 (snippet_verified, search summary of austlii s5 result; paragraph letter not seen). Hydro's own RTI page states the Act applies to it as a GBE (snippet_verified, search summary). GBE status: Treasury-document search listed 'Hydro-Electric Corporation' among GBEs (snippet_verified, search summary). Not in s 6(1) exclusions (weak, search summary)."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: [Treasurer, Minister for Energy and Renewables]
+    parent_id: null
+    rti_page_url: "https://www.hydro.com.au/about-us/our-governance/right-to-information"
+    rti_page_url_evidence: snippet_verified
+    disclosure_log_url: "https://www.hydro.com.au/about-us/our-governance/right-to-information/right-to-information-disclosures"
+    disclosure_log_url_evidence: "snippet_verified (result URL, title 'Right to Information disclosures'); a second result URL https://www.hydro.com.au/right-information-disclosures (title 'Right to Information disclosures | Hydro Tasmania') was also returned - likely an alias/redirect (inferred). ABC 2026-05-20 cited Hydro's log as an example (snippet_verified, search summary)."
+    disclosure_log_format: html_page_with_pdf_attachments
+    rti_contact_email: null
+    annual_report_url: "https://www.hydro.com.au/sites/default/files/2026-01/hydro-tasmania-annual-report-2025.pdf"
+    website: "https://www.hydro.com.au"
+    source_of_listing:
+      - "Treasury Government Businesses list (snippet_verified, search summary; result set incl. https://www.treasury.tas.gov.au/government-businesses and https://www.treasury.tas.gov.au/government-businesses/tasmanian-government-businesses)"
+      - "GBE Act 1995 Sch 1 (memory)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Disclosure log format inferred from result URLs pointing at PDF decision letters (e.g. /docs/default-source/about-us/our-governance/request-to-information-(rti)/...pdf and /sites/default/files/2026-02/16-06-23-rti-decision-letter-...pdf), i.e. site migrated to a new CMS c. 2026 - old /docs/default-source/ links may break. Annual Report 2024-25 PDF URL seen in results (title 'Powering Tasmania for generations Annual Report 2024-25'). Portfolio minister title is memory (2025 Rockliff ministry). Renamed from Hydro-Electric Commission to Hydro-Electric Corporation 1998 (memory). Group includes Momentum Energy (subsidiary company) and Entura (division). Retained in public hands per May 2025 review (search summary). AETV Pty Ltd (Tamar Valley Power Station) is a Hydro subsidiary per memory - not searched; possible extra subsidiary record."
+    queries:
+      - 'Hydro Tasmania "right to information"'
+      - 'Hydro Tasmania "disclosure log"'
+      - 'Hydro Tasmania annual report 2024-25 Momentum Energy Entura subsidiaries'
+      - 'Treasury Tasmania "Government Business Enterprises" list'
+      - '"Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp Port Arthur'
+
+  - id: entura
+    name: Entura
+    aliases: [Hydro Tasmania Consulting]
+    type: other
+    legal_name: Hydro-Electric Corporation trading as Entura
+    enabling_act: Hydro-Electric Corporation Act 1995 (via parent)
+    rti_status: full
+    rti_status_basis: "Not a separate legal entity: search summary states Hydro-Electric Corporation (ABN 48 072 377 158) 'trades as Hydro Tasmania and/or Entura' and Entura 'operates as a department within Hydro, under the same ... ABN' (snippet_verified, search summary; results incl. https://entura.com.au/privacy-policy/ and https://www.hydro.com.au/privacy-policy). Its information is therefore Hydro's information and RTI applies through the parent GBE (inferred)."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: [Treasurer, Minister for Energy and Renewables]
+    parent_id: hydro
+    rti_page_url: null
+    rti_page_url_evidence: null
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "none seen; applications presumably go to Hydro Tasmania (inferred)"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://entura.com.au"
+    source_of_listing:
+      - "Hydro group structure (snippet_verified, search summary: 'Entura is a division of Hydro Tasmania')"
+      - "May 2025 GBE review retained list names Entura separately (snippet_verified, search summary, Pulse Tasmania)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Record kept only so the registry resolves the name; do NOT count as a separate public authority. Formerly Hydro Tasmania Consulting (memory, renamed c. 2010). Overseas subsidiaries (e.g. an Indian entity) exist per memory - not searched, and would not be RTI bodies (UNCERTAIN). Its future was questioned in the privatisation debate (Pulse Tasmania result title)."
+    queries:
+      - 'Entura "trading name" OR "division of" "Hydro-Electric Corporation" ABN'
+      - 'Hydro Tasmania annual report 2024-25 Momentum Energy Entura subsidiaries'
+
+  - id: momentum
+    name: Momentum Energy
+    aliases: [Momentum Energy Pty Ltd]
+    type: subsidiary
+    legal_name: Momentum Energy Pty Ltd
+    enabling_act: Corporations Act 2001 (Cth) (company; memory)
+    rti_status: UNCERTAIN
+    rti_status_basis: "Wholly-owned subsidiary of Hydro-Electric Corporation (snippet_verified, search summary: '100% owned subsidiary of Hydro Tasmania'). Not a GBE in its own right and not in the Treasury SOC list seen. Whether it is a 'State-owned company' (or otherwise a 'public authority') under RTI Act s 5 depends on definition wording that was NOT seen; no Momentum RTI page, policy or disclosure found in search ('\"Momentum Energy\" \"right to information\" Tasmania' returned nothing specific). UNCERTAIN."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: []
+    parent_id: hydro
+    rti_page_url: null
+    rti_page_url_evidence: "searched, none found"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "searched, none found"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.momentumenergy.com.au"
+    source_of_listing:
+      - "Hydro Tasmania group (snippet_verified, search summary; joint modern slavery statement URL https://www.momentumenergy.com.au/docs/default-source/default-document-library/hydro-tasmania-group-modern-slavery-statement.pdf?sfvrsn=1c26ca3e_3)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Melbourne-based mainland energy retailer (Vic/NSW/SA/Qld per search summary). Shareholder is Hydro, not Ministers directly, so shareholder_ministers left empty (inferred). A Victorian ESC retail licence page exists (result URL). Key open question for the registry: does the RTI Act s 5 'State-owned company' limb (or GBE Act definitions it borrows) extend to subsidiaries of GBEs? Resolve from the Act text when the network is opened."
+    queries:
+      - '"Momentum Energy" "right to information" Tasmania'
+      - '"Momentum Energy Pty Ltd" wholly owned subsidiary "Hydro-Electric Corporation" Victoria'
+      - 'Hydro Tasmania annual report 2024-25 Momentum Energy Entura subsidiaries'
+
+  - id: tasnetworks
+    name: TasNetworks
+    aliases: [Tasmanian Networks Pty Ltd, Tasmanian Networks]
+    type: soc
+    legal_name: Tasmanian Networks Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; State-owned company under Tasmanian electricity legislation (Electricity Companies Act 1997 as amended - memory, UNCERTAIN)"
+    rti_status: full
+    rti_status_basis: "TasNetworks RTI policy: TasNetworks is 'a public authority as defined in the Act' and the RTI Act covers 'government entities, including state owned companies' (snippet_verified, search summary of https://www.tasnetworks.com.au/Documents/Manual-documents/Policies/Right-to-Information-Policy). RTI Act s 5 includes a State-owned company (snippet_verified, search summary; limb letter not seen)."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: [Treasurer, Minister for Energy and Renewables]
+    parent_id: null
+    rti_page_url: "https://www.tasnetworks.com.au/Documents/Manual-documents/Policies/Right-to-Information-Policy"
+    rti_page_url_evidence: "snippet_verified (result URL; it is the RTI policy document, linked from https://www.tasnetworks.com.au/about-us/policies - also snippet_verified)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "none seen. A search summary said TasNetworks was among the businesses that had not responded to the Premier's disclosure-log request (UNCERTAIN - the ABC 'other nine' were not individually named in any output seen)."
+    disclosure_log_format: unknown
+    rti_contact_email: RTIOfficer@tasnetworks.com.au
+    annual_report_url: null
+    website: "https://www.tasnetworks.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'Tasmanian Networks Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Email and postal address (Right to Information Officer, PO Box 606, Moonah TAS 7009) from search summary of the RTI policy (snippet_verified, search summary). Formed 1 July 2014 from the merger of Transend Networks and Aurora Energy's distribution business (memory; Wikipedia 'Transend Networks' result returned but content not seen). Under privatisation assessment (May 2025, search summary). Marinus Link Pty Ltd was a TasNetworks subsidiary until restructured (memory) - see marinuslink."
+    queries:
+      - 'TasNetworks "right to information" disclosure'
+      - 'ABC Tasmania government businesses disclosure logs RTI which businesses publish TasNetworks TasPorts TasRail 2026'
+      - '"State-owned companies" Tasmania Treasury list'
+
+  - id: aurora
+    name: Aurora Energy
+    aliases: [Aurora Energy Pty Ltd, Aurora]
+    type: soc
+    legal_name: Aurora Energy Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; established under Electricity Companies Act 1997 (Tas) (memory)"
+    rti_status: full
+    rti_status_basis: "Aurora's RTI material states the RTI Act 2009 'provides for greater public access to information held by government entities, including Aurora' (snippet_verified, search summary of https://auroraenergy.com.au/about/who-we-are/about-us-charters-policies). RTI Act s 5 State-owned company limb (snippet_verified, search summary; letter not seen)."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: [Treasurer, Minister for Energy and Renewables]
+    parent_id: null
+    rti_page_url: "https://auroraenergy.com.au/about/who-we-are/about-us-charters-policies"
+    rti_page_url_evidence: "snippet_verified (result URL; RTI content summarised from it). Policy PDF also seen: https://www.auroraenergy.com.au/sites/default/files/2025-02/RightToInformationPolicy-v8-0.pdf (v8.0, approved 17 Oct 2024)."
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "Search summary says 'Aurora Energy's previous disclosures under Right to Information are available on their website', but no log URL returned. ABC 2026-05-20: Aurora 'would set them up' (snippet_verified, search summary)."
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.auroraenergy.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'Aurora Energy Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Application fee $49.00 as at 1 July 2026 (search summary). Tasmanian electricity/gas retailer; distribution business moved to TasNetworks 1 July 2014 (memory). Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - 'Aurora Energy Tasmania "right to information"'
+      - 'Aurora Energy "disclosure log" OR "RTI disclosures" auroraenergy.com.au'
+
+  - id: tasports
+    name: TasPorts
+    aliases: [Tasmanian Ports Corporation Pty Ltd, Tasmanian Ports Corporation]
+    type: soc
+    legal_name: Tasmanian Ports Corporation Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Tasmanian Ports Corporation Act 2005 (memory)"
+    rti_status: full
+    rti_status_basis: "TasPorts governance page: 'As a State Owned Company, TasPorts is required by the Right to Information Act 2009 (RTI Act) to make information available to the public through proactive disclosure' (snippet_verified, search summary of https://tasports.com.au/corporate). RTI Act s 5 State-owned company limb."
+    portfolio_minister: Minister for Infrastructure and Transport
+    shareholder_ministers: [Treasurer, Minister for Infrastructure and Transport]
+    parent_id: null
+    rti_page_url: "https://tasports.com.au/corporate"
+    rti_page_url_evidence: "snippet_verified (Governance page). Application form: https://tasports.com.au/volumes/documents/Governance/Right-to-Information-Form.pdf (snippet_verified)."
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "UNCERTAIN. Search summary of the Governance page says released information 'will be published online within 48 hours' and is 'accessible via the disclosure log', so a log appears to exist on or under https://tasports.com.au/corporate, but no distinct log URL was returned. A search summary also (without clear support) placed TasPorts among the nine non-responders as of May 2026 - conflicting."
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://tasports.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'Tasmanian Ports Corporation Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Fee 25 fee units ($47.75 'as at 1 July', year unspecified) per search summary. Right to Know body page: https://www.righttoknow.org.au/body/tasports (snippet_verified). Formed 2006 by merger of the four regional port companies (memory). Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - 'TasPorts "right to information" "disclosure log"'
+      - 'tasports.com.au "disclosure log" right to information released documents'
+
+  - id: tasrail
+    name: TasRail
+    aliases: [Tasmanian Railway Pty Ltd]
+    type: soc
+    legal_name: Tasmanian Railway Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Rail Company Act 2009 (memory)"
+    rti_status: full
+    rti_status_basis: "TasRail RTI page: 'As a State-owned company, Tasmanian Railway Pty Ltd (TasRail) is required by the RTI Act to make information available to the public' (snippet_verified, search summary of https://www.tasrail.com.au/right-to-information). RTI Act s 5 State-owned company limb."
+    portfolio_minister: Minister for Infrastructure and Transport
+    shareholder_ministers: [Treasurer, Minister for Infrastructure and Transport]
+    parent_id: null
+    rti_page_url: "https://www.tasrail.com.au/right-to-information"
+    rti_page_url_evidence: snippet_verified
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "none seen; a search summary suggested TasRail had not responded to the Premier's request (UNCERTAIN, not individually named in output seen)"
+    disclosure_log_format: unknown
+    rti_contact_email: NAA@tasrail.com.au
+    annual_report_url: null
+    website: "https://www.tasrail.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'Tasmanian Railway Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "rti_contact_email NAA@tasrail.com.au is from a search summary ('TasRail's preference is that requests for information be made via email to NAA@tasrail.com.au') - the address looks like a rail-access mailbox and may be a summariser error; verify before use. Retained in public hands per May 2025 review (search summary)."
+    queries:
+      - 'TasRail "right to information"'
+
+  - id: ttline
+    name: Spirit of Tasmania (TT-Line Company)
+    aliases: [TT-Line Company Pty Ltd, TT-Line, Spirit of Tasmania]
+    type: soc
+    legal_name: TT-Line Company Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; TT-Line Arrangements Act 1993 (memory)"
+    rti_status: full
+    rti_status_basis: "Search summary of Spirit of Tasmania policies page: 'TT-Line Company Pty Ltd (trading as Spirit of Tasmania) is required under the Right to Information Act 2009 to make information available to the public through proactive disclosure' (snippet_verified, search summary). RTI Act s 5 State-owned company limb."
+    portfolio_minister: Minister for Infrastructure and Transport
+    shareholder_ministers: [Treasurer, Minister for Infrastructure and Transport]
+    parent_id: null
+    rti_page_url: "https://www.spiritoftasmania.com.au/company-information/corporate-information/policies/"
+    rti_page_url_evidence: "snippet_verified (result URL; RTI statement summarised from the result set - may be on this page or https://www.spiritoftasmania.com.au/company-information/corporate-information/)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "none. ABC (search summary): TT-Line 'doesn't have to keep a public log of RTI requests'; the March 2026 motion named TT-Line and Tasracing. Summary also says TT-Line publishes some RTI releases where in the public interest - CONFLICTING/UNCERTAIN."
+    disclosure_log_format: none_known
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.spiritoftasmania.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'TT-Line Company Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Portfolio minister title is memory; historically TT-Line sat with Infrastructure and Transport. Retained in public hands per May 2025 review (search summary)."
+    queries:
+      - 'TT-Line Spirit of Tasmania "right to information" disclosure log'
+      - 'Tasmania parliament motion March 2026 state-owned businesses establish disclosure log right to information'
+
+  - id: tasirrigation
+    name: Tasmanian Irrigation
+    aliases: [Tasmanian Irrigation Pty Ltd, TI]
+    type: soc
+    legal_name: Tasmanian Irrigation Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Water Management Act 1999 / Irrigation Company Act 2011 (memory, UNCERTAIN)"
+    rti_status: full
+    rti_status_basis: "Listed as a State-owned company by Treasury (snippet_verified, search summary); RTI Act s 5 State-owned company limb (snippet_verified, search summary). Listed as an RTI body on Right to Know (https://www.righttoknow.org.au/body/tasmanian_irrigation_pty_ltd, snippet_verified). Own RTI page not seen."
+    portfolio_minister: Minister for Primary Industries and Water
+    shareholder_ministers: [Treasurer, Minister for Primary Industries and Water]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "searched; no tasmanianirrigation.com.au RTI page returned"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "searched, none found"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.tasmanianirrigation.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary: 'Tasmanian Irrigation Pty Ltd')"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Website URL is memory (not seen). Portfolio minister title is memory. Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - 'Tasmanian Irrigation "right to information"'
+
+  - id: maib
+    name: Motor Accidents Insurance Board
+    aliases: [MAIB, Tasmanian Motor Accidents Insurance Board]
+    type: gbe
+    legal_name: Motor Accidents Insurance Board
+    enabling_act: Motor Accidents (Liabilities and Compensation) Act 1973
+    rti_status: full
+    rti_status_basis: "'The Motor Accidents Insurance Board (MAIB) is a Tasmanian Government Business Enterprise' (snippet_verified, search summary of https://maib.tas.gov.au/what-is-the-maib); RTI Act s 5 GBE limb. Search summary states MAIB is not in the s 6(1) exclusion list (weak)."
+    portfolio_minister: UNCERTAIN
+    shareholder_ministers: [Treasurer]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "searched; no MAIB RTI page returned. Right to Know body: https://www.righttoknow.org.au/body/tasmanian_motor_accidents_insurance_board (snippet_verified; no requests as of July 2026)."
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "searched, none found"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://maib.tas.gov.au"
+    source_of_listing:
+      - "Treasury GBE list (snippet_verified, search summary: 'Motor Accidents Insurance Board')"
+      - "GBE Act 1995 Sch 1 (memory)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Portfolio minister UNCERTAIN (memory suggests Treasurer/Minister for Finance or Infrastructure and Transport - not seen). Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - 'Motor Accidents Insurance Board MAIB Tasmania "right to information"'
+
+  - id: publictrustee
+    name: Public Trustee
+    aliases: [Public Trustee Tasmania]
+    type: gbe
+    legal_name: Public Trustee
+    enabling_act: Public Trustee Act 1930
+    rti_status: full
+    rti_status_basis: "Public Trustee RTI page: 'as the Public Trustee is a Government Business Enterprise' within the meaning of the GBE Act 1995 (snippet_verified, search summary of https://www.publictrustee.tas.gov.au/about-us/governance/right-to-information/); RTI Act s 5 GBE limb."
+    portfolio_minister: Attorney-General
+    shareholder_ministers: [Treasurer, Attorney-General]
+    parent_id: null
+    rti_page_url: "https://www.publictrustee.tas.gov.au/about-us/governance/right-to-information/"
+    rti_page_url_evidence: snippet_verified
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "none seen; ABC 2026-05-20: Public Trustee 'would set them up' (snippet_verified, search summary). The dedicated search for its log could not run (search budget exhausted)."
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.publictrustee.tas.gov.au"
+    source_of_listing:
+      - "Treasury GBE list (snippet_verified, search summary)"
+      - "GBE Act 1995 Sch 1 (memory)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Portfolio minister (Attorney-General) is memory. Retained in public hands per May 2025 review (search summary)."
+    queries:
+      - '"Right to Information Act 2009" Tasmania "public authority" definition section 5 "Government Business Enterprise"'
+      - 'Right to Information Act 2009 Tas section 6 "does not apply" Government Business Enterprise commercial information'
+
+  - id: stt
+    name: Sustainable Timber Tasmania
+    aliases: [Forestry Tasmania, STT]
+    type: gbe
+    legal_name: Forestry Tasmania trading as Sustainable Timber Tasmania
+    enabling_act: Forest Management Act 2013
+    rti_status: full
+    rti_status_basis: "Listed as a GBE by Treasury (snippet_verified, search summary); RTI Act s 5 GBE limb (snippet_verified, search summary). ABC 2026-05-20 says STT was publishing a disclosure log (snippet_verified, search summary), consistent with RTI coverage."
+    portfolio_minister: Minister for Resources
+    shareholder_ministers: [Treasurer, Minister for Resources]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched directly (search budget exhausted)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "log exists per ABC 2026-05-20 (snippet_verified, search summary) but URL not seen; sttas.com.au blocked"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://sttas.com.au"
+    source_of_listing:
+      - "Treasury GBE list (snippet_verified, search summary: 'Sustainable Timber Tasmania')"
+      - "GBE Act 1995 Sch 1 (memory)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Trading name adopted 2017 (memory; date 2017-07-01 supplied by caller, not seen). Portfolio minister title is memory (may now be styled Minister for Business, Industry and Resources). Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - 'Treasury Tasmania "Government Businesses" Hydro Tasmania TasNetworks Aurora TasPorts TasRail TT-Line Tasmanian Irrigation MAIB Public Trustee Sustainable Timber Tasmania Tasracing'
+      - 'Tasmania parliament motion March 2026 state-owned businesses establish disclosure log right to information'
+
+  - id: metro
+    name: Metro Tasmania
+    aliases: [Metro Tasmania Pty Ltd, Metro]
+    type: soc
+    legal_name: Metro Tasmania Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Metro Tasmania Act 1997 (memory)"
+    rti_status: full
+    rti_status_basis: "Listed as a State-owned company by Treasury (snippet_verified, search summary: 'Metro Tasmania Pty Ltd'); RTI Act s 5 State-owned company limb (snippet_verified, search summary)."
+    portfolio_minister: Minister for Infrastructure and Transport
+    shareholder_ministers: [Treasurer, Minister for Infrastructure and Transport]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.metrotas.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Website URL is memory. Under privatisation assessment (May 2025, search summary)."
+    queries:
+      - '"State-owned companies" Tasmania Treasury list'
+
+  - id: tascorp
+    name: Tasmanian Public Finance Corporation
+    aliases: [Tascorp]
+    type: gbe
+    legal_name: Tasmanian Public Finance Corporation
+    enabling_act: Tasmanian Public Finance Corporation Act 1985
+    rti_status: full
+    rti_status_basis: "Listed as a GBE by Treasury (snippet_verified, search summary: 'Tasmanian Public Finance Corporation (Tascorp)'); RTI Act s 5 GBE limb. Search summary states Tascorp is not in the s 6(1) exclusion list (weak - list not seen in full)."
+    portfolio_minister: Treasurer
+    shareholder_ministers: [Treasurer]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.tascorp.com.au"
+    source_of_listing:
+      - "Treasury GBE list (snippet_verified, search summary)"
+      - "Tascorp submission to GBE reform plan: https://www.treasury.tas.gov.au/Documents/Draft%20Reform%20Plan%20Submission%20-%20Tasmanian%20Public%20Finance%20Corporation.pdf (snippet_verified URL)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Whether Tascorp is currently in GBE Act Sch 1 or governed solely by its own Act is UNCERTAIN (memory: it was brought under the GBE Act; the Treasury list seen treats it as a GBE). Sole Minister = Treasurer (memory). Website is memory. Retained in public hands per May 2025 review (search summary). Much of its information would attract s 38 (business affairs) exemptions but it is not excluded."
+    queries:
+      - '"Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp Port Arthur'
+      - '"Right to Information Act 2009" Tasmania section 6 excluded bodies "Auditor-General" "Ombudsman" "Integrity Commission" "Tasmanian Public Finance Corporation" OR "Motor Accidents Insurance Board"'
+
+  - id: pahsma
+    name: Port Arthur Historic Site Management Authority
+    aliases: [PAHSMA, Port Arthur Historic Sites]
+    type: gbe
+    legal_name: Port Arthur Historic Site Management Authority
+    enabling_act: Port Arthur Historic Site Management Authority Act 1987
+    rti_status: full
+    rti_status_basis: "Listed as a GBE by Treasury ('Port Arthur Historic Management Authority', snippet_verified, search summary); RTI Act s 5 GBE limb. Also caught as a statutory body established under an Act (memory)."
+    portfolio_minister: UNCERTAIN
+    shareholder_ministers: [Treasurer]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://portarthur.org.au"
+    source_of_listing:
+      - "Treasury GBE list (snippet_verified, search summary)"
+      - "GBE Act 1995 Sch 1 (memory)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Portfolio minister UNCERTAIN (memory: Minister for Environment/Parks/Heritage; historically Tourism). Manages Port Arthur, Coal Mines and Cascades Female Factory sites (memory). Website is memory. Retained in public hands per May 2025 review (search summary)."
+    queries:
+      - '"Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp Port Arthur'
+
+  - id: tasracing
+    name: Tasracing
+    aliases: [Tasracing Pty Ltd]
+    type: soc
+    legal_name: Tasracing Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Racing (Tasracing Pty Ltd) Act 2009 (memory)"
+    rti_status: full
+    rti_status_basis: "Listed as a State-owned company by Treasury (snippet_verified, search summary: 'Tasracing Pty Ltd'); RTI Act s 5 State-owned company limb. Operates an RTI disclosure log (URL snippet_verified)."
+    portfolio_minister: Minister for Racing
+    shareholder_ministers: [Treasurer, Minister for Racing]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: null
+    disclosure_log_url: "https://tasracing.com.au/corporate/right-to-information-disclosure-log"
+    disclosure_log_url_evidence: "snippet_verified (result URL, title 'Right To Information Disclosure Log'). ABC 2026-05-20 (search summary): Tasracing 'would set them up' - so the log is likely new (post-May 2026)."
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://tasracing.com.au"
+    source_of_listing:
+      - "Treasury SOC list (snippet_verified, search summary)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Named in the March 2026 parliamentary disclosure-log motion (search summary). Retained in public hands per May 2025 review (search summary)."
+    queries:
+      - 'tasports.com.au "disclosure log" right to information released documents'
+      - '"State-owned companies" Tasmania Treasury list'
+
+  - id: taswater
+    name: TasWater
+    aliases: [Tasmanian Water and Sewerage Corporation Pty Ltd, Tasmanian Water and Sewerage Corporation]
+    type: other
+    legal_name: Tasmanian Water and Sewerage Corporation Pty Ltd
+    enabling_act: Water and Sewerage Corporation Act 2012
+    rti_status: UNCERTAIN
+    rti_status_basis: "Not a GBE and not in the Treasury SOC list seen. Audit Tasmania reports it alongside, but separately from, Government Businesses ('Government Businesses and Tasmanian Water and Sewerage Corporation Pty Ltd 2016-17', snippet_verified URL). RTI Act s 5 includes 'a council-owned company' (snippet_verified, search summary), which likely captures TasWater as a company owned by the 29 councils, but the definition's wording and whether partial State shareholding changes the analysis were NOT seen. No TasWater RTI page was searched (budget exhausted). UNCERTAIN."
+    portfolio_minister: null
+    shareholder_ministers: []
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "not searched (search budget exhausted)"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.taswater.com.au"
+    source_of_listing:
+      - "Audit Tasmania: https://www.audit.tas.gov.au/publication/government-businesses-and-tasmanian-water-and-sewerage-corporation-pty-ltd-2016-17/ (snippet_verified URL)"
+      - "Wikipedia 'TasWater' result returned for RTI s 5 query (content not seen)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Owned by Tasmanian councils; the State took up a minority shareholding under a 2018 agreement (memory, UNCERTAIN - not seen). Formed 1 July 2013 from merger of Ben Lomond Water, Cradle Mountain Water, Southern Water and the Onstream service company (memory). May belong in the council/local-government slice instead - dedupe. Website is memory."
+    queries:
+      - '"public authority" "Right to Information Act 2009" Tasmania "State-owned company" "Government Business Enterprise within the meaning"'
+      - '"Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp Port Arthur'
+
+  - id: marinuslink
+    name: Marinus Link
+    aliases: [Marinus Link Pty Ltd]
+    type: other
+    legal_name: Marinus Link Pty Ltd
+    enabling_act: Corporations Act 2001 (Cth) (memory)
+    rti_status: UNCERTAIN
+    rti_status_basis: "Not searched (search budget exhausted). Memory: formerly a wholly-owned TasNetworks subsidiary; since 2024 jointly owned by the Commonwealth (~49%), Victoria (~33.3%) and Tasmania (~17.7%). With Tasmania a minority owner it is unlikely to be a Tasmanian 'State-owned company', but the RTI Act s 5 wording was not seen. Commonwealth FOI Act coverage also unresolved. UNCERTAIN."
+    portfolio_minister: Minister for Energy and Renewables
+    shareholder_ministers: []
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: "not searched"
+    disclosure_log_url: null
+    disclosure_log_url_evidence: "not searched"
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: "https://www.marinuslink.com.au"
+    source_of_listing:
+      - "caller's candidate list (not verified)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: true
+    notes: "Whole record is memory. Portfolio link to Tas Energy Minister is memory. Website is memory. High-priority item for a future verification run."
+    queries: []
+
+  - id: transend
+    name: Transend Networks
+    aliases: [Transend Networks Pty Ltd, Transend]
+    type: soc
+    legal_name: Transend Networks Pty Ltd
+    enabling_act: "Corporations Act 2001 (Cth) company; Electricity Companies Act 1997 (memory)"
+    rti_status: full
+    rti_status_basis: "Historic SOC; was an RTI public authority under the State-owned company limb until merged (memory)."
+    portfolio_minister: Minister for Energy
+    shareholder_ministers: [Treasurer, Minister for Energy]
+    parent_id: null
+    rti_page_url: null
+    rti_page_url_evidence: null
+    disclosure_log_url: null
+    disclosure_log_url_evidence: null
+    disclosure_log_format: unknown
+    rti_contact_email: null
+    annual_report_url: null
+    website: null
+    source_of_listing:
+      - "Wikipedia 'Transend Networks' result URL https://en.wikipedia.org/wiki/Transend_Networks (snippet_verified URL; content not seen)"
+    last_verified: null
+    verification_status: network_blocked_search_only
+    active: false
+    notes: "Historical only. Merged with Aurora Energy's distribution network into Tasmanian Networks Pty Ltd, 1 July 2014 (memory). Successor: tasnetworks."
+    queries:
+      - 'Treasury Tasmania "Government Businesses" Hydro Tasmania TasNetworks Aurora TasPorts TasRail TT-Line Tasmanian Irrigation MAIB Public Trustee Sustainable Timber Tasmania Tasracing'
+
+name_history:
+  - id: stt
+    former_name: Forestry Tasmania
+    effective_to: "2017-07-01"
+    evidence: "memory (date supplied by caller; not seen in any result). Legal name remains Forestry Tasmania (memory)."
+  - id: hydro
+    former_name: Hydro-Electric Commission
+    effective_to: "1998"
+    evidence: "memory (search summary said Hydro Tasmania was 'formerly known as the Hydro-Electric Commission', snippet_verified, search summary; date is memory)"
+  - id: tasnetworks
+    former_name: Transend Networks Pty Ltd (transmission) and Aurora Energy Pty Ltd distribution business
+    effective_to: "2014-07-01"
+    evidence: "memory (Wikipedia Transend Networks and TasNetworks result URLs returned, content not seen)"
+  - id: entura
+    former_name: Hydro Tasmania Consulting
+    effective_to: "2010"
+    evidence: "memory"
+  - id: taswater
+    former_name: "Ben Lomond Water, Cradle Mountain Water, Southern Water (council-owned regional corporations)"
+    effective_to: "2013-07-01"
+    evidence: "memory"
+
+# queries_run (all 34 successful WebSearch calls, in order):
+#  1 Treasury Tasmania "Government Business Enterprises" list
+#  2 "Government Business Enterprises Act 1995" schedule 1
+#  3 "State-owned companies" Tasmania Treasury list
+#  4 "Right to Information Act 2009" Tasmania "public authority" definition section 5 "Government Business Enterprise"
+#  5 "public authority" "Right to Information Act 2009" Tasmania "State-owned company" "Government Business Enterprise within the meaning"
+#  6 Right to Information Act 2009 Tas section 6 "does not apply" Government Business Enterprise commercial information
+#  7 Tasmania Right to Information Act "section 38" "competitive commercial activities" public authority exempt information
+#  8 Treasury Tasmania "Government Businesses" Hydro Tasmania TasNetworks Aurora TasPorts TasRail TT-Line Tasmanian Irrigation MAIB Public Trustee Sustainable Timber Tasmania Tasracing
+#  9 Tasmania government businesses privatisation review 2026 Treasurer Abetz Aurora Metro sale
+# 10 "Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp Port Arthur
+# 11 Hydro Tasmania "right to information"
+# 12 Hydro Tasmania "disclosure log"
+# 13 "Tasmanian government businesses defy premier's call for public disclosure logs"
+# 14 ABC Tasmania government businesses disclosure logs RTI which businesses publish TasNetworks TasPorts TasRail 2026
+# 15 Tasmania parliament motion March 2026 state-owned businesses establish disclosure log right to information
+# 16 "Government Business Governance Reforms Bill 2026" right to information disclosure log
+# 17 Rockliff amend legislation force government businesses disclose RTI documents disclosure log GBE
+# 18 "Right to Information Act 2009" Tasmania "State-owned company" definition "Government Business Enterprises Act 1995" section 3 "State-owned company"
+# 19 Tasmania "Right to Information Act" section 6 excluded "information in the possession of" "unless the information relates to the administration" list bodies
+# 20 Ombudsman Tasmania RTI manual "Government Business Enterprise" "State-owned company" public authority "controlling interest"
+# 21 "Right to Information Act 2009" Tasmania section 6 excluded bodies "Auditor-General" "Ombudsman" "Integrity Commission" "Tasmanian Public Finance Corporation" OR "Motor Accidents Insurance Board"
+# 22 Hydro Tasmania annual report 2024-25 Momentum Energy Entura subsidiaries
+# 23 "Momentum Energy" "right to information" Tasmania
+# 24 Entura "trading name" OR "division of" "Hydro-Electric Corporation" ABN
+# 25 "Momentum Energy Pty Ltd" wholly owned subsidiary "Hydro-Electric Corporation" Victoria
+# 26 TasNetworks "right to information" disclosure
+# 27 Aurora Energy Tasmania "right to information"
+# 28 Aurora Energy "disclosure log" OR "RTI disclosures" auroraenergy.com.au
+# 29 TasPorts "right to information" "disclosure log"
+# 30 tasports.com.au "disclosure log" right to information released documents
+# 31 TasRail "right to information"
+# 32 TT-Line Spirit of Tasmania "right to information" disclosure log
+# 33 Tasmanian Irrigation "right to information"
+# 34 Motor Accidents Insurance Board MAIB Tasmania "right to information"
+#  (a 35th query was refused by the session search cap.)
+# queries_not_run (budget exhausted - run these first when budget/network allows):
+#  - Public Trustee Tasmania "right to information" disclosure log   (refused by budget cap)
+#  - "Sustainable Timber Tasmania" "right to information" / "disclosure log"
+#  - "Metro Tasmania" "right to information" / "disclosure log"
+#  - "Tascorp" OR "Tasmanian Public Finance Corporation" "right to information"
+#  - "Port Arthur Historic Site Management Authority" "right to information"
+#  - TasWater "right to information" "disclosure log"; "TasWater" "public authority" RTI
+#  - "Marinus Link Pty Ltd" shareholders Commonwealth Victoria Tasmania; "Marinus Link" "right to information" OR "freedom of information"
+#  - "Macquarie Point Development Corporation" "statutory authority" OR "Government Business Enterprise"
+#  - "Stadiums Tasmania" "statutory authority" "right to information"
+#  - Tasracing "right to information" (RTI page)
+#  - "<body>" annual report 2024-25 for each body
+#  - "Right to Information Act 2009" "State-owned company means"
+#  - "Government Business Enterprises Act 1995" "Schedule 1" "Part 1" "Part 2" list of names

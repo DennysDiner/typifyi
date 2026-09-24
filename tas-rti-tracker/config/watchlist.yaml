@@ -1,0 +1,28 @@
+# Campaign keyword watchlist. A new release whose title, listing text or extracted text matches any
+# keyword of a campaign is auto-tagged to that campaign and alerted immediately (brief §5).
+# Matching is case-insensitive whole-word/phrase. Kurt edits this file; `rti watchlist sync` reloads.
+campaigns:
+  - id: forestry
+    name: Native forestry / STT
+    keywords: ["Sustainable Timber Tasmania", "STT", "Forestry Tasmania", "native forest", "forestry", "Forest Practices Authority", "FPA", "swift parrot", "coupe"]
+  - id: nyrstar
+    name: Nyrstar / Trafigura grant probity
+    keywords: ["Nyrstar", "Trafigura", "Hobart smelter", "zinc works"]
+  - id: liberty_bell_bay
+    name: Liberty Bell Bay / GFG
+    keywords: ["Liberty Bell Bay", "GFG", "Gupta", "Bell Bay", "TEMCO", "manganese"]
+  - id: group6
+    name: Group 6 Metals
+    keywords: ["Group 6 Metals", "Dolphin tungsten", "King Island Scheelite"]
+  - id: pokies
+    name: Pokies / gaming reform
+    keywords: ["poker machine", "poker machines", "pokies", "gaming", "Gaming Control Act", "Federal Group", "Wrest Point", "Country Club", "electronic gaming machine", "EGM", "Tasmanian Liquor and Gaming Commission"]
+  - id: data_centre
+    name: Data-centre energy
+    keywords: ["data centre", "data center", "hyperscale", "Firmus", "AI factory"]
+  - id: justice_performance
+    name: Justice system performance
+    keywords: ["Legal Aid", "Legal Aid Commission", "court backlog", "Risdon", "Tasmania Prison Service", "custodial", "Magistrates Court delay"]
+  - id: energy
+    name: Energy (Hydro/Marinus/TasNetworks)
+    keywords: ["Marinus", "Hydro Tasmania", "TasNetworks", "Battery of the Nation", "Basslink", "North West Transmission"]

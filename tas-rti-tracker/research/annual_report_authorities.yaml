@@ -1,0 +1,99 @@
+# Tasmanian RTI Annual Report: authorities recovered via WebSearch only (2026-09-24).
+# See annual_report_crosscheck.md for full context, caveats and queries.
+# HONEST SUMMARY: 0 per-authority rows recovered from any report. Only 2022-23 sector totals were recovered.
+# Evidence labels: snippet_verified | inferred | memory | UNCERTAIN (see AGENT_CONSTRAINTS.md)
+
+landing_page:
+  url: "https://www.justice.tas.gov.au/about-us/reports-publications/reports/annual-reports/right-to-information-annual-reports"
+  evidence: snippet_verified
+
+reports:
+  - year: "2024-25"
+    source_url: null   # link text "Right to Information Annual Report 2024-25 (PDF, 681.4 KB)" seen; href not seen
+    evidence: snippet_verified   # existence and file size only
+    sector_totals: {}
+    authorities: []
+
+  - year: "2023-24"
+    source_url: null
+    evidence: null   # no report-specific result found
+    sector_totals: {}
+    authorities: []
+
+  - year: "2022-23"
+    source_url: null
+    evidence: snippet_verified   # figures from Examiner coverage of the tabled report, not from the PDF
+    secondary_source_url: "https://www.examiner.com.au/story/8632212/right-to-information-requests-soar-in-tasmania/"
+    sector_totals:
+      departments: {applications_received: 1753, evidence: snippet_verified}
+      councils: {applications_received: 171, evidence: snippet_verified}
+      other_public_authorities: {applications_received: 190, evidence: snippet_verified}
+      ministers: {applications_received: 51, evidence: snippet_verified}
+      total: {applications_received: 2165, evidence: snippet_verified, note: "equals the sum of the four sectors (inferred check); +10.6% on 2021-22, +55% on 2020-21 (snippet_verified)"}
+    headline:
+      refused_in_full: {value: "close to one-fifth of all applications", evidence: snippet_verified}
+      exemptions_applied: {value: "more than half of determined applications", evidence: snippet_verified}
+      released_in_full: {value: "about one-quarter", evidence: snippet_verified}
+      decided_within_20_working_days: {value: "61%", evidence: snippet_verified}
+    authorities: []
+
+  - year: "2021-22"
+    source_url: null
+    evidence: inferred
+    sector_totals:
+      total: {applications_received: 1958, evidence: inferred, note: "2165 / 1.106; approximate"}
+    authorities: []
+
+  - year: "2020-21"
+    source_url: null
+    evidence: snippet_verified
+    sector_totals:
+      departments: {applications_received: 1108, evidence: snippet_verified}
+      ministers: {applications_received: 16, evidence: snippet_verified}
+      total: {applications_received: 1397, evidence: inferred, note: "2165 / 1.55; approximate"}
+    authorities: []
+
+  - year: "2019-20"
+    source_url: null
+    evidence: snippet_verified   # ABC 2022-04-01 analysis
+    secondary_source_url: "https://www.abc.net.au/news/2022-04-01/tasmania-right-to-information-delays-analysis/100955744"
+    headline:
+      refused_in_full: {value: "more than 21%", evidence: snippet_verified}
+      late: {value: "more than 25% took too long to be decided", evidence: snippet_verified}
+    authorities: []
+
+  - year: "2014-15"
+    source_url: "https://www.justice.tas.gov.au/__data/assets/pdf_file/0011/353756/Right_to_Information_Annual_Report_2014-15.pdf"
+    evidence: snippet_verified
+    authorities: []
+
+# NOT from any annual report: bodies seen in search results as having RTI pages or appearing in Ombudsman RTI decisions.
+# Use only as a seed list for name-matching the parser output.
+candidate_authorities_not_from_report:
+  - {name: "Department of Justice", evidence: snippet_verified}
+  - {name: "Department of Premier and Cabinet", evidence: snippet_verified}
+  - {name: "Department for Education, Children and Young People", evidence: snippet_verified}
+  - {name: "Department of Health", evidence: snippet_verified}
+  - {name: "Tasmania Police", evidence: snippet_verified}
+  - {name: "Department of State Growth", evidence: snippet_verified}
+  - {name: "Department of Natural Resources and Environment Tasmania", evidence: snippet_verified}
+  - {name: "Department of Treasury and Finance", evidence: snippet_verified}
+  - {name: "Communities Tasmania", evidence: snippet_verified}
+  - {name: "Audit Tasmania", evidence: snippet_verified}
+  - {name: "Public Trustee", evidence: snippet_verified}
+  - {name: "Local Government Association of Tasmania", evidence: snippet_verified}
+  - {name: "Hydro Tasmania", evidence: snippet_verified}
+  - {name: "Tasmanian Community Fund", evidence: snippet_verified}
+  - {name: "Ombudsman Tasmania", evidence: snippet_verified}
+  - {name: "Tasmanian Irrigation", evidence: snippet_verified}
+  - {name: "City of Hobart", evidence: snippet_verified}
+  - {name: "Meander Valley Council", evidence: snippet_verified}
+  - {name: "Flinders Council", evidence: snippet_verified}
+  - {name: "University of Tasmania", evidence: snippet_verified}
+
+uncertain:
+  - "Search summaries attributed the s 53 reporting duty to Audit Tasmania; probably a misattribution (from memory: the Minister, with DoJ compiling the report). Verify against the Act."
+  - "The WebSearch tool returns model-written summaries, not raw snippets; every snippet_verified number needs checking against the PDF."
+
+queries_run: 21
+queries_refused_budget: 3

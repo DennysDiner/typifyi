@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block body %}
+<h2>Application #{{a.id}} — {{a.authority_name or a.authority_id}} {{a.reference or ''}}</h2>
+<div class="card"><b>Scope:</b> {{a.scope}}<br><b>Lodged:</b> {{a.lodged_date}} · <b>Accepted:</b> {{a.accepted_date or '—'}} · <b>Fee:</b> {{a.fee_amount or '—'}} · <b>Waiver:</b> {{a.fee_waiver or '—'}}<br><span class="muted">{{a.notes or ''}}</span></div>
+<h3>State: <span class="{{'bad' if 'deemed' in st.state else ''}}">{{st.state}}</span> <span class="muted">({{st.state_section}}) — {{st.state_note}}</span></h3>
+{% for w in st.warnings %}<div class="banner">⚠ {{w}}</div>{% endfor %}
+<h3>Statutory dates</h3>
+<table><tr><th>Deadline</th><th>Due (statewide holidays)</th><th>Due (incl. regional holidays)</th><th>Section</th><th>Evidence</th><th>Basis</th></tr>
+{% for d in st.deadlines %}<tr class="{{'muted' if d.passed else ''}}"><td>{{d.label}}{% if d.passed %} (passed){% endif %}</td><td>{{d.due}}</td><td>{{d.due_regional or '='}}</td><td>{{d.section}}{% if d.uncertain %} <b class="warn">UNCERTAIN</b>{% elif d.pinpoint_uncertain %} <span class="warn">pinpoint uncertain</span>{% endif %}</td><td class="muted">{{d.evidence}}</td><td class="muted">{{d.basis}}{% if d.alternative %} · alt: {{d.alternative.days}} wd → {{d.alternative.due}}{% endif %}</td></tr>{% endfor %}</table>
+<h3>What you can do next</h3>
+<ul>{% for s in st.next_steps %}<li><b>{{s.title}}</b> <span class="tag">{{s.section}}</span>{% if s.deadline %} by <b>{{s.deadline}}</b>{% if s.deadline_regional %} (or {{s.deadline_regional}}){% endif %}{% endif %}{% if s.uncertain %} <span class="warn">UNCERTAIN</span>{% endif %}<div class="muted">{{s.note}}</div></li>{% endfor %}</ul>
+<h3>Events</h3>
+<table><tr><th>Date</th><th>Event</th><th>Section</th><th>Detail</th></tr>{% for e in events %}<tr><td>{{e.event_date}}</td><td>{{e.event}}</td><td>{{e.section or ''}}</td><td class="mono">{{e.detail}}</td></tr>{% endfor %}</table>
+<form method="post" action="/applications/{{a.id}}/event" class="filters"><select name="event">{% for ev in all_events %}<option>{{ev}}</option>{% endfor %}</select><input type="date" name="when" value="{{today}}"><input name="detail" placeholder='{"decision_maker":"delegate","outcome":"partial"}' size="45"><button>Record event</button></form>
+<h3>Attachments</h3><ul>{% for t in atts %}<li><a href="/archive/{{t.sha256}}">{{t.filename}}</a> <span class="muted">{{t.description or ''}} · {{t.added_at[:10]}}</span></li>{% endfor %}</ul>
+<h3>Linked public releases</h3><ul>{% for l in links %}<li><a href="/item/{{l.item_id}}">{{l.title}}</a> <span class="tag">{{l.matched_by}} {{l.confidence}}</span>{% if not l.confirmed %}<span class="muted"> (proposed)</span>{% endif %}</li>{% else %}<li class="muted">none yet</li>{% endfor %}</ul>
+{% endblock %}

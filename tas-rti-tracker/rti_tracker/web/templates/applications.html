@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block body %}
+<h2>My applications <span class="muted">(never public)</span></h2>
+<p class="muted">Today {{today}}. Countdowns are in working days under the statewide-holiday reading; see each application for the regional reading and UNCERTAIN flags.</p>
+<table><tr><th>#</th><th>Authority</th><th>Ref</th><th>Lodged</th><th>State</th><th>Next deadline</th><th>Working days</th><th>Linked releases</th></tr>
+{% for x in apps %}<tr><td><a href="/applications/{{x.a.id}}">{{x.a.id}}</a></td><td>{{x.a.authority_name or x.a.authority_id}}</td><td>{{x.a.reference or ''}}</td><td>{{x.a.lodged_date}}</td>
+<td class="{{'bad' if 'deemed' in x.st.state else ''}}">{{x.st.state}} <span class="muted">({{x.st.state_section}})</span></td>
+<td>{% if x.next %}{{x.next.label}} {{x.next.due}}{% if x.next.is_range %} / {{x.next.due_regional}}{% endif %}{% endif %}</td>
+<td class="{{'bad' if x.days is not none and x.days<=2 else ('warn' if x.days is not none and x.days<=5 else '')}}">{{x.days if x.days is not none else ''}}</td>
+<td>{% for l in x.links %}<span class="tag">{{l.title[:40]}} ({{l.matched_by}} {{l.confidence}})</span>{% endfor %}</td></tr>{% endfor %}</table>
+<p class="muted">Add applications with <code>rti app new …</code>.</p>
+{% endblock %}
