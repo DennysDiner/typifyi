@@ -21,6 +21,16 @@ class AutoAdapter(Adapter):
         self.detected: str | None = None
 
     def parse(self, body: bytes, base_url: str, config: dict) -> list[ListedItem]:
+        pinned = config.get("pinned_format")
+        if pinned and pinned != "pdf_index" and body[:5] != b"%PDF-":
+            table = {"html_table": HtmlTableAdapter, "html_list": HtmlListAdapter, "per_release_pages": PerReleasePagesAdapter}
+            if pinned in table:
+                items = table[pinned]().parse(body, base_url, config)
+                if items:
+                    self.detected = pinned
+                    config["detected_format"] = pinned
+                    return items
+                # pinned parser found nothing: fall through to re-detection (monitor alerts on a switch)
         if body[:5] == b"%PDF-":
             self.detected = "pdf_index"
             return PdfIndexAdapter().parse(body, base_url, config)

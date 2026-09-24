@@ -66,9 +66,11 @@ def main() -> int:
     if ov.exists():
         for a in (yaml.safe_load(ov.read_text()) or {}).get("authorities", []):
             if a["id"] in merged:
-                merged[a["id"]].update({k: v for k, v in a.items() if k != "id"})
+                merged[a["id"]].update({k: v for k, v in a.items() if k not in ("id", "notes_override")})
+                if a.get("notes_override"):
+                    merged[a["id"]]["notes"] = a["notes_override"] + " [original: " + (merged[a["id"]].get("notes") or "")[:300] + "]"
             else:
-                merged[a["id"]] = a
+                merged[a["id"]] = {k: v for k, v in a.items() if k != "notes_override"}
     out = {
         "generated_by": "scripts/merge_registry.py",
         "sources": [f"registry/slices/{n}.yaml" for n in ORDER] + ["registry/overrides.yaml"],

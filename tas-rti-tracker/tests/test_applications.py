@@ -34,7 +34,7 @@ def test_link_by_reference_and_scope(conn):
 
 def test_deadline_alerts_fire_at_offsets_and_dedupe(conn):
     _auth(conn)
-    app_id = create(conn, authority_id="nre", authority_name=None, lodged=date(2026, 8, 3), accepted=date(2026, 8, 3), scope="x")
+    create(conn, authority_id="nre", authority_name=None, lodged=date(2026, 8, 3), accepted=date(2026, 8, 3), scope="x")
     eng = DeadlineEngine(today=date(2026, 8, 24))  # 5 wd before 31 Aug
     alerts = due_deadline_alerts(conn, eng)
     assert any(a["days_before"] == 5 and a["deadline"].id == "decision_due" for a in alerts)

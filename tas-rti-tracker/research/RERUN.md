@@ -14,3 +14,9 @@ fetchable. The following lists are the queued work, in priority order.
 5. State bodies: `meta.failed_queries` in registry/slices/state_bodies.yaml, plus a Building Tasmania
    disclosure log URL, and the current DPAC / ministerial log URLs (old-site paths).
 6. WorkSafe Tasmania statutory holidays list → `rti holidays import-csv`.
+7. Audit follow-ups needing the network (research/AUDIT_RESPONSE.md): Tier 1 log URLs for justice,
+   building_tas, stt, tasnetworks, tasports, tasrail, ttline, tas_irrigation, maib, launceston_cc (audit #1,
+   #62: STT and TasTAFE are reported by the ABC as publishing; Justice notes a "Disclosure Register"); verify
+   the 2026 machinery-of-government facts (#11); resolve UNCERTAIN statuses against ss 5–6 (#6); former
+   Ministers for historical attribution (#5); Easter Tuesday and the s 45 time limit (#15, #20); external
+   anchoring of the archive chain head (#38).

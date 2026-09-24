@@ -27,6 +27,15 @@ from .config import LEGAL_DIR
 from .db import tx, utcnow
 
 REGIONS = ("statewide", "south", "north", "north_west")
+# Municipality -> broad region (for inheriting part-State days). Memory-derived; only used with unverified data.
+MUNICIPALITY_REGION = {
+    "hobart": "south", "glenorchy": "south", "clarence": "south", "kingborough": "south", "brighton": "south", "sorell": "south",
+    "derwent_valley": "south", "huon_valley": "south", "tasman": "south", "glamorgan_spring_bay": "south", "central_highlands": "south",
+    "southern_midlands": "south", "launceston": "north", "west_tamar": "north", "george_town": "north", "meander_valley": "north",
+    "northern_midlands": "north", "dorset": "north", "break_oday": "north", "flinders": "north", "devonport": "north_west",
+    "burnie": "north_west", "central_coast": "north_west", "latrobe": "north_west", "kentish": "north_west", "waratah_wynyard": "north_west",
+    "circular_head": "north_west", "west_coast": "north_west", "king_island": "north_west",
+}
 
 
 @dataclass
@@ -36,10 +45,17 @@ class Calendar:
     sources: list[str] = field(default_factory=list)
 
     def is_holiday(self, d: date, region: str | None = None) -> str | None:
+        """`region` may be a municipality slug ("launceston") or a broad region ("north"). A municipality
+        inherits its broad region's part-State days (Regatta / Recreation Day) via MUNICIPALITY_REGION."""
         if d in self.statewide:
             return self.statewide[d]
         if region and region != "statewide":
-            return self.regional.get(region, {}).get(d)
+            hit = self.regional.get(region, {}).get(d)
+            if hit:
+                return hit
+            broad = MUNICIPALITY_REGION.get(region)
+            if broad:
+                return self.regional.get(broad, {}).get(d)
         return None
 
     def is_working_day(self, d: date, region: str | None = None) -> bool:
@@ -79,6 +95,7 @@ def library_holidays(years: list[int]) -> tuple[dict[date, str], str]:
 def load_regional(path: Path | None = None, include_unverified: bool = False) -> tuple[dict[str, dict[date, str]], list[str]]:
     path = path or (LEGAL_DIR / "holidays" / "regional.yaml")
     out: dict[str, dict[date, str]] = {r: {} for r in REGIONS if r != "statewide"}
+    out.update({m: {} for m in MUNICIPALITY_REGION})
     sources: list[str] = []
     if not path.exists():
         return out, sources

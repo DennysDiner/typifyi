@@ -78,6 +78,9 @@ minister, URLs with evidence labels, `disclosure_log_format`, optional `adapter`
 rti registry merge && rti registry validate && rti registry sync && rti poll --authority <id>
 ```
 
+Bodies that are business units of a department (offices, divisions, services) are typed `business_unit`
+with `rti_status: via_parent`; they are excluded from coverage counts and health.
+
 Renames and machinery-of-government changes: add the old name to `name_history` (or `aliases`) and an entry
 to `mog_changes` with the effective date; never delete the old record — set `active: false` and name the
 successor in `notes`. `authority_names` / `authority_urls` in the DB are append-only so historical releases
@@ -119,6 +122,21 @@ documents, adapters failing > 24 h, blocked sources, and application deadlines; 
 the daily digest. Channels activate from env vars (`RTI_NTFY_URL`, or the SMTP set). Campaign keywords are
 in `config/watchlist.yaml`; `rti campaign sync` reloads them; `rti campaign pack <id>` exports a citation
 pack (source URL, retrieval time, sha256, archived copy path).
+
+## Adapter limits (what the tool cannot see yet)
+
+Logs published as spreadsheets or Word files, JavaScript-rendered lists (SharePoint, Power BI, "load more"
+buttons, AJAX pagers) and PDF indexes with wrapped rows are not parsed by the generic adapters; a site behind
+a bot challenge shows as `blocked`. Each of these is a coverage gap to report, not a reason to work around
+the site. `rti health` exits non-zero while any Tier 1 body has no source.
+
+## Provenance
+
+Every fetch is a `captures` row (URL, final URL, time, status, headers, sha256) chained to the previous one;
+the tables are append-only at the database level and blobs are read-only files. `rti archive verify`
+re-hashes blobs, verifies the chain and prints its head — anchor that head externally (OpenTimestamps or a
+dated public post) so the ledger is tamper-evident against the machine's owner too. Removal records carry
+the last capture that contained the entry and the first that did not.
 
 ## Hosting and access
 

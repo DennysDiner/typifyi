@@ -170,9 +170,56 @@ def test_every_rule_has_citation_and_evidence(rules):
     assert rules.raw["working_day"]["section"]
 
 
-def test_null_days_rules_never_invent_dates(rules, cal):
-    """Rules with days: null (e.g. external_review_deemed_refusal_window) must not yield a deadline."""
+def test_null_days_rules_use_precautionary_only_when_declared(rules, cal):
+    """days: null never invents a date; a declared precautionary_days yields a clearly labelled UNCERTAIN date."""
+    r = rules.rule("external_review_deemed_refusal_window")
+    assert r["days"] is None
     st = eng(cal, date(2026, 9, 24)).compute([Event(EV_ACCEPTED, date(2026, 8, 3))])
-    assert not any(d.id == "external_review_deemed_refusal_window" for d in st.deadlines)
+    d = next(x for x in st.deadlines if x.id == "external_review_deemed_refusal_window")
+    assert "PRECAUTIONARY" in d.label and d.uncertain
+    assert _count_wd(cal, date(2026, 8, 31), d.due) == r["precautionary_days"]
     step = next(s for s in st.next_steps if "Ombudsman" in s["title"])
-    assert step["deadline"] is None
+    assert step["deadline"] == d.due.isoformat()
+    # a rule with days null and no precautionary value yields nothing
+    assert not any(x.id == "ombudsman_decision" for x in st.deadlines)
+
+
+def test_late_extension_does_not_revive_expired_period(cal):
+    st = eng(cal, date(2026, 9, 10)).compute([Event(EV_ACCEPTED, date(2026, 8, 3)), Event(EV_THIRD_PARTY_DECIDED, date(2026, 9, 5))])
+    assert st.state == "deemed_refused"
+    assert any("NOT applied" in w for w in st.warnings)
+
+
+def test_unknown_decision_maker_shows_both_windows(cal):
+    st = eng(cal, date(2026, 9, 1)).compute([Event(EV_ACCEPTED, date(2026, 8, 3)), Event(EV_DECISION_NOTIFIED, date(2026, 8, 28), {})])
+    ids = {d.id for d in st.deadlines}
+    assert {"internal_review_window", "external_review_window"} <= ids
+    assert any("decision_maker not recorded" in w for w in st.warnings)
+
+
+def test_negotiation_alternative_only_with_event(cal):
+    from rti_tracker.deadlines import EV_NEGOTIATION_COMMENCED
+    st = eng(cal, date(2026, 8, 10)).compute([Event(EV_ACCEPTED, date(2026, 8, 3))])
+    assert not any(d.id == "negotiation_extended_decision_due" for d in st.deadlines)
+    st2 = eng(cal, date(2026, 8, 10)).compute([Event(EV_ACCEPTED, date(2026, 8, 3)), Event(EV_NEGOTIATION_COMMENCED, date(2026, 8, 5))])
+    assert any(d.id == "negotiation_extended_decision_due" for d in st2.deadlines)
+
+
+def test_met_status_and_received_date(cal):
+    st = eng(cal, date(2026, 9, 1)).compute([Event(EV_ACCEPTED, date(2026, 8, 3)),
+                                             Event(EV_DECISION_NOTIFIED, date(2026, 8, 28), {"decision_maker": "delegate", "received_date": "2026-08-31"})])
+    dd = next(d for d in st.deadlines if d.id == "decision_due")
+    assert dd.met is True and dd.status_word == "MET"
+    ir = next(d for d in st.deadlines if d.id == "internal_review_window")
+    assert _count_wd(cal, date(2026, 8, 31), ir.due) == 20  # runs from receipt, not the letter date
+
+
+def test_deemed_refusal_uses_later_reading(cal):
+    """South authority, synthetic Regatta 9 Feb inside window: the authority is only 'deemed refused' once the
+    later (regional) reading has passed; Kurt's own precautionary window uses the same anchor."""
+    st = eng(cal, date(2026, 2, 25)).compute([Event(EV_ACCEPTED, date(2026, 1, 27))], region="south")
+    dd = next(d for d in st.deadlines if d.id == "decision_due")
+    assert dd.is_range and dd.due == date(2026, 2, 24) and dd.due_regional == date(2026, 2, 25)
+    assert st.state == "awaiting_decision"  # 25 Feb not yet passed under the later reading
+    st2 = eng(cal, date(2026, 2, 26)).compute([Event(EV_ACCEPTED, date(2026, 1, 27))], region="south")
+    assert st2.state == "deemed_refused"

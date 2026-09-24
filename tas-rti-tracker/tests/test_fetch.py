@@ -31,9 +31,31 @@ def test_403_is_blocked(fetcher, site):
 
 
 def test_5xx_raises_and_backs_off(fetcher, site):
-    import httpx
+    from rti_tracker.fetch import FetchError
     site.set("/log", "boom", status=503)
-    with pytest.raises(httpx.HTTPError):
+    with pytest.raises(FetchError):
         fetcher.get("https://example.tas.gov.au/log")
     hs = fetcher._host("https://example.tas.gov.au/log")
     assert hs.failures == 1 and hs.backoff_until > 0
+
+
+def test_404_is_an_error_not_an_empty_success(fetcher, site):
+    from rti_tracker.fetch import FetchError
+    site.set("/gone", "<html>nav page</html>", status=404)
+    with pytest.raises(FetchError):
+        fetcher.get("https://example.tas.gov.au/gone")
+
+
+def test_robots_5xx_means_disallow(fetcher, site):
+    site.set("/log", "<html>ok</html>")
+    site.robots = None  # handler returns 200 text; emulate 5xx by overriding
+
+    def handler(request):
+        import httpx
+        if request.url.path == "/robots.txt":
+            return httpx.Response(503, text="down")
+        return httpx.Response(200, text="<html>ok</html>")
+    import httpx
+    fetcher.client = httpx.Client(transport=httpx.MockTransport(handler))
+    with pytest.raises(Blocked):
+        fetcher.get("https://example.tas.gov.au/log")

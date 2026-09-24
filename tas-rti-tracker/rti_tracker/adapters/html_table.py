@@ -17,6 +17,7 @@ from .base import (
     canon_url,
     dedupe,
     find_date,
+    find_next_page,
     find_reference,
     is_doc_url,
     norm_ws,
@@ -120,7 +121,7 @@ class HtmlTableAdapter(Adapter):
                 if v:
                     fields[lg] = v
             url = doc_urls[0] if doc_urls else (page_urls[0] if page_urls else None)
-            key_cols = config.get("key_columns") or (["reference"] if reference else ["title", "url"])
+            key_cols = config.get("key_columns") or (["reference", "title"] if reference else ["title", "url"])
             key_src = [reference if k == "reference" else url if k == "url" else title if k == "title" else col(k) for k in key_cols]
             if not any(key_src):
                 key_src = [title, url]
@@ -132,9 +133,9 @@ class HtmlTableAdapter(Adapter):
         return dedupe(items)
 
     def next_page(self, body: bytes, base_url: str, config: dict) -> str | None:
-        sel = config.get("next_selector")
-        if not sel:
-            return None
         soup = BeautifulSoup(body, "lxml")
-        a = soup.select_one(sel)
-        return canon_url(a["href"], base_url) if a and a.has_attr("href") else None
+        sel = config.get("next_selector")
+        if sel:
+            a = soup.select_one(sel)
+            return canon_url(a["href"], base_url) if a and a.has_attr("href") else None
+        return None if config.get("no_pagination") else find_next_page(soup, base_url)

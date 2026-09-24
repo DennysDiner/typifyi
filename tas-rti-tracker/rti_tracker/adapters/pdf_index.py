@@ -39,7 +39,7 @@ def pdf_links(reader: PdfReader) -> list[str]:
                 uri = obj.get("/A", {}).get("/URI")
                 if uri:
                     urls.append(str(uri))
-            except Exception:
+            except Exception:  # noqa: BLE001, S112 — malformed annotation, skip
                 continue
     return urls
 
@@ -67,7 +67,7 @@ class PdfIndexAdapter(Adapter):
                 ref = norm_ws(g.get("reference") or "") or find_reference(line)
                 date = find_date(g.get("date") or line)
                 items.append(ListedItem(
-                    external_key=stable_key(ref or title, date), title=title, reference=ref,
+                    external_key=stable_key(ref, title, date), title=title, reference=ref,
                     published_date=date, fields={"line": line}, url=None,
                 ))
         # Attach links by order where counts match; otherwise keep as listing-level links.

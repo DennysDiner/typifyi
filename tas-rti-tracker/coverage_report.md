@@ -1,33 +1,106 @@
 # Coverage report
 
-Generated 2026-09-24T14:00:36+00:00 from registry/authorities.yaml.
+Generated 2026-09-24T14:34:25+00:00 from registry/authorities.yaml.
+
+**Read before quoting any number here.** The registry was researched under a network policy that blocked every
+primary source and a search budget that ran out part-way (DECISIONS.md D3). 'No log found' therefore means one of two
+different things, and the tables below keep them apart: *searched, none found* (a log-specific search was run and
+returned nothing) versus *not yet searched*. Only the first is a finding, and even that is provisional until the
+authority's RTI page has been fetched and read (README: verification pass).
 
 | Metric | Count |
 |---|---|
-| Active authorities in registry | 168 |
+| Active public authorities in registry (business units of departments excluded: 33) | 143 |
 | With a disclosure log URL recorded | 24 |
 | … of which URL was seen in a search result (snippet_verified) | 21 |
-| With NO discoverable disclosure log | 144 |
-| rti_status UNCERTAIN | 18 |
-| Excluded / partial | 16 |
+| No log URL — log-specific search run, none found (provisional finding) | 21 |
+| No log URL — NOT yet searched (not a finding) | 98 |
+| rti_status UNCERTAIN | 24 |
+| Excluded / partial | 17 |
 
 ## Log health (from DB)
 
 | Authority | Last success | Last change | Failures | Blocked |
 |---|---|---|---|---|
+| decyp | - | - | 0 |  |
+| dpac | - | - | 0 |  |
+| dpfem | - | - | 0 |  |
+| epa | - | - | 0 |  |
+| health | - | - | 0 |  |
+| hydro | - | - | 0 |  |
+| ministers_dpac_log | - | - | 0 |  |
+| nre | - | - | 0 |  |
+| state_growth | - | - | 0 |  |
+| tasracing | - | - | 0 |  |
+| tpc | - | - | 0 |  |
+| treasury | - | - | 0 |  |
 
-## Authorities with no discoverable disclosure log
+## Searched, no log found (provisional findings)
 
-Each row is a finding: a body with RTI obligations that publishes no (findable) log of what it releases.
+A log-specific search was run for each of these and returned nothing. Confirm by reading the RTI page before citing.
 
-### agency (2 of 9)
+### agency (1 of 9)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| justice | Department of Justice | https://www.justice.tas.gov.au/about-us/access-to-information | full | Snippet: Department maintains a 'Disclosure Register' (not 'log'), publication within 48 hours - URL of the register not |
+
+### council (2 of 29)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| huon_valley_c | Huon Valley Council | - | full | Huonville. No dedicated RTI page URL was seen. The snippet summary mentions an 'Access to Information Policy (CORP GOV 0 |
+| tasman_c | Tasman Council | https://www.tasman.tas.gov.au/council-documents/right-to-information/ | full | Nubeena. Do not confuse with Tasman District Council (NZ, tasman.govt.nz). ABS LGA code (memory, unverified): 65410. No  |
+
+### gbe (1 of 6)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| stt | Sustainable Timber Tasmania | - | full | Trading name adopted 2017 (memory; date 2017-07-01 supplied by caller, not seen). Portfolio minister title is memory (ma |
+
+### other (4 of 12)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| house_of_assembly | House of Assembly | - | excluded | Only Ministers (not backbench/opposition MPs) are subject to RTI (DPAC snippet Q39). UNCERTAIN - verify s 6 text. |
+| legislative_council | Legislative Council | - | excluded | UNCERTAIN - verify s 6 text. |
+| lgat | Local Government Association of Tasmania | https://www.lgat.tas.gov.au/about-us/right-to-information | full | The brief expected LGAT to be UNCERTAIN, but its own page says the RTI Act applies to it, so it is recorded as full. The |
+| supreme_court | Supreme Court of Tasmania | - | partial | Administrative support via Justice (memory). |
+
+### soc (4 of 8)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| aurora | Aurora Energy | https://auroraenergy.com.au/about/who-we-are/about-us-charters-policies | full | Application fee $49.00 as at 1 July 2026 (search summary). Tasmanian electricity/gas retailer; distribution business mov |
+| ttline | Spirit of Tasmania (TT-Line Company) | https://www.spiritoftasmania.com.au/company-information/corporate-information/policies/ | full | Slice b recorded 'none_known'; normalised to none. Finding: no public log discovered. [original: Portfolio minister titl |
+| tasnetworks | TasNetworks | https://www.tasnetworks.com.au/Documents/Manual-documents/Policies/Right-to-Information-Policy | full | Email and postal address (Right to Information Officer, PO Box 606, Moonah TAS 7009) from search summary of the RTI poli |
+| tasports | TasPorts | https://tasports.com.au/corporate | full | Fee 25 fee units ($47.75 'as at 1 July', year unspecified) per search summary. Right to Know body page: https://www.righ |
+
+### statutory (9 of 59)
+
+| id | Name | RTI page | Status | Notes |
+|---|---|---|---|---|
+| adc | Anti-Discrimination Commissioner (Equal Opportunity Tasmania) | - | partial |  |
+| ccyp | Commissioner for Children and Young People | - | partial | Whether the 2018 amendment passed: memory says yes - UNCERTAIN. Post-Commission-of-Inquiry restructuring into a 'Commiss |
+| coroner | Coroners Court / Coroner | - | partial | Memory: Coronial Division of Magistrates Court. |
+| custodial_inspector | Custodial Inspector | - | partial | Memory: Office co-located with Ombudsman. |
+| hcc | Health Complaints Commissioner Tasmania | - | partial | Website domain seen in Q45 results. Office historically co-located with Ombudsman (memory). |
+| homes_tas | Homes Tasmania | - | full | Homes Tasmania Act 2022 (memory). RTI email snippet_verified (Q50 summary); 'RTI decisions considered to be in the publi |
+| integrity_commission | Integrity Commission | https://www.integrity.tas.gov.au/about/rti | partial | 2026 context: former ministers Ogilvie and Howlett used taxpayer-funded legal fees in Supreme Court proceedings against  |
+| dpp | Office of the Director of Public Prosecutions | - | partial | Administration information only. |
+| ombudsman | Ombudsman Tasmania | https://www.ombudsman.tas.gov.au/right-to-information | partial | Also the RTI review body (external review decisions at https://www.ombudsman.tas.gov.au/right-to-information/reasons-for |
+
+## Not yet searched (NOT findings)
+
+No log-specific search was run (search budget exhausted). These rows say nothing about whether a log exists.
+
+### agency (1 of 9)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
 | building_tas | Building Tasmania | - | full | Commenced 2026-07-02. Responsible for housing, roads, infrastructure; overseen by Kerry Vincent; Shane Gregory acting se |
-| justice | Department of Justice | https://www.justice.tas.gov.au/about-us/access-to-information | full | Snippet: Department maintains a 'Disclosure Register' (not 'log'), publication within 48 hours - URL of the register not |
 
-### council (29 of 29)
+### council (27 of 29)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
@@ -47,7 +120,6 @@ Each row is a finding: a body with RTI obligations that publishes no (findable) 
 | glamorgan_spring_bay_c | Glamorgan Spring Bay Council | https://gsbc.tas.gov.au/council/council-governance/right-to-information/ | full | Triabunna. annual_report_url is the annual reports listing page (snippet_verified), not a single report. rti_contact_ema |
 | glenorchy_cc | Glenorchy City Council | https://www.gcc.tas.gov.au/council/governance-and-operations/privacy-and-rti/ | full | 374 Main Road Glenorchy; PO Box 103 Glenorchy TAS 7010 (snippet_verified). rti_contact_email gccmail@gcc.tas.gov.au is s |
 | hobart_cc | Hobart City Council | https://www.hobartcity.com.au/Council/About-Council/Governance-and-transparency/Right-to-Information | full | A DRAFT City of Hobart Information Disclosure Policy and Procedures was a council agenda attachment in October 2024: htt |
-| huon_valley_c | Huon Valley Council | - | full | Huonville. No dedicated RTI page URL was seen. The snippet summary mentions an 'Access to Information Policy (CORP GOV 0 |
 | kentish_c | Kentish Council | - | full | Sheffield. No Kentish Council web page appeared in the results, so website is null (memory suggests kentish.tas.gov.au,  |
 | king_island_c | King Island Council | https://kingisland.tas.gov.au/council/access-to-information/ | full | Currie. annual_report_url is the 2024/25 Annual Report PDF (snippet_verified). A 2023/24 draft is also indexed at https: |
 | kingborough_c | Kingborough Council | https://www.kingborough.tas.gov.au/council/right-to-information/ | full | Kingston. Release of Documents Policy 3.22 (Jan 2022) is indexed. An ABC article (28 Nov 2024) reported emails about the |
@@ -56,125 +128,80 @@ Each row is a finding: a body with RTI obligations that publishes no (findable) 
 | northern_midlands_c | Northern Midlands Council | - | full | Longford. No result was titled as an RTI page. The proactive-disclosure text probably comes from the 'Council Informatio |
 | sorell_c | Sorell Council | https://www.sorell.tas.gov.au/right-to-information/ | full | ABS LGA code (memory, unverified): 65010. No disclosure log seen in any snippet; the dedicated disclosure-log queries co |
 | southern_midlands_c | Southern Midlands Council | https://www.southernmidlands.tas.gov.au/right-to-information-act/ | full | Oatlands. ABS LGA code (memory, unverified): 65210. No disclosure log seen in any snippet; the dedicated disclosure-log  |
-| tasman_c | Tasman Council | https://www.tasman.tas.gov.au/council-documents/right-to-information/ | full | Nubeena. Do not confuse with Tasman District Council (NZ, tasman.govt.nz). ABS LGA code (memory, unverified): 65410. No  |
 | waratah_wynyard_c | Waratah-Wynyard Council | https://www.warwyn.tas.gov.au/governance/transparency-and-accountability/ | full | Wynyard. ABS LGA code (memory, unverified): 65610. No disclosure log seen in any snippet; the dedicated disclosure-log q |
 | west_coast_c | West Coast Council | - | full | Queenstown. No dedicated RTI page URL was seen. The RTI form is probably on the forms-and-applications page (UNCERTAIN). |
 | west_tamar_c | West Tamar Council | - | full | Riverside. The RTI text probably comes from the Governance page (https://www.wtc.tas.gov.au/council/governance/), but th |
 
-### council_entity (6 of 6)
+### council_entity (7 of 7)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
 | copping_jointauth | Copping Refuse Disposal Site Joint Authority | - | UNCERTAIN | Owners and trading name are from memory. Whether it was restructured into a regional waste body after the Waste and Reso |
 | cradle_coast_authority | Cradle Coast Authority | - | UNCERTAIN | Owners per memory: Burnie, Central Coast, Circular Head, Devonport, Kentish, King Island, Latrobe, Waratah-Wynyard, West |
 | dulverton_waste | Dulverton Regional Waste Management Authority | - | UNCERTAIN | The exact legal name and whether it is a joint authority or a company are UNCERTAIN (memory only). No search could be ru |
+| launceston_flood_authority | Launceston Flood Authority | - | UNCERTAIN | Added per audit #5. UNVERIFIED. |
 | ntdc | Northern Tasmania Development Corporation Ltd | - | UNCERTAIN | Its existence, members (memory: Launceston, West Tamar, George Town, Meander Valley, Northern Midlands, Dorset, Break O' |
 | southern_tas_regional_waste_authority | Southern Tasmanian Regional Waste Authority | - | UNCERTAIN | LOW CONFIDENCE, memory only. Included so a verifier checks it. Delete if it does not exist. active=true is not verified. |
 | taswater | Tasmanian Water and Sewerage Corporation Pty Ltd | https://www.taswater.com.au/about-us/governance-and-policies/right-to-information-guidance | full | Slice (b) may also claim TasWater because the State is a shareholder, so dedupe across slices. It is placed here as coun |
 
-### gbe (5 of 6)
+### gbe (4 of 6)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
 | maib | Motor Accidents Insurance Board | - | full | Portfolio minister UNCERTAIN (memory suggests Treasurer/Minister for Finance or Infrastructure and Transport - not seen) |
 | pahsma | Port Arthur Historic Site Management Authority | - | full | Portfolio minister UNCERTAIN (memory: Minister for Environment/Parks/Heritage; historically Tourism). Manages Port Arthu |
 | public_trustee | Public Trustee | https://www.publictrustee.tas.gov.au/about-us/governance/right-to-information/ | full | Portfolio minister (Attorney-General) is memory. Retained in public hands per May 2025 review (search summary). [merged  |
-| stt | Sustainable Timber Tasmania | - | full | Trading name adopted 2017 (memory; date 2017-07-01 supplied by caller, not seen). Portfolio minister title is memory (ma |
 | tascorp | Tasmanian Public Finance Corporation | - | full | Whether Tascorp is currently in GBE Act Sch 1 or governed solely by its own Act is UNCERTAIN (memory: it was brought und |
 
-### other (43 of 44)
+### other (7 of 12)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
-| office_aboriginal_affairs | Aboriginal Affairs (DPAC) | - | full | Office of Aboriginal Affairs moved from Communities to DPAC Dec 2022 (Find & Connect snippet lists it among Communities  |
-| ambulance_tas | Ambulance Tasmania | - | full | Division of Department of Health (memory). No body-specific search was run: the session-wide WebSearch budget (200) was  |
-| arts_tas | Arts Tasmania | - | full | Snippet Q6 describes Arts Tasmania's role. To TECT Dec 2026. |
-| business_tas | Business Tasmania | - | full | Memory: State Growth service. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted aft |
-| community_corrections | Community Corrections | - | full |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
-| cbos | Consumer, Building and Occupational Services | - | full | Division of Justice (memory). Building-regulation functions could be affected by Building Tasmania MoG - UNCERTAIN. |
-| cisve | Creative Industries, Sport and Visitor Economy | - | full | State Growth division coordinating tourism, events, arts, screen and sport (snippet Q6). Expected to become Tourism, Eve |
-| crown_law | Crown Law (Office of the Solicitor-General / Crown Solicitor) | - | UNCERTAIN | Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 5 |
-| dss | Digital Strategy and Services | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
-| events_tas | Events Tasmania | - | full | Snippet Q6 describes Events Tasmania. |
-| fsst | Forensic Science Service Tasmania | - | full | Memory: within DPFEM. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this  |
 | governor | Governor of Tasmania (Office of the Governor) | - | excluded | Governor Barbara Baker (snippet Q15). |
-| house_of_assembly | House of Assembly | - | excluded | Only Ministers (not backbench/opposition MPs) are subject to RTI (DPAC snippet Q39). UNCERTAIN - verify s 6 text. |
-| jobs_tas | Jobs Tasmania | - | full | Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this  |
-| land_tasmania | Land Tasmania (Recorder of Titles, Surveyor-General) | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
-| legislative_council | Legislative Council | - | excluded | UNCERTAIN - verify s 6 text. |
+| law_society_tas | Law Society of Tasmania | - | partial | Partial coverage per s 6. |
 | legislature_general | Legislature-General / Tasmanian Parliamentary joint services | - | UNCERTAIN |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
-| libraries_tas | Libraries Tasmania (incl. Tasmanian Archives) | - | full | Snippet Q31: DECYP covers libraries and the Tasmanian archives. Separate RTI handling not seen. |
-| lgat | Local Government Association of Tasmania | https://www.lgat.tas.gov.au/about-us/right-to-information | full | The brief expected LGAT to be UNCERTAIN, but its own page says the RTI Act applies to it, so it is recorded as full. The |
-| local_gov_division | Local Government Division / Office of Local Government | - | full | Memory: in DPAC. Whether moved to Building Tasmania in 2026 MoG UNCERTAIN. No body-specific search was run: the session- |
 | magistrates_court | Magistrates Court of Tasmania | - | partial |  |
 | marinus_link | Marinus Link | - | UNCERTAIN | Whole record is memory. Portfolio link to Tas Energy Minister is memory. Website is memory. High-priority item for a fut |
-| mrt | Mineral Resources Tasmania | - | full | Memory: State Growth division; 'resources functions' to DPAC (snippet), timing UNCERTAIN. No body-specific search was ru |
-| ori | Office of Racing Integrity | - | full | Memory: in NRE; Director of Racing statutory office. Tasracing is a State-owned company (slice b). No body-specific sear |
-| osem | Office of Security and Emergency Management | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
-| coordinator_general | Office of the Coordinator-General | - | full | Memory: State Growth. Destination in 2026 MoG (DPAC economic development?) UNCERTAIN. No body-specific search was run: t |
-| pws | Parks and Wildlife Service | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
-| bdm | Registry of Births, Deaths and Marriages | - | full |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
-| recfit | Renewables, Climate and Future Industries Tasmania | - | full | Memory: State Growth division. Climate change function to NRE 2026-08-13 (snippet); energy functions to DPAC economic de |
-| screen_tas | Screen Tasmania | - | full | Memory: within State Growth. |
-| sentencing_advisory | Sentencing Advisory Council | - | full |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
-| service_tas | Service Tasmania | - | full | DPAC routine disclosure attachments name 'Service Tasmania activities' (snippet Q40). |
-| skills_tas | Skills Tasmania | - | full | Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this  |
-| sport_rec_tas | Sport and Recreation Tasmania | - | full | Memory. TECT to include all sport functions (snippet Q3). |
-| ses | State Emergency Service | - | full | Division of DPFEM (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after |
-| state_planning_office | State Planning Office | - | full | Moved from DPAC to Building Tasmania in 2026 (snippet 'will become part of Building Tasmania'; exact date UNCERTAIN, lik |
-| supreme_court | Supreme Court of Tasmania | - | partial | Administrative support via Justice (memory). |
-| tfs | Tasmania Fire Service | - | full | Operational arm of State Fire Commission within DPFEM (memory). No body-specific search was run: the session-wide WebSea |
-| tas_prison_service | Tasmania Prison Service | - | full |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
 | tascat | Tasmanian Civil and Administrative Tribunal | - | partial | Memory: commenced 2021-11-05 amalgamating many tribunals/boards (see mog_changes). Date UNCERTAIN. |
-| tis | Tasmanian Institute of Sport | - | full | Memory: program of Sport and Recreation Tasmania, not separate statutory body - UNCERTAIN. No body-specific search was r |
 | tso | Tasmanian Symphony Orchestra | - | UNCERTAIN |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
-| worksafe | WorkSafe Tasmania | - | full | Memory: Workplace Standards/WorkSafe within Justice. No body-specific search was run: the session-wide WebSearch budget  |
 
-### soc (7 of 8)
+### soc (3 of 8)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
-| aurora | Aurora Energy | https://auroraenergy.com.au/about/who-we-are/about-us-charters-policies | full | Application fee $49.00 as at 1 July 2026 (search summary). Tasmanian electricity/gas retailer; distribution business mov |
 | metro | Metro Tasmania | - | full | Website URL is memory. Under privatisation assessment (May 2025, search summary). |
-| ttline | Spirit of Tasmania (TT-Line Company) | https://www.spiritoftasmania.com.au/company-information/corporate-information/policies/ | full | Portfolio minister title is memory; historically TT-Line sat with Infrastructure and Transport. Retained in public hands |
-| tasnetworks | TasNetworks | https://www.tasnetworks.com.au/Documents/Manual-documents/Policies/Right-to-Information-Policy | full | Email and postal address (Right to Information Officer, PO Box 606, Moonah TAS 7009) from search summary of the RTI poli |
-| tasports | TasPorts | https://tasports.com.au/corporate | full | Fee 25 fee units ($47.75 'as at 1 July', year unspecified) per search summary. Right to Know body page: https://www.righ |
 | tasrail | TasRail | https://www.tasrail.com.au/right-to-information | full | rti_contact_email NAA@tasrail.com.au is from a search summary ('TasRail's preference is that requests for information be |
 | tas_irrigation | Tasmanian Irrigation | - | full | Website URL is memory (not seen). Portfolio minister title is memory. Under privatisation assessment (May 2025, search s |
 
-### statutory (50 of 53)
+### statutory (47 of 59)
 
 | id | Name | RTI page | Status | Notes |
 |---|---|---|---|---|
 | aboriginal_heritage_council | Aboriginal Heritage Council | - | full | Aboriginal Heritage Act 1975 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exha |
-| adc | Anti-Discrimination Commissioner (Equal Opportunity Tasmania) | - | partial |  |
 | brand_tas | Brand Tasmania | - | full | Brand Tasmania Act 2018 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted |
 | bcitb | Building and Construction Industry Training Board | - | full | Building and Construction Industry Training Fund Act 1990 (memory). No body-specific search was run: the session-wide We |
-| ccyp | Commissioner for Children and Young People | - | partial | Whether the 2018 amendment passed: memory says yes - UNCERTAIN. Post-Commission-of-Inquiry restructuring into a 'Commiss |
-| coroner | Coroners Court / Coroner | - | partial | Memory: Coronial Division of Magistrates Court. |
-| custodial_inspector | Custodial Inspector | - | partial | Memory: Office co-located with Ombudsman. |
 | energy_ombudsman | Energy Ombudsman Tasmania | - | UNCERTAIN | Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 5 |
 | fpa | Forest Practices Authority | - | full | Forest Practices Act 1985 (memory). Forest Practices Regulations consultation Aug 2026 (premier.tas.gov.au snippet Q25). |
-| hcc | Health Complaints Commissioner Tasmania | - | partial | Website domain seen in Q45 results. Office historically co-located with Ombudsman (memory). |
-| homes_tas | Homes Tasmania | - | full | Homes Tasmania Act 2022 (memory). RTI email snippet_verified (Q50 summary); 'RTI decisions considered to be in the publi |
+| forest_practices_tribunal | Forest Practices Tribunal | - | UNCERTAIN | Added per audit #5. UNVERIFIED. |
 | cyso_regulator | Independent Regulator (Child and Youth Safe Organisations) | - | UNCERTAIN | Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 5 |
 | ifs | Inland Fisheries Service | - | full | Memory: separate agency/statutory service vs NRE division - UNCERTAIN. No body-specific search was run: the session-wide |
-| integrity_commission | Integrity Commission | https://www.integrity.tas.gov.au/about/rti | partial | 2026 context: former ministers Ogilvie and Howlett used taxpayer-funded legal fees in Supreme Court proceedings against  |
 | legal_aid | Legal Aid Commission of Tasmania | https://www.legalaid.tas.gov.au/right-to-information/ | full | Legal Aid Commission Act 1990 (memory). |
 | legal_profession_board | Legal Profession Board of Tasmania | - | full | Legal Profession Act 2007 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhaust |
 | local_government_board | Local Government Board | - | full |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
 | mpdc | Macquarie Point Development Corporation | - | full | Macquarie Point Development Corporation Act 2012 (memory). Portfolio created Aug 2025 (snippet Q32). |
+| marine_farming_planning_review_panel | Marine Farming Planning Review Panel | - | UNCERTAIN | Added per audit #5; relevant to salmon campaigns. UNVERIFIED. |
 | mast | Marine and Safety Tasmania | - | full | Marine and Safety Authority Act 1997 (memory). No body-specific search was run: the session-wide WebSearch budget (200)  |
 | ngsrb | Non-Government Schools Registration Board | - | full | Education Act 2016 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted afte |
 | tasc | Office of Tasmanian Assessment, Standards and Certification | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
-| dpp | Office of the Director of Public Prosecutions | - | partial | Administration information only. |
 | public_guardian | Office of the Public Guardian | - | full | Guardianship and Administration Act 1995 (memory). No body-specific search was run: the session-wide WebSearch budget (2 |
 | otter | Office of the Tasmanian Economic Regulator | - | full | Economic Regulator Act 2009 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhau |
 | official_visitors | Official Visitors (Mental Health / Custodial) | - | UNCERTAIN | Memory: Principal Official Visitor scheme administered from Ombudsman office. No body-specific search was run: the sessi |
-| ombudsman | Ombudsman Tasmania | https://www.ombudsman.tas.gov.au/right-to-information | partial | Also the RTI review body (external review decisions at https://www.ombudsman.tas.gov.au/right-to-information/reasons-for |
 | parole_board | Parole Board of Tasmania | - | UNCERTAIN |  No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st search;  |
+| poppy_advisory_control_board | Poppy Advisory and Control Board | - | UNCERTAIN | Added per audit #5. UNVERIFIED. |
 | private_forests_tas | Private Forests Tasmania | - | full | Private Forests Act 1994 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhauste |
+| racing_appeals_board | Racing Appeals Board | - | UNCERTAIN | Added per audit #5. UNVERIFIED. |
 | rbf_board | Retirement Benefits Fund Board | - | UNCERTAIN | Tasplan/Spirit Super are private super funds - likely not public authorities (UNCERTAIN). No body-specific search was ru |
+| rivers_water_supply_commission | Rivers and Water Supply Commission | - | UNCERTAIN | Added per audit #5. UNVERIFIED; may be dormant. |
 | rtbg | Royal Tasmanian Botanical Gardens | - | full | Royal Tasmanian Botanical Gardens Act 2002 (memory); Board of Directors. No body-specific search was run: the session-wi |
 | solicitor_general | Solicitor-General of Tasmania | - | partial | Crown Law/Office of the Solicitor-General sits in Justice (memory). |
 | stadiums_tas | Stadiums Tasmania | - | full | Stadiums Tasmania Act 2022 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhaus |
@@ -194,6 +221,7 @@ Each row is a finding: a body with RTI obligations that publishes no (findable) 
 | theatre_royal | Theatre Royal Management Board | - | full | Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent's 51st s |
 | tourism_tas | Tourism Tasmania | - | full | Snippet: statutory authority since 1997; stand-alone State Authority from 1 July 2014. Relationship to TECT from Dec 202 |
 | valuer_general | Valuer-General | - | full | Memory: Office of the Valuer-General in NRE. No body-specific search was run: the session-wide WebSearch budget (200) wa |
+| veterinary_board_tas | Veterinary Board of Tasmania | - | UNCERTAIN | Added per audit #5. UNVERIFIED. |
 | wellington_park | Wellington Park Management Trust | - | full | Wellington Park Act 1993 (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhauste |
 | workcover_board | WorkCover Tasmania Board | - | full | Workers Rehabilitation and Compensation Act 1988 (memory). Current name UNCERTAIN. No body-specific search was run: the  |
 

@@ -16,16 +16,26 @@ def test_registry_valid_and_syncs(conn):
     assert stats["authorities"] == len(data["authorities"])
     # every authority with a disclosure log URL (and not sharing) has exactly one enabled source
     for a in data["authorities"]:
-        if a.get("disclosure_log_url") and not a.get("shares_source_with") and a.get("disclosure_log_format") != "none":
-            n = conn.execute("SELECT count(*) FROM sources WHERE authority_id=? AND kind='disclosure_log' AND enabled=1", (a["id"],)).fetchone()[0]
+        n = conn.execute("SELECT count(*) FROM sources WHERE authority_id=? AND kind='disclosure_log' AND enabled=1", (a["id"],)).fetchone()[0]
+        if a.get("disclosure_log_url") and not a.get("shares_source_with") and a.get("disclosure_log_format") != "none" and a.get("active", True) is not False:
             assert n == 1, a["id"]
+        else:
+            assert n == 0, a["id"]   # inactive bodies, shared logs and log-less bodies must not be polled (audit #7, #8, #14)
+    assert conn.execute("SELECT count(*) FROM sources WHERE authority_id='tlgc' AND enabled=1").fetchone()[0] == 0
+    # business units are excluded from health/coverage and never counted as authorities without a log
+    from rti_tracker.health import health_rows
+    ids = {r["authority_id"] for r in health_rows(conn)}
+    assert "ambulance_tas" not in ids and "stt" in ids
+    assert any(r["state"] == "TIER1_NO_SOURCE" for r in health_rows(conn) if r["authority_id"] == "stt")
     assert conn.execute("SELECT tier FROM authorities WHERE id='stt'").fetchone()[0] == 1
     assert conn.execute("SELECT tier FROM authorities WHERE id='hobart_cc'").fetchone()[0] == 2
-    # historical names resolve
+    # historical names resolve by exact match only; loose input yields candidates, never a silent guess
     assert resolve_authority(conn, "Forestry Tasmania") == "stt"
     assert resolve_authority(conn, "Department of State Growth") == "state_growth"
+    assert resolve_authority(conn, "Council") is None and resolve_authority(conn, "Tasmania") is None
+    assert resolve_authority(conn, "Dept of State Growth", candidates=True)
     rep = coverage_report(data, conn)
-    assert "no discoverable disclosure log" in rep.lower()
+    assert "not yet searched" in rep.lower() and "searched, no log found" in rep.lower()
 
 
 def test_sync_is_idempotent_and_keeps_history(conn):

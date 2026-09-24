@@ -112,3 +112,31 @@ matches; the internal-review decision period (15 vs 20) genuinely conflicts acro
 file shows both; the deemed-refusal subsection and the s 44/s 45 split are plausibly right but unverified.
 None of these checks is a substitute for reading the consolidated Act; see the verification checklist at
 the end of `LEGAL_MODEL.md`.
+
+## D17. Removals need two consecutive complete polls
+The audit showed pagination and transient glitches would generate false "silent removal" claims, which are the
+single most damaging false positive this tool could produce. A removal is now recorded only after an entry is
+missing from two consecutive complete crawls (also evaluated on unchanged/304 polls), and the record carries the
+last capture that contained the entry and the first that did not. Cost: a real removal is alerted one poll later
+(about an hour for Tier 1). `removal_confirm_polls` in a source's config changes this.
+
+## D18. D11 corrected: document rechecks
+D11 claimed `--force` would catch a replaced PDF. It did not. `Monitor.recheck_documents()` re-fetches current
+documents with conditional GETs (`rti recheck-docs`, and three sources per `rti run` tick, oldest first).
+
+## D19. Provenance ledger is append-only and chained
+Captures and blobs cannot be updated or deleted at the database level (triggers); each capture commits to the
+previous one via a hash chain; blob files are read-only. `rti archive verify` checks both and prints the chain
+head. The head must be anchored somewhere outside the machine (OpenTimestamps, a dated post) for the ledger to
+be tamper-evident against the database owner. That step needs network access and is on Kurt.
+
+## D20. Coverage statistics: only "searched, none found" is a finding
+The coverage report now distinguishes authorities where a log-specific search was run from those never searched,
+and excludes business units. Until every row has a recorded search and the annual-report cross-check has run,
+none of these counts should be quoted externally.
+
+## D21. Precautionary deadlines are shown for the applicant's own windows only
+Where the Act's time limit could not be established (Ombudsman application after a deemed refusal),
+`legal/rules.yaml` may declare `precautionary_days`; the engine then shows a clearly labelled PRECAUTIONARY,
+UNCERTAIN date and alerts on it. Precautionary dates are never used to assert that an authority is late: a
+deemed refusal is asserted only once the later of the two working-day readings has passed.

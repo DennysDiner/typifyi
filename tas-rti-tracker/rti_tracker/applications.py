@@ -23,13 +23,13 @@ from .deadlines import (
 
 def create(conn: sqlite3.Connection, *, authority_id: str | None, authority_name: str | None, lodged: date, scope: str,
            reference: str | None = None, fee_amount: float | None = None, fee_waiver: str | None = None,
-           accepted: date | None = None, notes: str | None = None) -> int:
+           accepted: date | None = None, notes: str | None = None, region: str | None = None) -> int:
     now = utcnow()
     with tx(conn):
         cur = conn.execute(
-            "INSERT INTO applications(authority_id,authority_name,lodged_date,accepted_date,scope,reference,fee_amount,fee_waiver,status,notes,created_at,updated_at)"
-            " VALUES (?,?,?,?,?,?,?,?,'lodged',?,?,?)",
-            (authority_id, authority_name, lodged.isoformat(), accepted.isoformat() if accepted else None, scope, reference, fee_amount, fee_waiver, notes, now, now),
+            "INSERT INTO applications(authority_id,authority_name,lodged_date,accepted_date,scope,reference,fee_amount,fee_waiver,status,notes,created_at,updated_at,region)"
+            " VALUES (?,?,?,?,?,?,?,?,'lodged',?,?,?,?)",
+            (authority_id, authority_name, lodged.isoformat(), accepted.isoformat() if accepted else None, scope, reference, fee_amount, fee_waiver, notes, now, now, region),
         )
         app_id = int(cur.lastrowid)
         conn.execute("INSERT INTO application_events(application_id,event,event_date,section,detail,recorded_at) VALUES (?,?,?,?,?,?)",
@@ -53,12 +53,13 @@ def add_event(conn: sqlite3.Connection, app_id: int, event: str, when: date, det
 
 
 def add_attachment(conn: sqlite3.Connection, archive: Archive, app_id: int, path: Path, description: str | None = None) -> str:
+    """Attachments are PRIVATE: stored under archive/private/ with no captures/blobs row (audit #57)."""
     data = path.read_bytes()
-    cap = archive.store(data, url=f"file://{path.name}", content_type=None, headers={}, http_status=None, kind="attachment")
+    sha, stored = archive.store_private(data, path.name)
     with tx(conn):
-        conn.execute("INSERT INTO application_attachments(application_id,filename,sha256,description,added_at) VALUES (?,?,?,?,?)",
-                     (app_id, path.name, cap.sha256, description, utcnow()))
-    return cap.sha256
+        conn.execute("INSERT INTO application_attachments(application_id,filename,sha256,description,added_at,path) VALUES (?,?,?,?,?,?)",
+                     (app_id, path.name, sha, description, utcnow(), str(stored)))
+    return sha
 
 
 def events_for(conn: sqlite3.Connection, app_id: int) -> list[Event]:
@@ -76,7 +77,7 @@ def region_for(conn: sqlite3.Connection, authority_id: str | None) -> str | None
 def status_for(conn: sqlite3.Connection, app_id: int, engine: DeadlineEngine | None = None) -> Status:
     engine = engine or DeadlineEngine()
     app = conn.execute("SELECT * FROM applications WHERE id=?", (app_id,)).fetchone()
-    st = engine.compute(events_for(conn, app_id), region=region_for(conn, app["authority_id"]))
+    st = engine.compute(events_for(conn, app_id), region=app["region"] or region_for(conn, app["authority_id"]))
     if app["status"] != st.state:
         conn.execute("UPDATE applications SET status=?, updated_at=? WHERE id=?", (st.state, utcnow(), app_id))
     return st
@@ -138,7 +139,7 @@ def due_deadline_alerts(conn: sqlite3.Connection, engine: DeadlineEngine, offset
     today = engine.today
     for app_id, st in refresh_all(conn, engine):
         app = conn.execute("SELECT * FROM applications WHERE id=?", (app_id,)).fetchone()
-        region = region_for(conn, app["authority_id"])
+        region = app["region"] or region_for(conn, app["authority_id"])
         for d in st.deadlines:
             if d.id in ("deemed_refusal", "internal_review_deemed_refusal"):
                 key = (app_id, d.id, d.due.isoformat(), -1)
@@ -146,16 +147,16 @@ def due_deadline_alerts(conn: sqlite3.Connection, engine: DeadlineEngine, offset
                     out.append({"application_id": app_id, "reference": app["reference"], "authority": app["authority_name"] or app["authority_id"],
                                 "kind": "deemed_refusal", "deadline": d, "days_before": -1, "status": st})
                 continue
-            if "ALTERNATIVE" in d.label:
+            if "ALTERNATIVE" in d.label or d.met is not None:
                 continue
+            # Fire when the offset date is due OR overdue and not yet sent (a missed tick must not lose the alert, audit #51).
             for n, fire_on in upcoming_alert_offsets(engine, d.due, offsets, region).items():
-                if fire_on <= today <= d.due or (n == 0 and fire_on == today):
+                if fire_on <= today <= d.due:
                     key = (app_id, d.id, d.due.isoformat(), n)
                     if conn.execute("SELECT 1 FROM deadline_alerts_sent WHERE application_id=? AND deadline_id=? AND due_date=? AND days_before=?", key).fetchone():
                         continue
-                    if fire_on == today:
-                        out.append({"application_id": app_id, "reference": app["reference"], "authority": app["authority_name"] or app["authority_id"],
-                                    "kind": "deadline", "deadline": d, "days_before": n, "status": st})
+                    out.append({"application_id": app_id, "reference": app["reference"], "authority": app["authority_name"] or app["authority_id"],
+                                "kind": "deadline", "deadline": d, "days_before": n, "status": st})
     return out
 
 

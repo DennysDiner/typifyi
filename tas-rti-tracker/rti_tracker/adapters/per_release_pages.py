@@ -28,7 +28,7 @@ class PerReleasePagesAdapter(Adapter):
             for a in root.find_all("a", href=True):
                 u = canon_url(a["href"], base_url)
                 t = norm_ws(a.get_text(" ", strip=True))
-                if pat and pat not in u:
+                if not u or (pat and pat not in u):
                     continue
                 if not t or is_doc_url(u):
                     continue

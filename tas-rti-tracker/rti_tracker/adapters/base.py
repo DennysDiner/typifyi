@@ -134,12 +134,22 @@ def norm_ws(s: str | None) -> str:
 def canon_url(url: str, base: str) -> str:
     u = urljoin(base, url.strip())
     parts = urlsplit(u)
+    if parts.scheme.lower() not in ("http", "https"):
+        return ""  # javascript:, mailto:, data: are never links we follow or render
     return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, parts.query, ""))
 
 
+_DOC_PATH_HINTS = ("/__data/assets/", "/download", "/getmedia/", "/documentcenter/view/", "/sites/default/files/", "/getattachment/")
+
+
 def is_doc_url(url: str) -> bool:
-    path = urlsplit(url).path.lower()
-    return path.endswith(DOC_EXTS) or "/__data/assets/" in path or "/download" in path
+    parts = urlsplit(url)
+    path, query = parts.path.lower(), parts.query.lower()
+    if parts.scheme not in ("http", "https"):
+        return False
+    return (path.endswith(DOC_EXTS) or any(h in path for h in _DOC_PATH_HINTS) or "download.aspx" in path
+            or ("drive.google.com" in parts.netloc and "/file/" in path) or ("1drv.ms" in parts.netloc)
+            or ("attachment" in query and "id=" in query))
 
 
 _DATE_PATTERNS = [
@@ -156,7 +166,7 @@ def parse_date(s: str | None) -> str | None:
         return None
     s = norm_ws(s)
     try:
-        d = dateparser.parse(s, dayfirst=True, fuzzy=True, default=datetime(1900, 1, 1))
+        d = dateparser.parse(s, dayfirst=True, fuzzy=True, default=datetime(1900, 1, 1))  # noqa: DTZ001
         if d.year < 1990:
             return None
         return d.date().isoformat()
@@ -181,16 +191,42 @@ def stable_key(*parts: str | None) -> str:
     return hashlib.sha1(raw.encode()).hexdigest()[:16]
 
 
-_REF_PAT = re.compile(r"\b((?:RTI|FOI)[\s-]?[\d/-]+[\dA-Za-z/-]*|\b\d{2,4}[-/]\d{1,4}(?:[-/]\d{1,4})?)\b")
+# A reference must carry a prefix (RTI/FOI/Ref/No) or be a financial-year style token (2024-25/031, 2025/031).
+# Plain dates (12/05/2025, 12-05-2025) are explicitly rejected: mistaking a date for a reference merged
+# distinct same-day releases into one item (audit finding 32).
+_REF_PAT = re.compile(r"\b((?:RTI|FOI|Ref(?:erence)?\.?|No\.?)\s*[:#-]?\s*[A-Z0-9][\w/-]{1,24}|(?:20\d{2}[-/]\d{2,4}/\d{1,4}))\b", re.IGNORECASE)
+_DATE_SHAPE = re.compile(r"^\d{1,2}[/-]\d{1,2}[/-]\d{2,4}$|^\d{4}[/-]\d{1,2}[/-]\d{1,2}$")
 
 
 def find_reference(*texts: str | None) -> str | None:
     for t in texts:
         if not t:
             continue
-        m = _REF_PAT.search(t)
-        if m:
-            return m.group(1).strip()
+        for m in _REF_PAT.finditer(t):
+            cand = m.group(1).strip().rstrip(".,;:")
+            core = re.sub(r"^(RTI|FOI|Ref(?:erence)?\.?|No\.?)\s*[:#-]?\s*", "", cand, flags=re.IGNORECASE)
+            if _DATE_SHAPE.match(core) or not any(ch.isdigit() for ch in core):
+                continue
+            # keep RTI/FOI prefixes (they are part of the number); drop "Reference"/"No" words
+            return re.sub(r"^(Ref(?:erence)?\.?|No\.?)\s*[:#-]?\s*", "", cand, flags=re.IGNORECASE)
+    return None
+
+
+_NEXT_TEXT = re.compile(r"^(next|next page|older|more|›|»|>|>>)\s*$", re.IGNORECASE)
+
+
+def find_next_page(soup, base_url: str) -> str | None:
+    """Heuristic pagination: rel=next, common pager classes, or link text like Next / › / »."""
+    a = soup.select_one('a[rel~="next"], link[rel~="next"], a.next, li.next > a, a.pagination-next, a[aria-label="Next"], a[aria-label="Next page"]')
+    if a is not None and a.has_attr("href"):
+        u = canon_url(a["href"], base_url)
+        if u and u != base_url:
+            return u
+    for a in soup.find_all("a", href=True):
+        if _NEXT_TEXT.match(norm_ws(a.get_text(" ", strip=True)) or ""):
+            u = canon_url(a["href"], base_url)
+            if u and u != base_url:
+                return u
     return None
 
 

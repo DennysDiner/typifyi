@@ -1,21 +1,23 @@
-# Regional / part-State Tasmanian holidays.
+# Regional / part-State Tasmanian holidays, keyed by MUNICIPALITY (show and cup days are declared for
+# particular municipal areas, not for the three regions — audit finding #21).
 #
-# STATUS: NOT VERIFIED. The network policy in the build environment blocked worksafe.tas.gov.au and
-# legislation.tas.gov.au, so no official source could be read. The entries below are from memory of the
-# Statutory Holidays Act 2000 (Tas) and are marked verified: false; the deadline engine IGNORES unverified
-# entries unless run with --include-unverified-regional.
-#
-# To populate properly: download the statutory holidays list from WorkSafe Tasmania
-# (https://worksafe.tas.gov.au/topics/laws-and-compliance/statutory-holidays) as CSV columns
-# date,name,region and run:  rti holidays import-csv <file.csv> --source-url <url>
-# Regions: south | north | north_west (see LEGAL_MODEL.md working_day for why this matters).
+# STATUS: NOT VERIFIED. The build environment could not reach worksafe.tas.gov.au or legislation.tas.gov.au.
+# Entries are from memory and marked verified: false; the deadline engine IGNORES unverified entries unless
+# run with --include-unverified-regional. Populate from an official source with:
+#   rti holidays import-csv <file.csv> --source-url <url>     (columns: date,name,region)
+# where `region` is a municipality slug (hobart, launceston, burnie, ...) or one of south|north|north_west.
+# The engine maps an authority to its municipality via the registry `municipality` field (councils: their own
+# LGA) or, failing that, to its `region`. Recreation Day is observed in the parts of the State that do not
+# observe Regatta Day (auditor memory, 70%): listed here for north and north_west.
 holidays:
   - {date: 2026-02-09, name: Royal Hobart Regatta, region: south, source: memory, verified: false}
-  - {date: 2026-02-25, name: Launceston Cup, region: north, source: memory, verified: false}
-  - {date: 2026-03-03, name: King Island Show, region: north_west, source: memory, verified: false}
-  - {date: 2026-10-02, name: Burnie Show, region: north_west, source: memory, verified: false}
-  - {date: 2026-10-08, name: Launceston Show, region: north, source: memory, verified: false}
-  - {date: 2026-10-16, name: Flinders Island Show, region: north, source: memory, verified: false}
+  - {date: 2026-02-25, name: Launceston Cup, region: launceston, source: memory, verified: false}
+  - {date: 2026-03-03, name: King Island Show, region: king_island, source: memory, verified: false}
+  - {date: 2026-10-02, name: Burnie Show, region: burnie, source: memory, verified: false}
+  - {date: 2026-10-08, name: Launceston Show, region: launceston, source: memory, verified: false}
+  - {date: 2026-10-16, name: Flinders Island Show, region: flinders, source: memory, verified: false}
   - {date: 2026-10-22, name: Royal Hobart Show, region: south, source: memory, verified: false}
   - {date: 2026-11-02, name: Recreation Day, region: north, source: memory, verified: false}
-  - {date: 2026-11-27, name: Devonport Show, region: north_west, source: memory, verified: false}
+  - {date: 2026-11-02, name: Recreation Day, region: north_west, source: memory, verified: false}
+  - {date: 2026-11-27, name: Devonport Show, region: devonport, source: memory, verified: false}
+  - {date: 2027-01-13, name: Devonport Cup, region: devonport, source: memory, verified: false}

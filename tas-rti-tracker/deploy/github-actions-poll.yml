@@ -1,8 +1,12 @@
-# Copy to .github/workflows/rti-poll.yml if hosting the poller on GitHub Actions.
-# Caveats (see DECISIONS.md D12): Actions cron is best-effort (often 5–15 min late), the DB + archive must be
-# persisted (this example commits them to a data branch; use an artifact store or rclone for large archives),
-# and GitHub-hosted runners' egress IPs may be rate-limited by some hosts. Secrets: set repository secrets
-# RTI_CONTACT_EMAIL, RTI_NTFY_URL / SMTP vars, ANTHROPIC_API_KEY.
+# GitHub Actions option — READ THIS FIRST.
+#
+# Audit finding #53: an earlier version of this example committed data/ (the SQLite DB with Kurt's applications,
+# attachments and alert payloads) to a branch of the repository. That publishes private material if the repo is
+# or ever becomes public. This version therefore:
+#   * keeps state OUTSIDE GitHub (an rclone remote such as a private S3/B2 bucket or a WebDAV share), and
+#   * never writes data/ into the repository.
+# Remaining caveats: Actions cron is best-effort (often 5-15 min late), GitHub-hosted runner IPs may be rate-limited
+# by some hosts, and every secret listed below must be an Actions secret. Prefer cron/systemd on a host you control.
 name: rti-poll
 on:
   schedule:
@@ -14,23 +18,23 @@ jobs:
     concurrency: rti-poll
     steps:
       - uses: actions/checkout@v4
-        with: { ref: data }          # data branch holds data/rti.db + data/archive
-      - uses: actions/checkout@v4
-        with: { path: src }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: sudo apt-get install -y ocrmypdf tesseract-ocr
-      - run: pip install -e ./src
+      - run: sudo apt-get install -y ocrmypdf tesseract-ocr rclone
+      - run: pip install -e ./tas-rti-tracker
+      - name: Pull state from private storage
+        env: { RCLONE_CONFIG_REMOTE_TYPE: ${{ secrets.RCLONE_TYPE }}, RCLONE_CONFIG_REMOTE_ACCESS_KEY_ID: ${{ secrets.RCLONE_KEY }}, RCLONE_CONFIG_REMOTE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_SECRET }}, RCLONE_CONFIG_REMOTE_ENDPOINT: ${{ secrets.RCLONE_ENDPOINT }} }
+        run: rclone sync remote:rti-tracker-state ./data --create-empty-src-dirs
       - env:
-          RTI_ROOT: ${{ github.workspace }}/src
+          RTI_ROOT: ${{ github.workspace }}/tas-rti-tracker
           RTI_DATA_DIR: ${{ github.workspace }}/data
           RTI_CONTACT_EMAIL: ${{ secrets.RTI_CONTACT_EMAIL }}
           RTI_NTFY_URL: ${{ secrets.RTI_NTFY_URL }}
+          RTI_NTFY_TOKEN: ${{ secrets.RTI_NTFY_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           rti init
           rti run
-      - run: |
-          git config user.name rti-bot && git config user.email rti-bot@users.noreply.github.com
-          git add data && git commit -m "poll $(date -u +%FT%TZ)" || true
-          git push
+      - name: Push state back (never into git)
+        env: { RCLONE_CONFIG_REMOTE_TYPE: ${{ secrets.RCLONE_TYPE }}, RCLONE_CONFIG_REMOTE_ACCESS_KEY_ID: ${{ secrets.RCLONE_KEY }}, RCLONE_CONFIG_REMOTE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_SECRET }}, RCLONE_CONFIG_REMOTE_ENDPOINT: ${{ secrets.RCLONE_ENDPOINT }} }
+        run: rclone sync ./data remote:rti-tracker-state

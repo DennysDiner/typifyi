@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import date
+from datetime import UTC
 from pathlib import Path
 
 import click
@@ -27,6 +27,8 @@ def _archive(conn):
 def _fetcher(conn):
     from .fetch import Fetcher
     st = settings()
+    if not st.contact_email or "@" not in st.contact_email:
+        raise click.ClickException("RTI_CONTACT_EMAIL is not set: refusing to poll without a contact address in the User-Agent (politeness, audit #46)")
     return Fetcher(conn, _archive(conn), st.user_agent)
 
 
@@ -43,7 +45,7 @@ def init() -> None:
     click.echo(f"db: {settings().db_path}")
     click.echo(f"registry: {registry.sync(conn)}")
     click.echo(f"watchlist campaigns: {watchlist.sync(conn, settings().watchlist)}")
-    y = date.today().year
+    y = datetime.now(UTC).date().year
     click.echo(f"holidays rows: {holidays_cal.sync_to_db(conn, list(range(y - 2, y + 3)))}")
 
 
@@ -131,13 +133,37 @@ def poll(tier: int | None, authority: str | None, force: bool, limit: int | None
         click.echo(json.dumps(rep.__dict__, default=str))
 
 
+@main.command("recheck-docs")
+@click.option("--authority", default=None)
+@click.option("--max-age-hours", type=int, default=24, help="Only sources not rechecked within this many hours.")
+def recheck_docs(authority, max_age_hours) -> None:
+    """Re-fetch current documents with conditional GETs to detect replaced/removed files at unchanged URLs."""
+    from datetime import datetime, timedelta
+
+    from .monitor import Monitor
+    conn = _conn()
+    mon = Monitor(conn, _fetcher(conn))
+    cutoff = (datetime.now(UTC) - timedelta(hours=max_age_hours)).isoformat()
+    q = "SELECT id, authority_id FROM sources WHERE enabled=1 AND blocked=0 AND (last_doc_recheck_at IS NULL OR last_doc_recheck_at < ?)"
+    args = [cutoff]
+    if authority:
+        q += " AND authority_id=?"
+        args.append(authority)
+    for r in conn.execute(q, args).fetchall():
+        click.echo(f"{r['authority_id']}: {json.dumps(mon.recheck_documents(int(r['id'])))}")
+
+
 @main.command()
 def health() -> None:
-    """Per-authority freshness report."""
-    from .health import format_table, health_rows, summary
+    """Per-authority freshness report. Exit code 1 if any Tier 1 body has no source, a source is failing >24h,
+    blocked, never succeeded, or an inactive authority still has an enabled source."""
+    from .health import format_table, has_failures, health_rows, summary
     rows = health_rows(_conn())
     click.echo(format_table(rows))
     click.echo(json.dumps(summary(rows)))
+    if has_failures(rows):
+        click.echo("HEALTH: FAILURES PRESENT (see states in capitals / failing_24h / blocked)", err=True)
+        sys.exit(1)
 
 
 @main.command()
@@ -187,6 +213,11 @@ def run() -> None:
     changed = [r for r in reps if r.status == "changed"]
     click.echo(f"polled {len(reps)}; changed {len(changed)}; errors {sum(1 for r in reps if r.status in ('error','blocked'))}")
     click.echo(f"extracted {extract_pending(conn, _archive(conn))}")
+    from datetime import datetime, timedelta
+    cutoff = (datetime.now(UTC) - timedelta(hours=24)).isoformat()
+    due_recheck = conn.execute("SELECT id FROM sources WHERE enabled=1 AND blocked=0 AND kind='disclosure_log' AND (last_doc_recheck_at IS NULL OR last_doc_recheck_at < ?) ORDER BY tier, last_doc_recheck_at LIMIT 3", (cutoff,)).fetchall()
+    for r in due_recheck:
+        click.echo(f"recheck {r['id']}: {json.dumps(mon.recheck_documents(int(r['id'])))}")
     from .applications import link_releases
     link_releases(conn)
     click.echo(json.dumps(process_changes(conn)))
@@ -201,12 +232,18 @@ def archive() -> None:
 
 @archive.command("verify")
 def archive_verify() -> None:
+    """Re-hash every blob and verify the capture hash chain; prints the chain head to anchor externally."""
     conn = _conn()
     a = _archive(conn)
     bad = [r["sha256"] for r in conn.execute("SELECT sha256 FROM blobs") if not a.verify(r["sha256"])]
     click.echo(f"blobs: {conn.execute('SELECT count(*) FROM blobs').fetchone()[0]}, corrupt/missing: {len(bad)}")
     for b in bad:
         click.echo(b)
+    n, broken = a.verify_chain()
+    click.echo(f"captures: {n}, chain breaks: {len(broken)} {broken[:20]}")
+    click.echo(f"chain head: {a.chain_head()}  (anchor this externally — e.g. OpenTimestamps `ots stamp`, or a dated post — to make the ledger tamper-evident)")
+    if bad or broken:
+        sys.exit(1)
 
 
 # ---- applications ------------------------------------------------------------------------------
@@ -224,12 +261,16 @@ def app() -> None:
 @click.option("--fee", type=float, default=None)
 @click.option("--waiver", default=None)
 @click.option("--notes", default=None)
-def app_new(authority, lodged, accepted, scope, reference, fee, waiver, notes) -> None:
+@click.option("--region", type=click.Choice(["south", "north", "north_west"]), default=None, help="Reference point for regional holidays (overrides the authority's region).")
+def app_new(authority, lodged, accepted, scope, reference, fee, waiver, notes, region) -> None:
     from .applications import create
     from .registry import resolve_authority
     conn = _conn()
     aid = authority if conn.execute("SELECT 1 FROM authorities WHERE id=?", (authority,)).fetchone() else resolve_authority(conn, authority)
-    app_id = create(conn, authority_id=aid, authority_name=authority if not aid else None, lodged=lodged.date(), scope=scope,
+    if not aid:
+        cands = resolve_authority(conn, authority, candidates=True)
+        raise click.ClickException(f"authority {authority!r} not found; use a registry id. Candidates: {cands}")
+    app_id = create(conn, authority_id=aid, authority_name=None, lodged=lodged.date(), scope=scope, region=region,
                     reference=reference, fee_amount=fee, fee_waiver=waiver, accepted=accepted.date() if accepted else None, notes=notes)
     click.echo(f"application #{app_id} (authority_id={aid})")
 
@@ -258,18 +299,22 @@ def app_attach(app_id, path, description) -> None:
 @app.command("status")
 @click.argument("app_id", type=int, required=False)
 @click.option("--today", type=click.DateTime(formats=["%Y-%m-%d"]), default=None)
-def app_status(app_id, today) -> None:
+@click.option("--include-unverified-regional", is_flag=True, help="Apply the UNVERIFIED regional holidays in legal/holidays/regional.yaml.")
+def app_status(app_id, today, include_unverified_regional) -> None:
     from .applications import status_for
     from .deadlines import DeadlineEngine
+    from .holidays_cal import build_calendar
     conn = _conn()
-    eng = DeadlineEngine(today=today.date() if today else None)
+    t = today.date() if today else datetime.now(UTC).date()
+    cal = build_calendar(list(range(t.year - 2, t.year + 3)), include_unverified_regional)
+    eng = DeadlineEngine(today=t, calendar=cal)
     ids = [app_id] if app_id else [r["id"] for r in conn.execute("SELECT id FROM applications ORDER BY id")]
     for i in ids:
         a = conn.execute("SELECT * FROM applications WHERE id=?", (i,)).fetchone()
         st = status_for(conn, i, eng)
         click.echo(f"#{i} {a['authority_name'] or a['authority_id']} — {a['reference'] or ''}\n  state: {st.state} ({st.state_section}) — {st.state_note}")
         for d in st.deadlines:
-            click.echo(f"  {'PASSED ' if d.passed else ''}{d.display()}")
+            click.echo(f"  [{d.status_word}] {d.display()}")
         click.echo("  what you can do next:")
         for s in st.next_steps:
             click.echo(f"   - {s['title']} [{s['section']}]" + (f" by {s['deadline']}" if s["deadline"] else ""))
@@ -302,7 +347,7 @@ def holidays() -> None:
 @click.option("--include-unverified", is_flag=True)
 def holidays_show(year, include_unverified) -> None:
     from .holidays_cal import build_calendar
-    y = year or date.today().year
+    y = year or datetime.now(UTC).date().year
     cal = build_calendar([y], include_unverified)
     for d, n in sorted(cal.statewide.items()):
         click.echo(f"{d} statewide  {n}")
@@ -376,7 +421,9 @@ def annual_import(pdf, year, source_url, columns) -> None:
     from .registry import resolve_authority
     conn = _conn()
     data = Path(pdf).read_bytes()
-    cap = _archive(conn).store(data, url=source_url or f"file://{Path(pdf).name}", content_type="application/pdf", headers={}, http_status=None, kind="document")
+    # A manual import is recorded as such: kind='manual_import', file:// URL, claimed source in headers (audit #42).
+    cap = _archive(conn).store(data, url=f"file://{Path(pdf).resolve()}", content_type="application/pdf",
+                               headers={"x-claimed-source-url": source_url or ""}, http_status=None, kind="manual_import")
     res = import_report(conn, data, year, source_url, cap.sha256, columns.split(",") if columns else None, resolve=lambda n: resolve_authority(conn, n))
     click.echo(json.dumps({k: v for k, v in res.items() if k != "unmatched"}))
     for u in res["unmatched"][:200]:

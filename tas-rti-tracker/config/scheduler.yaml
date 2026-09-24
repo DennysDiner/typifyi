@@ -39,7 +39,7 @@ tier1_authorities:
 adjacent_sources:
   - kind: ombudsman_decisions
     adapter: ombudsman_decisions
-    url: https://www.ombudsman.tas.gov.au/right-to-information/decisions
+    url: https://www.ombudsman.tas.gov.au/right-to-information/reasons-for-decisions   # snippet_verified (LEGAL_MODEL.md App. A); decisions may be split into sub-folders — set extra_listing_urls after first poll
     tier: 2
     config: {}
   - kind: annual_report
@@ -53,3 +53,16 @@ adjacent_sources:
     tier: 2
     enabled: false      # stubbed; enable once search endpoint is confirmed (brief §2: optional)
     config: {terms: ["right to information", "RTI"]}
+  # Release channels that are not disclosure logs (audit #63). Disabled until the pages have been observed.
+  - kind: cabinet_decisions
+    adapter: html_list
+    url: https://www.dpac.tas.gov.au/cabinet-decisions      # UNVERIFIED URL — monthly release of final Cabinet decisions from 1 Sep 2026 (LEGAL_MODEL.md §6.2)
+    tier: 2
+    enabled: false
+    config: {}
+  - kind: right_to_know
+    adapter: html_list
+    url: https://www.righttoknow.org.au/body/tasmanian_government   # UNVERIFIED URL — public RTI request threads
+    tier: 2
+    enabled: false
+    config: {}

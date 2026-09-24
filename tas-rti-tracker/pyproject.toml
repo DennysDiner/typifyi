@@ -9,8 +9,9 @@ dependencies = [
   "beautifulsoup4>=4.12",
   "lxml>=5.0",
   "pypdf>=4.0",
+  "openpyxl>=3.1",
   "python-docx>=1.1",
-  "holidays>=0.60",
+  "holidays==0.105",   # pinned: an upgrade can silently change computed deadlines (audit #51)
   "click>=8.1",
   "fastapi>=0.115",
   "uvicorn>=0.30",

@@ -10,6 +10,8 @@ Config keys:
 """
 from __future__ import annotations
 
+import re
+
 from bs4 import BeautifulSoup, Tag
 
 from .base import (
@@ -18,6 +20,7 @@ from .base import (
     canon_url,
     dedupe,
     find_date,
+    find_next_page,
     find_reference,
     is_doc_url,
     norm_ws,
@@ -29,6 +32,7 @@ from .base import (
 
 def _item_from_tag(tag: Tag, base_url: str, config: dict) -> ListedItem | None:
     links = [(canon_url(a["href"], base_url), norm_ws(a.get_text(" ", strip=True))) for a in tag.find_all("a", href=True)]
+    links = [(u, t) for u, t in links if u]
     if not links:
         return None
     doc_urls = [u for u, _ in links if is_doc_url(u)]
@@ -52,7 +56,7 @@ def _item_from_tag(tag: Tag, base_url: str, config: dict) -> ListedItem | None:
     reference = find_reference(title, text)
     url = doc_urls[0] if doc_urls else page_urls[0]
     return ListedItem(
-        external_key=stable_key(reference or title, url), title=title, url=url, reference=reference,
+        external_key=stable_key(reference, title, url), title=title, url=url, reference=reference,
         published_date=published, fields={"text": text[:1000]}, document_urls=doc_urls,
         page_url=None if doc_urls else url,
     )
@@ -75,9 +79,10 @@ class HtmlListAdapter(Adapter):
         else:
             # heuristic: smallest block elements that directly contain a document link
             tags = []
+            furniture = re.compile(config.get("exclude_link_text", r"application form|how to apply|policy|guidelines|privacy"), re.IGNORECASE)
             for a in root.find_all("a", href=True):
                 u = canon_url(a["href"], base_url)
-                if not is_doc_url(u):
+                if not u or not is_doc_url(u) or furniture.search(norm_ws(a.get_text(" ", strip=True))):
                     continue
                 block = a
                 while block.parent is not None and block.name not in ("li", "article", "tr", "p", "div", "section", "dd"):
@@ -90,9 +95,9 @@ class HtmlListAdapter(Adapter):
         return dedupe(items)
 
     def next_page(self, body: bytes, base_url: str, config: dict) -> str | None:
-        sel = config.get("next_selector")
-        if not sel:
-            return None
         soup = BeautifulSoup(body, "lxml")
-        a = soup.select_one(sel)
-        return canon_url(a["href"], base_url) if a and a.has_attr("href") else None
+        sel = config.get("next_selector")
+        if sel:
+            a = soup.select_one(sel)
+            return canon_url(a["href"], base_url) if a and a.has_attr("href") else None
+        return None if config.get("no_pagination") else find_next_page(soup, base_url)

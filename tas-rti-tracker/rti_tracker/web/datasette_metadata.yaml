@@ -1,5 +1,8 @@
 title: Tas RTI tracker — data (private)
 description: Faceted search over the RTI tracker store. Run with `datasette data/rti.db -m rti_tracker/web/datasette_metadata.yaml`.
+# Private data (Kurt's applications and anything derived from them) is DENIED, not merely hidden (audit #54),
+# and arbitrary SQL is off so the denial cannot be bypassed with a query. Serve on localhost only.
+allow_sql: false
 databases:
   rti:
     tables:
@@ -15,14 +18,13 @@ databases:
         sort_desc: detected_at
       authorities:
         facets: [type, rti_status, tier, disclosure_log_format]
-      applications:
-        hidden: true      # Kurt's applications are never exposed via Datasette
-      application_events:
-        hidden: true
-      application_attachments:
-        hidden: true
-      application_links:
-        hidden: true
+      applications: {allow: false, hidden: true}      # Kurt's applications are never exposed via Datasette
+      application_events: {allow: false, hidden: true}
+      application_attachments: {allow: false, hidden: true}
+      application_links: {allow: false, hidden: true}
+      deadline_alerts_sent: {allow: false, hidden: true}
+      alerts: {allow: false, hidden: true}            # alert payloads name Kurt's applications
+      kv: {allow: false, hidden: true}
     queries:
       releases_by_authority_month:
         sql: SELECT authority_id, substr(COALESCE(published_date, first_seen_at),1,7) AS month, count(*) AS n FROM items GROUP BY 1,2 ORDER BY 2 DESC

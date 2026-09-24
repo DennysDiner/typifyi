@@ -68,6 +68,7 @@ rules:
   - id: negotiation_extended_decision_due
     description: Possible 30 working-day period where negotiation under s 13(7) has taken place.
     trigger: application_accepted
+    requires_event: negotiation_commenced
     days: 30
     unit: working_days
     section: "s 15(3)?"
@@ -229,11 +230,16 @@ rules:
     description: Time limit, if any, for applying to the Ombudsman after a deemed refusal under s 45(1)(f).
     trigger: deemed_refusal
     days: null
+    precautionary_days: 20
     unit: working_days
     section: "s 45(1)(f); time-limit subsection unknown"
     evidence: memory
     uncertain: true
-    notes: Not established. Do not show a lapse date. Show "may apply now".
+    notes: >-
+      Not established. The independent audit (research/AUDIT_REPORT.md #15, auditor memory ~50%) thinks s 45
+      may carry a 20-working-day limit running from the deemed-refusal date. Because this is the APPLICANT'S
+      own deadline, the engine shows a PRECAUTIONARY lapse date of `precautionary_days` after the deemed
+      refusal, labelled UNCERTAIN, and alerts on it. Confirm against s 45 before relying on the later date.
 
   - id: ombudsman_decision
     description: Ombudsman to complete the review as soon as practicable after receiving the application; no fixed statutory period found.
@@ -330,6 +336,22 @@ citation_normalisation:
   output: "{section: <int>, sub: '<(n)(x)...>' | null}"
   notes: Map s 33 to public_interest_test, not to an exemption. Expand ranges ss 36–37 into each section.
 
+# Section pinpoints used for state labels (audit #24: no section string lives in code).
+state_sections:
+  application_lodged: {section: "s 13", evidence: snippet_verified}
+  application_accepted: {section: "s 16", evidence: snippet_verified, uncertain: true}
+  decision_notice: {section: "s 22", evidence: memory, uncertain: true, notes: "notice-of-decision section not confirmed"}
+  internal_review_decided: {section: "s 43", evidence: snippet_verified}
+  external_review_decided: {section: "s 47", evidence: memory, uncertain: true}
+
+# Extensions and consultation decisions recorded after the decision period has already expired do not
+# revive it (audit #17; auditor memory ~55% that an extension must be made within the period). The engine
+# keeps the deemed refusal and warns. Mark UNCERTAIN.
+late_extension_policy:
+  revives_expired_period: false
+  evidence: memory
+  uncertain: true
+
 publication:
   disclosure_log_statutory: false
   disclosure_log_evidence: >-
@@ -345,7 +367,10 @@ publication:
       applies_to: GBEs and SOCs
       source: Premier's letter (ABC 2026-05-20)
       evidence: snippet_verified
-  notes: Non-publication is a policy departure, not a breach of the Act.
+  notes: >-
+    No MANDATORY statutory duty to keep a disclosure log was identified. Low-confidence recall (audit #26)
+    of "should consider routine disclosure" wording in s 12 or the Ombudsman Manual: check. Non-publication
+    is best described as a departure from government policy rather than a breach of the Act.
 
 annual_reporting:
   section: "s 53"

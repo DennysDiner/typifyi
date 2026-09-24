@@ -26,6 +26,14 @@ class Blocked(Exception):
     """The source cannot be polled (robots.txt disallow, 403/451, explicit block)."""
 
 
+class FetchError(Exception):
+    """A non-success HTTP status (anything other than 200/304) or an unusable response."""
+
+    def __init__(self, msg: str, status: int | None = None):
+        super().__init__(msg)
+        self.status = status
+
+
 @dataclass
 class FetchResult:
     url: str
@@ -97,8 +105,10 @@ class Fetcher:
             rp = urllib.robotparser.RobotFileParser()
             try:
                 r = self.client.get(robots_url, headers={"User-Agent": self.user_agent})
-                if r.status_code >= 400:
-                    rp.parse([])  # no robots => allowed
+                if 500 <= r.status_code < 600:
+                    rp.parse(["User-agent: *", "Disallow: /"])  # RFC 9309 §2.3.1.4: unavailable => disallow
+                elif r.status_code >= 400:
+                    rp.parse([])  # 4xx: no robots => allowed
                 else:
                     rp.parse(r.text.splitlines())
                     try:
@@ -106,10 +116,13 @@ class Fetcher:
                             r.content, url=robots_url, content_type=r.headers.get("content-type"),
                             headers=dict(r.headers), http_status=r.status_code, kind="robots",
                         )
-                    except Exception:
+                    except Exception:  # noqa: BLE001, S110 — archiving robots.txt is best-effort
                         pass
             except httpx.HTTPError:
-                rp.parse([])
+                rp.parse(["User-agent: *", "Disallow: /"])  # unreachable => treat as disallow until it can be read
+                hs.robots_checked_at = now - 86400 + 600     # retry in 10 minutes
+                hs.robots = rp
+                return False
             hs.robots = rp
             hs.robots_checked_at = now
         assert hs.robots is not None
@@ -159,9 +172,14 @@ class Fetcher:
                 headers["If-None-Match"] = etag
             if last_modified:
                 headers["If-Modified-Since"] = last_modified
+            if urlsplit(url).scheme not in ("http", "https"):
+                raise FetchError(f"unsupported URL scheme: {url}")
             try:
                 with self.client.stream("GET", url, headers=headers) as r:
                     status = r.status_code
+                    if (str(r.url) != url and urlsplit(str(r.url)).netloc.lower() != urlsplit(url).netloc.lower()
+                            and not self._robots_allowed(str(r.url))):
+                        raise Blocked(f"robots.txt on redirect target disallows {r.url}")
                     if status == 304:
                         body = b""
                     else:
@@ -188,11 +206,21 @@ class Fetcher:
                 raise Blocked(f"HTTP {status} for {url}")
             if status == 429 or status >= 500:
                 self._note_failure(url)
+                ra = resp_headers.get("retry-after")
+                if ra and ra.isdigit():
+                    self._host(url).backoff_until = max(self._host(url).backoff_until, time.time() + int(ra))
                 self.conn.execute(
                     "UPDATE fetches SET finished_at=?, status_code=?, error=? WHERE id=?",
                     (retrieved_at, status, f"HTTP {status}", fetch_id),
                 )
-                raise httpx.HTTPStatusError(f"HTTP {status}", request=None, response=None)  # type: ignore[arg-type]
+                raise FetchError(f"HTTP {status}", status)
+            if status not in (200, 304):
+                # 404/410/3xx-without-follow etc.: never treat as a successful (empty) listing.
+                self.conn.execute(
+                    "UPDATE fetches SET finished_at=?, status_code=?, error=? WHERE id=?",
+                    (retrieved_at, status, f"HTTP {status}", fetch_id),
+                )
+                raise FetchError(f"HTTP {status}", status)
             self._note_success(url)
             capture = None
             if status == 200 and archive:

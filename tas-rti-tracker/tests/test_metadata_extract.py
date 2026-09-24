@@ -37,7 +37,8 @@ def test_normalise_citations_excludes_s33():
 
 def test_run_metadata_with_fake_llm(conn, archive):
     import yaml
-    rules = yaml.safe_load(open("legal/rules.yaml"))
+    with open("legal/rules.yaml") as f:
+        rules = yaml.safe_load(f)
     cap = archive.store(b"x", url="https://x/d.pdf", content_type="application/pdf", headers={}, http_status=200)
     conn.execute("INSERT INTO documents(url,sha256,capture_id,first_seen_at,text_chars) VALUES ('https://x/d.pdf',?,?,'t',100)", (cap.sha256, cap.id))
     doc_id = conn.execute("SELECT id FROM documents").fetchone()[0]

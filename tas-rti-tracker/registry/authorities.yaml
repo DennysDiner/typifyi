@@ -93,9 +93,9 @@ authorities:
 - id: ambulance_tas
   name: Ambulance Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Health, Mental Health and Wellbeing (Bridget Archer)
@@ -112,16 +112,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Division of Department of Health (memory). No body-specific search was run: the session-wide WebSearch budget (200)
-    was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Division of Department of Health
+    (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
+    search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: arts_tas
   name: Arts Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: the Arts (Roger Jaensch)
@@ -138,7 +140,9 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: Snippet Q6 describes Arts Tasmania's role. To TECT Dec 2026.
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Snippet Q6 describes Arts Tasmania''s
+    role. To TECT Dec 2026.]'
   queries:
   - '"Tourism, Events and Creative Tasmania" established'
   slice: state_bodies
@@ -246,9 +250,9 @@ authorities:
 - id: bdm
   name: Registry of Births, Deaths and Marriages
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -265,8 +269,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
-    search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original:  No body-specific search was run:
+    the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.]'
   queries: []
   slice: state_bodies
 - id: brand_tas
@@ -455,9 +461,9 @@ authorities:
 - id: business_tas
   name: Business Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Small Business (Guy Barnett) / Business, Industry and Resources (Felix Ellis)
@@ -474,8 +480,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth service. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted
-    after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth service. No
+    body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all
+    facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: cbos
@@ -483,9 +491,9 @@ authorities:
   aliases:
   - CBOS
   - Consumer Affairs and Fair Trading
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Consumer Affairs (Guy Barnett)
@@ -502,7 +510,9 @@ authorities:
   - https://www.cbos.tas.gov.au/ (snippet_verified, Q48)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: Division of Justice (memory). Building-regulation functions could be affected by Building Tasmania MoG - UNCERTAIN.
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Division of Justice (memory). Building-regulation
+    functions could be affected by Building Tasmania MoG - UNCERTAIN.]'
   queries:
   - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
   slice: state_bodies
@@ -650,9 +660,9 @@ authorities:
   aliases:
   - CISVE
   - Culture, Arts and Sport (legacy /cas path)
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -669,8 +679,9 @@ authorities:
   - https://www.stategrowth.tas.gov.au/cas/about_us (snippet_verified)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: State Growth division coordinating tourism, events, arts, screen and sport (snippet Q6). Expected to become Tourism,
-    Events and Creative Tasmania 2026-12-03.
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: State Growth division coordinating
+    tourism, events, arts, screen and sport (snippet Q6). Expected to become Tourism, Events and Creative Tasmania 2026-12-03.]'
   queries:
   - '"Tourism, Events and Creative Tasmania" established'
   slice: state_bodies
@@ -715,9 +726,9 @@ authorities:
 - id: climate_change_office
   name: Tasmanian Climate Change Office
   aliases: []
-  type: other
+  type: business_unit
   active: false
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -734,10 +745,11 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: moved from DPAC into ReCFIT (State Growth) c. 2022; climate change function then moved from State Growth/Building
-    Tasmania to NRE 2026-08-13 (snippet). abolished (absorbed), successor recfit then nre. No body-specific search was run:
-    the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
-    labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: moved from DPAC into ReCFIT
+    (State Growth) c. 2022; climate change function then moved from State Growth/Building Tasmania to NRE 2026-08-13 (snippet).
+    abolished (absorbed), successor recfit then nre. No body-specific search was run: the session-wide WebSearch budget (200)
+    was exhausted afte]'
   queries:
   - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
   slice: state_bodies
@@ -777,9 +789,9 @@ authorities:
 - id: community_corrections
   name: Community Corrections
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Justice, Corrections and Rehabilitation (Guy Barnett)
@@ -796,16 +808,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
-    search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original:  No body-specific search was run:
+    the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.]'
   queries: []
   slice: state_bodies
 - id: coordinator_general
   name: Office of the Coordinator-General
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Business, Industry and Resources (Felix Ellis) - UNCERTAIN
@@ -822,9 +836,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth. Destination in 2026 MoG (DPAC economic development?) UNCERTAIN. No body-specific search was
-    run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
-    unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth. Destination
+    in 2026 MoG (DPAC economic development?) UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget
+    (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: copping_jointauth
@@ -929,9 +944,9 @@ authorities:
 - id: crown_law
   name: Crown Law (Office of the Solicitor-General / Crown Solicitor)
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: UNCERTAIN
+  rti_status: via_parent
   rti_status_basis: Division of Justice; overlap with s 6 Solicitor-General exclusion and legal professional privilege exemption
     - UNCERTAIN
   portfolio_minister: null
@@ -948,8 +963,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory only. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
-    51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory only. No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.]'
   queries: []
   slice: state_bodies
 - id: custodial_inspector
@@ -1382,9 +1399,9 @@ authorities:
 - id: dss
   name: Digital Strategy and Services
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Innovation, Science and the Digital Economy (Felix Ellis)
@@ -1401,8 +1418,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
-    51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory. No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.]'
   queries: []
   slice: state_bodies
 - id: dulverton_waste
@@ -1534,9 +1553,9 @@ authorities:
 - id: events_tas
   name: Events Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Tourism, Hospitality and Events (Roger Jaensch)
@@ -1553,7 +1572,8 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: Snippet Q6 describes Events Tasmania.
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Snippet Q6 describes Events Tasmania.]'
   queries:
   - '"Tourism, Events and Creative Tasmania" established'
   slice: state_bodies
@@ -1594,6 +1614,21 @@ authorities:
   - '"Flinders Council" "disclosure log"'
   - '"Flinders Council" RTI "assessed disclosure"'
   slice: local_gov_other
+- id: forest_practices_tribunal
+  name: Forest Practices Tribunal
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: auditor memory (35%); quasi-judicial functions may be carved out
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED.'
+  queries: []
 - id: fpa
   name: Forest Practices Authority
   aliases:
@@ -1627,9 +1662,9 @@ authorities:
   name: Forensic Science Service Tasmania
   aliases:
   - FSST
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -1646,8 +1681,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: within DPFEM. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after
-    this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: within DPFEM. No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: george_town_c
@@ -2088,13 +2125,10 @@ authorities:
   last_verified: null
   verification_status: network_blocked_search_only
   active: true
-  notes: Disclosure log format inferred from result URLs pointing at PDF decision letters (e.g. /docs/default-source/about-us/our-governance/request-to-information-(rti)/...pdf
-    and /sites/default/files/2026-02/16-06-23-rti-decision-letter-...pdf), i.e. site migrated to a new CMS c. 2026 - old /docs/default-source/
-    links may break. Annual Report 2024-25 PDF URL seen in results (title 'Powering Tasmania for generations Annual Report
-    2024-25'). Portfolio minister title is memory (2025 Rockliff ministry). Renamed from Hydro-Electric Commission to Hydro-Electric
-    Corporation 1998 (memory). Group includes Momentum Energy (subsidiary company) and Entura (division). Retained in public
-    hands per May 2025 review (search summary). AETV Pty Ltd (Tamar Valley Power Station) is a Hydro subsidiary per memory
-    - not searched; possible extra subsidiary record.
+  notes: 'Slice b recorded format ''html_page_with_pdf_attachments'' (snippet-derived); mapped to the html_list generic adapter.
+    Verify on first poll. [original: Disclosure log format inferred from result URLs pointing at PDF decision letters (e.g.
+    /docs/default-source/about-us/our-governance/request-to-information-(rti)/...pdf and /sites/default/files/2026-02/16-06-23-rti-decision-letter-...pdf),
+    i.e. site migrated to a new CMS c. 2026 - old /docs/default-s]'
   queries:
   - Hydro Tasmania "right to information"
   - Hydro Tasmania "disclosure log"
@@ -2103,8 +2137,6 @@ authorities:
   - '"Tasmanian Government Businesses" treasury.tas.gov.au "State-owned companies" "Government Business Enterprises" Tascorp
     Port Arthur'
   slice: gbe_soc
-  notes_override: Slice b recorded format 'html_page_with_pdf_attachments' (snippet-derived); mapped to the html_list generic
-    adapter. Verify on first poll.
 - id: ifs
   name: Inland Fisheries Service
   aliases:
@@ -2168,9 +2200,9 @@ authorities:
 - id: jobs_tas
   name: Jobs Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Skills and Jobs (Felix Ellis)
@@ -2187,8 +2219,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after
-    this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth. No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: justice
@@ -2342,9 +2376,9 @@ authorities:
 - id: land_tasmania
   name: Land Tasmania (Recorder of Titles, Surveyor-General)
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -2361,8 +2395,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
-    51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory. No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.]'
   queries: []
   slice: state_bodies
 - id: latrobe_c
@@ -2445,6 +2481,37 @@ authorities:
   - '"City of Launceston" "disclosure log"'
   - '"City of Launceston" RTI "assessed disclosure"'
   slice: local_gov_other
+- id: launceston_flood_authority
+  name: Launceston Flood Authority
+  type: council_entity
+  rti_status: UNCERTAIN
+  rti_status_basis: 'auditor memory (45%): council authority under the Local Government Act'
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED.'
+  queries: []
+- id: law_society_tas
+  name: Law Society of Tasmania
+  type: other
+  rti_status: partial
+  rti_status_basis: 's 6: covered only for specified functions under the Legal Profession Act (LEGAL_MODEL.md §1.2 row 2,
+    snippet_verified); added per audit #5'
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: Partial coverage per s 6.
+  queries: []
 - id: legal_aid
   name: Legal Aid Commission of Tasmania
   aliases:
@@ -2596,9 +2663,9 @@ authorities:
 - id: libraries_tas
   name: Libraries Tasmania (incl. Tasmanian Archives)
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Education (Jo Palmer)
@@ -2615,16 +2682,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Snippet Q31: DECYP covers libraries and the Tasmanian archives. Separate RTI handling not seen.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Snippet Q31: DECYP covers libraries
+    and the Tasmanian archives. Separate RTI handling not seen.]'
   queries:
   - Jo Palmer Minister for Education Children Youth Disability Services Tasmania 2025 2026 portfolios
   slice: state_bodies
 - id: local_gov_division
   name: Local Government Division / Office of Local Government
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Local Government (Kerry Vincent)
@@ -2641,8 +2710,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: in DPAC. Whether moved to Building Tasmania in 2026 MoG UNCERTAIN. No body-specific search was run: the
-    session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: in DPAC. Whether moved to
+    Building Tasmania in 2026 MoG UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200) was
+    exhausted after this agent''s 51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: local_government_board
@@ -2736,6 +2807,21 @@ authorities:
   queries:
   - Motor Accidents Insurance Board MAIB Tasmania "right to information"
   slice: gbe_soc
+- id: marine_farming_planning_review_panel
+  name: Marine Farming Planning Review Panel
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: 'auditor memory (55%): statutory body under the Marine Farming Planning Act 1995'
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5; relevant to salmon campaigns. UNVERIFIED.'
+  queries: []
 - id: marinus_link
   name: Marinus Link
   aliases:
@@ -3331,8 +3417,12 @@ authorities:
   verification_status: network_blocked_search_only
   active: true
   tier: 1
-  notes: Synthetic owner record for the single DPAC-hosted ministerial disclosure log. Items are attributed to individual
-    ministers by the adapter where the entry names the Minister.
+  notes: 'Entries are attributed to individual Minister records by matching Minister names in the entry (audit #9). [original:
+    Synthetic owner record for the single DPAC-hosted ministerial disclosure log. Items are attributed to individual ministers
+    by the adapter where the entry names the Minister.]'
+  adapter_config:
+    attribution: authority_names
+    attribution_type: minister
 - id: momentum
   name: Momentum Energy
   aliases:
@@ -3402,9 +3492,9 @@ authorities:
   name: Mineral Resources Tasmania
   aliases:
   - MRT
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Business, Industry and Resources (Felix Ellis)
@@ -3421,9 +3511,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth division; ''resources functions'' to DPAC (snippet), timing UNCERTAIN. No body-specific search
-    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
-    unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth division; ''resources
+    functions'' to DPAC (snippet), timing UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget (200)
+    was exhausted after this agent''s 51st search; all facts here are memory unless labelled.]'
   queries:
   - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
   slice: state_bodies
@@ -3565,9 +3656,9 @@ authorities:
 - id: office_aboriginal_affairs
   name: Aboriginal Affairs (DPAC)
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Aboriginal Affairs (Bridget Archer)
@@ -3584,9 +3675,11 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Office of Aboriginal Affairs moved from Communities to DPAC Dec 2022 (Find & Connect snippet lists it among Communities
-    functions transferred; receiving agency memory). No body-specific search was run: the session-wide WebSearch budget (200)
-    was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Office of Aboriginal Affairs moved
+    from Communities to DPAC Dec 2022 (Find & Connect snippet lists it among Communities functions transferred; receiving
+    agency memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts he]'
   queries:
   - Communities Tasmania abolished 1 December 2022 functions transferred Homes Tasmania DECYP Department of Health
   slice: state_bodies
@@ -3655,9 +3748,9 @@ authorities:
   name: Office of Racing Integrity
   aliases:
   - ORI
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Racing (Roger Jaensch)
@@ -3674,17 +3767,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: in NRE; Director of Racing statutory office. Tasracing is a State-owned company (slice b). No body-specific
-    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
-    are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: in NRE; Director of Racing
+    statutory office. Tasracing is a State-owned company (slice b). No body-specific search was run: the session-wide WebSearch
+    budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: osem
   name: Office of Security and Emergency Management
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -3701,8 +3795,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
-    51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory. No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.]'
   queries: []
   slice: state_bodies
 - id: otter
@@ -3795,6 +3891,21 @@ authorities:
     search; all facts here are memory unless labelled.'
   queries: []
   slice: state_bodies
+- id: poppy_advisory_control_board
+  name: Poppy Advisory and Control Board
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: auditor memory (45%)
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED.'
+  queries: []
 - id: private_forests_tas
   name: Private Forests Tasmania
   aliases: []
@@ -3896,9 +4007,9 @@ authorities:
   aliases:
   - PWS
   - Tasmania Parks and Wildlife
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Parks (Nick Duigan)
@@ -3915,10 +4026,27 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
-    51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory. No body-specific search
+    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
+    unless labelled.]'
   queries: []
   slice: state_bodies
+- id: racing_appeals_board
+  name: Racing Appeals Board
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: auditor memory (35%); quasi-judicial functions may be carved out
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED.'
+  queries: []
 - id: rbf_board
   name: Retirement Benefits Fund Board
   aliases: []
@@ -3949,9 +4077,9 @@ authorities:
   name: Renewables, Climate and Future Industries Tasmania
   aliases:
   - ReCFIT
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Energy and Renewables (Nick Duigan)
@@ -3968,13 +4096,30 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth division. Climate change function to NRE 2026-08-13 (snippet); energy functions to DPAC economic
-    development (timing UNCERTAIN). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted
-    after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth division. Climate
+    change function to NRE 2026-08-13 (snippet); energy functions to DPAC economic development (timing UNCERTAIN). No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unles]'
   queries:
   - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
   - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
   slice: state_bodies
+- id: rivers_water_supply_commission
+  name: Rivers and Water Supply Commission
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: auditor memory (40%)
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED; may be dormant.'
+  queries: []
 - id: rmpat
   name: Resource Management and Planning Appeal Tribunal
   aliases:
@@ -4034,9 +4179,9 @@ authorities:
 - id: screen_tas
   name: Screen Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: the Arts (Roger Jaensch) - UNCERTAIN
@@ -4053,16 +4198,17 @@ authorities:
   - https://en.wikipedia.org/wiki/Screen_Tasmania (snippet_verified title only)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: within State Growth.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: within State Growth.]'
   queries:
   - Pulse Tasmania "Building Tasmania to launch on July 2" restructure stages
   slice: state_bodies
 - id: sentencing_advisory
   name: Sentencing Advisory Council
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: 'Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department (memory: ministerially established, supported by Justice)'
   portfolio_minister: null
@@ -4079,16 +4225,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
-    search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original:  No body-specific search was run:
+    the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.]'
   queries: []
   slice: state_bodies
 - id: service_tas
   name: Service Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -4105,7 +4253,9 @@ authorities:
   - https://www.service.tas.gov.au/ (snippet_verified, Q48)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: DPAC routine disclosure attachments name 'Service Tasmania activities' (snippet Q40).
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: DPAC routine disclosure attachments
+    name ''Service Tasmania activities'' (snippet Q40).]'
   queries:
   - '"Department of Premier and Cabinet" Tasmania "disclosure log" right to information'
   - Building Tasmania website buildingtasmania.tas.gov.au OR "building.tas.gov.au" department contact
@@ -4115,9 +4265,9 @@ authorities:
   aliases:
   - SES
   - Tasmania SES
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
@@ -4134,16 +4284,18 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Division of DPFEM (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted
-    after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Division of DPFEM (memory). No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: skills_tas
   name: Skills Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Skills and Jobs (Felix Ellis)
@@ -4160,8 +4312,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: State Growth. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after
-    this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: State Growth. No body-specific
+    search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here
+    are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: solicitor_general
@@ -4332,9 +4486,9 @@ authorities:
 - id: sport_rec_tas
   name: Sport and Recreation Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Sport (Nick Duigan)
@@ -4351,7 +4505,9 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: Memory. TECT to include all sport functions (snippet Q3).
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory. TECT to include all sport
+    functions (snippet Q3).]'
   queries:
   - Tasmania "machinery of government" 2025 department renamed
   slice: state_bodies
@@ -4438,9 +4594,10 @@ authorities:
   - https://www.abc.net.au/news/2026-03-03/tas-department-of-state-growth-transform-into-building-tasmania/106408320 (snippet_verified)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Renamed/transformed into Building Tasmania on 2026-07-02 (snippet_verified: Wikipedia ''Building Tasmania'' and
-    DPAC HoSS message). Successor: building_tas. Snippet: releases published within 2 working days. Whether the stategrowth.tas.gov.au
-    disclosure log remains online/redirects after 2 Jul 2026 is UNKNOWN. abolished 2026-07-02 (renamed), successor building_tas.'
+  notes: 'Kept active for polling of the legacy stategrowth.tas.gov.au log until building_tas has its own log URL. [original:
+    Renamed/transformed into Building Tasmania on 2026-07-02 (snippet_verified: Wikipedia ''Building Tasmania'' and DPAC HoSS
+    message). Successor: building_tas. Snippet: releases published within 2 working days. Whether the stategrowth.tas.gov.au
+    disclosure log remains online/redirects after 2 Jul 2026 is]'
   queries:
   - Tasmania "machinery of government" 2025 department renamed
   - site:tas.gov.au "right to information" disclosure log
@@ -4450,15 +4607,14 @@ authorities:
   - nre.tas.gov.au right to information disclosure log
   slice: state_bodies
   tier: 1
-  notes_override: Kept active for polling of the legacy stategrowth.tas.gov.au log until building_tas has its own log URL.
 - id: state_planning_office
   name: State Planning Office
   aliases:
   - SPO
   - formerly Planning Policy Unit
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Housing and Planning (Kerry Vincent)
@@ -4475,8 +4631,10 @@ authorities:
   - https://www.stateplanning.tas.gov.au/news-and-events/2026/state-planning-office-now-in-building-tasmania (snippet_verified)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: Moved from DPAC to Building Tasmania in 2026 (snippet 'will become part of Building Tasmania'; exact date UNCERTAIN,
-    likely 2026-07-02). Formerly Planning Policy Unit (planningreform.tas.gov.au snippet; rename date UNCERTAIN).
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Moved from DPAC to Building Tasmania
+    in 2026 (snippet ''will become part of Building Tasmania''; exact date UNCERTAIN, likely 2026-07-02). Formerly Planning
+    Policy Unit (planningreform.tas.gov.au snippet; rename date UNCERTAIN).]'
   queries:
   - '"Building Tasmania" department commencement 2 July 2026 functions transferring Department of Health'
   - Building Tasmania Homes Tasmania merged "State Planning Office" economic development DPAC energy resources
@@ -4671,9 +4829,9 @@ authorities:
   name: Tasmania Prison Service
   aliases:
   - TPS
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Justice, Corrections and Rehabilitation (Guy Barnett)
@@ -4690,8 +4848,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: ' No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st
-    search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original:  No body-specific search was run:
+    the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless
+    labelled.]'
   queries: []
   slice: state_bodies
 - id: tasc
@@ -5183,9 +5343,9 @@ authorities:
   name: Tasmania Fire Service
   aliases:
   - TFS
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Police, Fire and Emergency Management (Felix Ellis)
@@ -5202,8 +5362,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Operational arm of State Fire Commission within DPFEM (memory). No body-specific search was run: the session-wide
-    WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Operational arm of State Fire Commission
+    within DPFEM (memory). No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this
+    agent''s 51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: theatre_royal
@@ -5290,9 +5452,9 @@ authorities:
 - id: tis
   name: Tasmanian Institute of Sport
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: Sport (Nick Duigan)
@@ -5309,9 +5471,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: program of Sport and Recreation Tasmania, not separate statutory body - UNCERTAIN. No body-specific search
-    was run: the session-wide WebSearch budget (200) was exhausted after this agent''s 51st search; all facts here are memory
-    unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: program of Sport and Recreation
+    Tasmania, not separate statutory body - UNCERTAIN. No body-specific search was run: the session-wide WebSearch budget
+    (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 - id: tlgc
@@ -5339,12 +5502,13 @@ authorities:
   - https://www.treasury.tas.gov.au/liquor-and-gaming/regulators/tasmanian-liquor-and-gaming-commission (snippet_verified)
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'RTI for TLGC appears to be processed by Treasury (TLGC internal-review release hosted on treasury.tas.gov.au, Q26)
-    - disclosure log inferred to be Treasury''s. Campaign-relevant (pokies): Greens criticised ''pokies backdown'' Sep 2026
-    (snippet).'
+  notes: 'Audit #8: TLGC''s log URL is Treasury''s; polled once under treasury. [original: RTI for TLGC appears to be processed
+    by Treasury (TLGC internal-review release hosted on treasury.tas.gov.au, Q26) - disclosure log inferred to be Treasury''s.
+    Campaign-relevant (pokies): Greens criticised ''pokies backdown'' Sep 2026 (snippet).]'
   queries:
   - Tasmania minister responsible "Gaming Control Act" 2026 poker machines minister Liquor and Gaming
   slice: state_bodies
+  shares_source_with: treasury
 - id: tmag
   name: Tasmanian Museum and Art Gallery
   aliases:
@@ -5589,13 +5753,13 @@ authorities:
   last_verified: null
   verification_status: network_blocked_search_only
   active: true
-  notes: Portfolio minister title is memory; historically TT-Line sat with Infrastructure and Transport. Retained in public
-    hands per May 2025 review (search summary).
+  notes: 'Slice b recorded ''none_known''; normalised to none. Finding: no public log discovered. [original: Portfolio minister
+    title is memory; historically TT-Line sat with Infrastructure and Transport. Retained in public hands per May 2025 review
+    (search summary).]'
   queries:
   - TT-Line Spirit of Tasmania "right to information" disclosure log
   - Tasmania parliament motion March 2026 state-owned businesses establish disclosure log right to information
   slice: gbe_soc
-  notes_override: 'Slice b recorded ''none_known''; normalised to none. Finding: no public log discovered.'
 - id: utas
   name: University of Tasmania
   aliases:
@@ -5672,6 +5836,21 @@ authorities:
     (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
   queries: []
   slice: state_bodies
+- id: veterinary_board_tas
+  name: Veterinary Board of Tasmania
+  type: statutory
+  rti_status: UNCERTAIN
+  rti_status_basis: auditor memory (45%)
+  portfolio_minister: null
+  disclosure_log_url: null
+  disclosure_log_format: unknown
+  source_of_listing:
+  - 'research/AUDIT_REPORT.md #5 (auditor memory)'
+  last_verified: null
+  verification_status: auditor_memory_unverified
+  active: true
+  notes: 'Added per audit #5. UNVERIFIED.'
+  queries: []
 - id: waratah_wynyard_c
   name: Waratah-Wynyard Council
   aliases:
@@ -5842,9 +6021,9 @@ authorities:
 - id: worksafe
   name: WorkSafe Tasmania
   aliases: []
-  type: other
+  type: business_unit
   active: true
-  rti_status: full
+  rti_status: via_parent
   rti_status_basis: Covered through parent Agency (s 5 Agency limb); not a separate public authority - applications go to
     the parent department
   portfolio_minister: null
@@ -5861,8 +6040,10 @@ authorities:
   - memory (State Service Act 2000 Sch 1 / establishing Act) - not seen in any search result this session
   last_verified: null
   verification_status: network_blocked_search_only
-  notes: 'Memory: Workplace Standards/WorkSafe within Justice. No body-specific search was run: the session-wide WebSearch
-    budget (200) was exhausted after this agent''s 51st search; all facts here are memory unless labelled.'
+  notes: 'Audit #3: a business unit / office inside a department, not a separate public authority; RTI applications go to
+    the parent. Excluded from coverage counts; releases roll up to the parent. [original: Memory: Workplace Standards/WorkSafe
+    within Justice. No body-specific search was run: the session-wide WebSearch budget (200) was exhausted after this agent''s
+    51st search; all facts here are memory unless labelled.]'
   queries: []
   slice: state_bodies
 minister_portfolios:

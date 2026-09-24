@@ -13,8 +13,8 @@ from pathlib import Path
 from .config import CONFIG_DIR, REGISTRY_DIR, load_yaml
 from .db import j, tx, utcnow
 
-TYPES = {"agency", "minister", "gbe", "soc", "subsidiary", "statutory", "council", "council_entity", "university", "other"}
-RTI_STATUS = {"full", "partial", "excluded", "UNCERTAIN"}
+TYPES = {"agency", "minister", "gbe", "soc", "subsidiary", "statutory", "council", "council_entity", "university", "other", "business_unit"}
+RTI_STATUS = {"full", "partial", "excluded", "UNCERTAIN", "via_parent"}
 FORMATS = {"html_table", "html_list", "pdf_index", "per_release_pages", "none", "unknown"}
 
 
@@ -127,7 +127,8 @@ def sync(conn: sqlite3.Connection, data: dict | None = None, scheduler_cfg: dict
             log_url = a.get("disclosure_log_url")
             fmt = a.get("disclosure_log_format") or "unknown"
             adapter = a.get("adapter") or (fmt if fmt in ("html_table", "html_list", "pdf_index", "per_release_pages") else ("auto" if fmt == "unknown" else None))
-            if log_url and adapter and not a.get("shares_source_with"):
+            inactive = a.get("active") is False
+            if log_url and adapter and not a.get("shares_source_with") and not inactive:
                 cfg = j(a.get("adapter_config") or {})
                 row = conn.execute("SELECT id, enabled FROM sources WHERE authority_id=? AND kind='disclosure_log' AND url=?", (aid, log_url)).fetchone()
                 if row:
@@ -140,6 +141,10 @@ def sync(conn: sqlite3.Connection, data: dict | None = None, scheduler_cfg: dict
                 # disable other disclosure_log sources for this authority whose URL changed (keep history)
                 n = conn.execute("UPDATE sources SET enabled=0 WHERE authority_id=? AND kind='disclosure_log' AND url<>? AND enabled=1",
                                  (aid, log_url)).rowcount
+                stats["sources_disabled"] += n
+            else:
+                # no log URL, shared source, or inactive authority: any leftover disclosure_log source is switched off (audit #7, #14)
+                n = conn.execute("UPDATE sources SET enabled=0 WHERE authority_id=? AND kind='disclosure_log' AND enabled=1", (aid,)).rowcount
                 stats["sources_disabled"] += n
             for extra in a.get("extra_sources") or []:
                 row = conn.execute("SELECT id FROM sources WHERE authority_id=? AND kind=? AND url=?", (aid, extra["kind"], extra["url"])).fetchone()
@@ -174,39 +179,50 @@ def sync(conn: sqlite3.Connection, data: dict | None = None, scheduler_cfg: dict
     return stats
 
 
-def resolve_authority(conn: sqlite3.Connection, name: str) -> str | None:
-    """Map a free-text authority name (current or historical) to an id."""
-    n = " ".join(name.lower().split())
+def resolve_authority(conn: sqlite3.Connection, name: str, *, candidates: bool = False):
+    """Map an authority name (current, historical or alias) to an id by EXACT match only (audit #12: loose
+    substring matching hid registry gaps). With candidates=True, return up to 5 fuzzy suggestions instead."""
+    n = " ".join(name.lower().split()).strip(" .,")
     row = conn.execute("SELECT authority_id FROM authority_names WHERE lower(name)=? LIMIT 1", (n,)).fetchone()
-    if row:
+    if row and not candidates:
         return row[0]
-    row = conn.execute("SELECT id FROM authorities WHERE lower(name) LIKE ? ORDER BY length(name) LIMIT 1", (f"%{n}%",)).fetchone()
-    if row:
-        return row[0]
-    # try each known name as a substring of the input (longest first)
-    rows = conn.execute("SELECT authority_id, name FROM authority_names ORDER BY length(name) DESC").fetchall()
-    for r in rows:
-        if len(r["name"]) >= 6 and r["name"].lower() in n:
-            return r["authority_id"]
-    return None
+    if row and candidates:
+        return [row[0]]
+    if not candidates:
+        return None
+    import difflib
+    names = {r["name"]: r["authority_id"] for r in conn.execute("SELECT name, authority_id FROM authority_names")}
+    close = difflib.get_close_matches(name, list(names), n=5, cutoff=0.5)
+    return [f"{names[c]} ({c})" for c in close]
 
 
 def coverage_report(data: dict, conn: sqlite3.Connection | None = None) -> str:
     """Markdown: authorities with no discoverable disclosure log, grouped by type. This gap is a finding."""
-    auths = [a for a in data["authorities"] if a.get("active", True) is not False]
+    all_active = [a for a in data["authorities"] if a.get("active", True) is not False]
+    units = [a for a in all_active if a.get("rti_status") == "via_parent" or a.get("type") == "business_unit"]
+    auths = [a for a in all_active if a not in units]
     by_type: dict[str, list[dict]] = {}
     for a in auths:
         by_type.setdefault(a["type"], []).append(a)
-    lines = ["# Coverage report", "", f"Generated {utcnow()} from registry/authorities.yaml.", ""]
+    lines = ["# Coverage report", "", f"Generated {utcnow()} from registry/authorities.yaml.", "",
+             "**Read before quoting any number here.** The registry was researched under a network policy that blocked every",
+             "primary source and a search budget that ran out part-way (DECISIONS.md D3). 'No log found' therefore means one of two",
+             "different things, and the tables below keep them apart: *searched, none found* (a log-specific search was run and",
+             "returned nothing) versus *not yet searched*. Only the first is a finding, and even that is provisional until the",
+             "authority's RTI page has been fetched and read (README: verification pass).", ""]
     total = len(auths)
     with_log = [a for a in auths if a.get("disclosure_log_url")]
     verified_log = [a for a in with_log if (a.get("disclosure_log_url_evidence") or "") == "snippet_verified"]
+    no_log = [a for a in auths if not a.get("disclosure_log_url")]
+    searched = [a for a in no_log if search_status(a) == "searched_none_found"]
+    unsearched = [a for a in no_log if search_status(a) != "searched_none_found"]
     lines += [
         "| Metric | Count |", "|---|---|",
-        f"| Active authorities in registry | {total} |",
+        f"| Active public authorities in registry (business units of departments excluded: {len(units)}) | {total} |",
         f"| With a disclosure log URL recorded | {len(with_log)} |",
         f"| … of which URL was seen in a search result (snippet_verified) | {len(verified_log)} |",
-        f"| With NO discoverable disclosure log | {total - len(with_log)} |",
+        f"| No log URL — log-specific search run, none found (provisional finding) | {len(searched)} |",
+        f"| No log URL — NOT yet searched (not a finding) | {len(unsearched)} |",
         f"| rti_status UNCERTAIN | {sum(1 for a in auths if a.get('rti_status') == 'UNCERTAIN')} |",
         f"| Excluded / partial | {sum(1 for a in auths if a.get('rti_status') in ('excluded', 'partial'))} |",
         "",
@@ -217,16 +233,21 @@ def coverage_report(data: dict, conn: sqlite3.Connection | None = None) -> str:
         for r in rows:
             lines.append(f"| {r['authority_id']} | {r['last_success_at'] or '-'} | {r['last_change_at'] or '-'} | {r['consecutive_failures']} | {'yes' if r['blocked'] else ''} |")
         lines.append("")
-    lines += ["## Authorities with no discoverable disclosure log", "",
-              "Each row is a finding: a body with RTI obligations that publishes no (findable) log of what it releases.", ""]
-    for t in sorted(by_type):
-        missing = [a for a in by_type[t] if not a.get("disclosure_log_url")]
-        if not missing:
-            continue
-        lines += [f"### {t} ({len(missing)} of {len(by_type[t])})", "", "| id | Name | RTI page | Status | Notes |", "|---|---|---|---|---|"]
-        for a in sorted(missing, key=lambda x: x["name"]):
-            lines.append(f"| {a['id']} | {a['name']} | {a.get('rti_page_url') or '-'} | {a.get('rti_status')} | {(a.get('notes') or '')[:120].replace('|', '/')} |")
-        lines.append("")
+    for heading, bucket, blurb in [
+        ("Searched, no log found (provisional findings)", searched,
+         "A log-specific search was run for each of these and returned nothing. Confirm by reading the RTI page before citing."),
+        ("Not yet searched (NOT findings)", unsearched,
+         "No log-specific search was run (search budget exhausted). These rows say nothing about whether a log exists."),
+    ]:
+        lines += [f"## {heading}", "", blurb, ""]
+        for t in sorted(by_type):
+            rows = [a for a in by_type[t] if a in bucket]
+            if not rows:
+                continue
+            lines += [f"### {t} ({len(rows)} of {len(by_type[t])})", "", "| id | Name | RTI page | Status | Notes |", "|---|---|---|---|---|"]
+            for a in sorted(rows, key=lambda x: x["name"]):
+                lines.append(f"| {a['id']} | {a['name']} | {a.get('rti_page_url') or '-'} | {a.get('rti_status')} | {(a.get('notes') or '')[:120].replace('|', '/')} |")
+            lines.append("")
     lines += ["## Authorities with a disclosure log", "", "| id | Name | Format | URL | Evidence |", "|---|---|---|---|---|"]
     for a in sorted(with_log, key=lambda x: x["name"]):
         lines.append(f"| {a['id']} | {a['name']} | {a.get('disclosure_log_format')} | {a['disclosure_log_url']} | {a.get('disclosure_log_url_evidence') or '-'} |")
@@ -234,12 +255,21 @@ def coverage_report(data: dict, conn: sqlite3.Connection | None = None) -> str:
     return "\n".join(lines)
 
 
+def search_status(a: dict) -> str:
+    """Whether a log-specific search was actually run for this record (from the research slices' `queries`)."""
+    qs = [q.lower() for q in (a.get("queries") or [])]
+    if any("disclosure log" in q or "disclosure" in q or "rti" in q for q in qs):
+        return "searched_none_found" if not a.get("disclosure_log_url") else "searched_found"
+    return "not_searched"
+
+
 def export_coverage_csv(data: dict) -> str:
     import csv
     import io
     buf = io.StringIO()
     w = csv.writer(buf)
-    w.writerow(["id", "name", "type", "rti_status", "portfolio_minister", "rti_page_url", "disclosure_log_url", "disclosure_log_format", "disclosure_log_url_evidence", "verification_status", "notes"])
+    cols = ["id", "name", "type", "rti_status", "portfolio_minister", "rti_page_url", "disclosure_log_url", "disclosure_log_format", "disclosure_log_url_evidence", "verification_status", "notes"]
+    w.writerow(cols + ["search_status"])
     for a in data["authorities"]:
-        w.writerow([a.get(k) for k in ["id", "name", "type", "rti_status", "portfolio_minister", "rti_page_url", "disclosure_log_url", "disclosure_log_format", "disclosure_log_url_evidence", "verification_status", "notes"]])
+        w.writerow([a.get(k) for k in cols] + [search_status(a)])
     return buf.getvalue()

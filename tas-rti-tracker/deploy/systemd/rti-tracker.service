@@ -6,5 +6,5 @@ After=network-online.target
 Type=oneshot
 WorkingDirectory=/opt/tas-rti-tracker
 EnvironmentFile=/etc/rti-tracker.env
-ExecStart=/opt/tas-rti-tracker/.venv/bin/rti run
+ExecStart=/usr/bin/flock -n /opt/tas-rti-tracker/data/run.lock /opt/tas-rti-tracker/.venv/bin/rti run
 User=rti
