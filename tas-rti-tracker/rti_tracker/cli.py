@@ -10,7 +10,7 @@ import click
 
 from . import db as dbm
 from .archive import Archive
-from .config import CONFIG_DIR, LEGAL_DIR, REGISTRY_DIR, load_yaml, settings
+from .config import LEGAL_DIR, settings
 
 
 def _conn():
@@ -154,8 +154,9 @@ def extract(limit: int, no_ocr: bool) -> None:
 @click.option("--limit", type=int, default=20)
 def metadata(limit: int) -> None:
     """Run the LLM metadata pass over extracted documents (needs ANTHROPIC_API_KEY)."""
-    from .metadata import run_metadata
     import yaml
+
+    from .metadata import run_metadata
     rules = yaml.safe_load((LEGAL_DIR / "rules.yaml").read_text())
     click.echo(f"processed {run_metadata(_conn(), rules, limit=limit)}")
 

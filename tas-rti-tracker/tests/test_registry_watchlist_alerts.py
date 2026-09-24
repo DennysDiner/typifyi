@@ -1,9 +1,8 @@
-import json
 
-from rti_tracker import registry, watchlist
+from rti_tracker import watchlist
 from rti_tracker.alerts import process_changes, send_digest
 from rti_tracker.config import Settings, load_yaml
-from rti_tracker.registry import load_registry, validate, sync, coverage_report, resolve_authority
+from rti_tracker.registry import coverage_report, load_registry, resolve_authority, sync, validate
 
 
 def test_registry_valid_and_syncs(conn):

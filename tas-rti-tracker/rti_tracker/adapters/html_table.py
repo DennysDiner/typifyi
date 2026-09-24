@@ -9,12 +9,21 @@ Config keys (all optional, from the authority's `adapter_config`):
 """
 from __future__ import annotations
 
-import re
-
 from bs4 import BeautifulSoup, Tag
 
-from .base import (Adapter, ListedItem, canon_url, dedupe, find_date, find_reference, is_doc_url, norm_ws,
-                   parse_date, register, stable_key)
+from .base import (
+    Adapter,
+    ListedItem,
+    canon_url,
+    dedupe,
+    find_date,
+    find_reference,
+    is_doc_url,
+    norm_ws,
+    parse_date,
+    register,
+    stable_key,
+)
 
 DEFAULT_HEADER_KEYWORDS = ["date", "title", "subject", "description", "reference", "document", "decision", "release"]
 LOGICAL = {
@@ -96,7 +105,7 @@ class HtmlTableAdapter(Adapter):
             links = [canon_url(a["href"], base_url) for a in tr.find_all("a", href=True)]
             doc_urls = [u for u in links if is_doc_url(u)]
             page_urls = [u for u in links if not is_doc_url(u)]
-            def col(name: str) -> str | None:
+            def col(name: str, texts=texts) -> str | None:
                 i = col_map.get(name)
                 return texts[i] if i is not None and i < len(texts) else None
             title = col("title") or max(texts, key=len)

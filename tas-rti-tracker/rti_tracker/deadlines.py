@@ -13,7 +13,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
-from typing import Any
 
 import yaml
 
@@ -49,7 +48,7 @@ class Rules:
     by_id: dict[str, dict]
 
     @classmethod
-    def load(cls, path: Path | None = None) -> "Rules":
+    def load(cls, path: Path | None = None) -> Rules:
         path = path or (LEGAL_DIR / "rules.yaml")
         raw = yaml.safe_load(path.read_text())
         return cls(raw=raw, by_id={r["id"]: r for r in raw.get("rules", [])})

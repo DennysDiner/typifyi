@@ -18,7 +18,7 @@ import json
 import sqlite3
 import traceback
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 
 from .adapters.base import Adapter, ListedItem, get_adapter
 from .db import j, tx, utcnow

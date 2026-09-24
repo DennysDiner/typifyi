@@ -1,9 +1,10 @@
 import json
+from datetime import UTC
 
-from tests.conftest import fixture_bytes
 from make_pdf import simple_pdf
 
 from rti_tracker.monitor import Monitor
+from tests.conftest import fixture_bytes
 
 BASE = "https://example.tas.gov.au"
 
@@ -108,12 +109,12 @@ def test_per_release_pages_end_to_end(conn, fetcher, site):
 
 
 def test_adapter_failing_24h_change(conn, fetcher, site):
-    from datetime import datetime, timedelta, timezone
+    from datetime import datetime, timedelta
     _setup_table(site)
     sid = _source(conn)
     mon = Monitor(conn, fetcher)
     mon.poll(sid)
-    old = (datetime.now(timezone.utc) - timedelta(hours=30)).replace(microsecond=0).isoformat()
+    old = (datetime.now(UTC) - timedelta(hours=30)).replace(microsecond=0).isoformat()
     conn.execute("UPDATE sources SET last_success_at=? WHERE id=?", (old, sid))
     site.set("/rti/log", "boom", status=500)
     mon.poll(sid)

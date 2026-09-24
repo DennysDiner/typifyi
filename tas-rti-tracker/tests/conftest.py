@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
 
@@ -12,9 +11,9 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tests" / "fixtures" / "synthetic"))
 FIX = ROOT / "tests" / "fixtures" / "synthetic"
 
-from rti_tracker import db as dbm  # noqa: E402
-from rti_tracker.archive import Archive  # noqa: E402
-from rti_tracker.fetch import Fetcher  # noqa: E402
+from rti_tracker import db as dbm
+from rti_tracker.archive import Archive
+from rti_tracker.fetch import Fetcher
 
 
 @pytest.fixture

@@ -6,12 +6,9 @@ The YAML is the source of truth for the registry; `rti registry sync` upserts it
 """
 from __future__ import annotations
 
-import json
 import sqlite3
 from dataclasses import dataclass
 from pathlib import Path
-
-import yaml
 
 from .config import CONFIG_DIR, REGISTRY_DIR, load_yaml
 from .db import j, tx, utcnow

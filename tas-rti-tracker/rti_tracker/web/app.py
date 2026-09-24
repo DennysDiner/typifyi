@@ -174,6 +174,7 @@ def application(request: Request, app_id: int):
 @app.post("/applications/{app_id}/event", dependencies=[Depends(auth)])
 def application_event(app_id: int, event: str = Form(...), when: str = Form(...), detail: str = Form("{}")):
     from datetime import date
+
     from ..applications import add_event
     add_event(conn(), app_id, event, date.fromisoformat(when), json.loads(detail or "{}"))
     return RedirectResponse(f"/applications/{app_id}", status_code=303)
@@ -201,7 +202,8 @@ def pack(cid: str, fmt: str, request: Request):
     if fmt == "json":
         return PlainTextResponse(json.dumps(rows, indent=2), media_type="application/json")
     if fmt == "csv":
-        import csv, io
+        import csv
+        import io
         buf = io.StringIO()
         w = csv.DictWriter(buf, fieldnames=list(rows[0].keys()) if rows else ["authority"])
         w.writeheader(); w.writerows(rows)

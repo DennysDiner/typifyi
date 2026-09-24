@@ -31,8 +31,8 @@ to null. Fields:
   a string like "s 35" or "s 37(1)(b)". Do not include s 33 (public interest test) as an exemption.
 - pages_released: integer if stated. pages_withheld: integer if stated."""
 
-CITE = re.compile(r"\b(?:s|ss|sec|section|sections)\.?\s*(\d{1,2})(\s*\([0-9a-z]+\))*", re.I)
-RANGE = re.compile(r"\bss\.?\s*(\d{1,2})\s*(?:-|–|to|and)\s*(\d{1,2})", re.I)
+CITE = re.compile(r"\b(?:s|ss|sec|section|sections)\.?\s*(\d{1,2})(\s*\([0-9a-z]+\))*", re.IGNORECASE)
+RANGE = re.compile(r"\bss\.?\s*(\d{1,2})\s*(?:-|–|to|and)\s*(\d{1,2})", re.IGNORECASE)
 
 
 def normalise_citations(text: str, exemption_sections: set[int]) -> list[str]:
@@ -100,8 +100,7 @@ def call_llm(text: str, model: str, api_key: str) -> dict:
     )
     raw = "".join(getattr(b, "text", "") for b in msg.content)
     raw = raw.strip().strip("`")
-    if raw.startswith("json"):
-        raw = raw[4:]
+    raw = raw.removeprefix("json")
     return json.loads(raw)
 
 

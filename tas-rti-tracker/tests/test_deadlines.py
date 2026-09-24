@@ -4,9 +4,19 @@ from datetime import date
 
 import pytest
 
-from rti_tracker.deadlines import (EV_ACCEPTED, EV_DECISION_NOTIFIED, EV_EXTENSION_AGREED, EV_INTERNAL_REVIEW_LODGED,
-                                   EV_INTERNAL_REVIEW_NOTIFIED, EV_RECEIVED, EV_THIRD_PARTY_DECIDED, EV_TRANSFERRED,
-                                   DeadlineEngine, Event, Rules)
+from rti_tracker.deadlines import (
+    EV_ACCEPTED,
+    EV_DECISION_NOTIFIED,
+    EV_EXTENSION_AGREED,
+    EV_INTERNAL_REVIEW_LODGED,
+    EV_INTERNAL_REVIEW_NOTIFIED,
+    EV_RECEIVED,
+    EV_THIRD_PARTY_DECIDED,
+    EV_TRANSFERRED,
+    DeadlineEngine,
+    Event,
+    Rules,
+)
 from rti_tracker.holidays_cal import Calendar, library_holidays
 
 

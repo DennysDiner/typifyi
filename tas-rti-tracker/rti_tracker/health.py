@@ -1,14 +1,15 @@
 """Per-authority freshness / health check."""
 from __future__ import annotations
 
+import json
 import sqlite3
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 
 def health_rows(conn: sqlite3.Connection, now: datetime | None = None) -> list[dict]:
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     rows = conn.execute(
-        "SELECT a.id AS authority_id, a.name, a.tier, a.disclosure_log_format, a.disclosure_log_url,"
+        "SELECT a.id AS authority_id, a.name, a.tier, a.disclosure_log_format, a.disclosure_log_url, a.raw,"
         " s.id AS source_id, s.kind, s.adapter, s.url, s.enabled, s.blocked, s.blocked_reason, s.last_fetch_at, s.last_success_at,"
         " s.last_change_at, s.last_status, s.last_error, s.consecutive_failures, s.next_due_at"
         " FROM authorities a LEFT JOIN sources s ON s.authority_id=a.id AND s.kind='disclosure_log' AND s.enabled=1"
@@ -18,7 +19,12 @@ def health_rows(conn: sqlite3.Connection, now: datetime | None = None) -> list[d
     for r in rows:
         d = dict(r)
         if d["source_id"] is None:
-            d["state"] = "no_log" if d["disclosure_log_format"] in ("none", "unknown", None) and not d["disclosure_log_url"] else "unconfigured"
+            shared = json.loads(r["raw"] or "{}").get("shares_source_with")
+            if shared:
+                d["state"] = "shared_log"
+                d["shares_source_with"] = shared
+            else:
+                d["state"] = "no_log" if not d["disclosure_log_url"] or d["disclosure_log_format"] == "none" else "unconfigured"
         elif d["blocked"]:
             d["state"] = "blocked"
         elif d["last_success_at"] is None:

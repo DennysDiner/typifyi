@@ -3,15 +3,16 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from datetime import datetime, timezone
+from collections.abc import Iterator
+from contextlib import contextmanager
+from datetime import UTC, datetime
 from importlib import resources
 from pathlib import Path
-from typing import Any, Iterator
-from contextlib import contextmanager
+from typing import Any
 
 
 def utcnow() -> str:
-    return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    return datetime.now(UTC).replace(microsecond=0).isoformat()
 
 
 def connect(path: str | Path) -> sqlite3.Connection:

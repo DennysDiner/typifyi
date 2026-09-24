@@ -21,7 +21,7 @@ def sync(conn: sqlite3.Connection, cfg: dict) -> int:
 
 def _compile(keywords: list[str]) -> re.Pattern:
     parts = [r"(?<![A-Za-z0-9])" + re.escape(k) + r"(?![A-Za-z0-9])" for k in keywords if k]
-    return re.compile("|".join(parts), re.I) if parts else re.compile(r"(?!x)x")
+    return re.compile("|".join(parts), re.IGNORECASE) if parts else re.compile(r"(?!x)x")
 
 
 def match_text(conn: sqlite3.Connection, text: str) -> list[tuple[str, str]]:
@@ -64,14 +64,21 @@ def scan_change(conn: sqlite3.Connection, change: sqlite3.Row) -> list[tuple[str
 
 
 def citation_pack(conn: sqlite3.Connection, campaign_id: str, base_url: str = "") -> list[dict]:
+    """One row per archived document tagged to the campaign (item-level tags expand to every document of
+    the item), each with source URL, retrieval time, sha256 and archived-copy path."""
     rows = conn.execute(
-        "SELECT ct.tagged_at, ct.note, d.id AS document_id, d.url, d.sha256, d.first_seen_at, c.retrieved_at, c.http_status, c.final_url, b.path,"
-        " i.title, i.published_date, a.name AS authority"
-        " FROM campaign_tags ct LEFT JOIN documents d ON d.id=ct.document_id LEFT JOIN captures c ON c.id=d.capture_id"
-        " LEFT JOIN blobs b ON b.sha256=d.sha256 LEFT JOIN items i ON i.id=COALESCE(ct.item_id, d.item_id) LEFT JOIN authorities a ON a.id=COALESCE(d.authority_id, i.authority_id)"
-        " WHERE ct.campaign_id=? ORDER BY ct.tagged_at", (campaign_id,)).fetchall()
+        "WITH tagged AS ("
+        "  SELECT ct.tagged_at, ct.note, ct.tagged_by, d.id AS document_id FROM campaign_tags ct JOIN documents d ON d.id=ct.document_id WHERE ct.campaign_id=?"
+        "  UNION"
+        "  SELECT ct.tagged_at, ct.note, ct.tagged_by, d.id FROM campaign_tags ct JOIN documents d ON d.item_id=ct.item_id WHERE ct.campaign_id=? AND ct.document_id IS NULL"
+        ") SELECT t.tagged_at, t.note, t.tagged_by, d.id AS document_id, d.url, d.sha256, d.first_seen_at, d.superseded_by, c.retrieved_at, c.http_status, c.final_url, b.path,"
+        " i.id AS item_id, i.title, i.published_date, i.url AS listing_url, a.name AS authority"
+        " FROM tagged t JOIN documents d ON d.id=t.document_id JOIN captures c ON c.id=d.capture_id JOIN blobs b ON b.sha256=d.sha256"
+        " LEFT JOIN items i ON i.id=d.item_id LEFT JOIN authorities a ON a.id=COALESCE(d.authority_id, i.authority_id)"
+        " ORDER BY a.name, i.published_date, d.id", (campaign_id, campaign_id)).fetchall()
     return [{
-        "authority": r["authority"], "title": r["title"], "published_date": r["published_date"], "source_url": r["url"], "final_url": r["final_url"],
-        "retrieved_at": r["retrieved_at"], "sha256": r["sha256"], "archived_copy": (f"{base_url}/archive/{r['sha256']}" if r["sha256"] else None),
-        "archive_path": r["path"], "tagged_at": r["tagged_at"], "note": r["note"],
+        "authority": r["authority"], "title": r["title"], "published_date": r["published_date"], "listing_url": r["listing_url"],
+        "source_url": r["url"], "final_url": r["final_url"], "retrieved_at": r["retrieved_at"], "http_status": r["http_status"],
+        "sha256": r["sha256"], "archived_copy": f"{base_url}/archive/{r['sha256']}" if base_url else None, "archive_path": r["path"],
+        "superseded_by": r["superseded_by"], "tagged_at": r["tagged_at"], "tagged_by": r["tagged_by"], "note": r["note"],
     } for r in rows]

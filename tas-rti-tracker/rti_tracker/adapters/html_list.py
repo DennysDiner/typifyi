@@ -12,8 +12,19 @@ from __future__ import annotations
 
 from bs4 import BeautifulSoup, Tag
 
-from .base import (Adapter, ListedItem, canon_url, dedupe, find_date, find_reference, is_doc_url, norm_ws,
-                   parse_date, register, stable_key)
+from .base import (
+    Adapter,
+    ListedItem,
+    canon_url,
+    dedupe,
+    find_date,
+    find_reference,
+    is_doc_url,
+    norm_ws,
+    parse_date,
+    register,
+    stable_key,
+)
 
 
 def _item_from_tag(tag: Tag, base_url: str, config: dict) -> ListedItem | None:

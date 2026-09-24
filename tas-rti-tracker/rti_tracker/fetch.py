@@ -13,8 +13,7 @@ import threading
 import time
 import urllib.robotparser
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta, timezone
-from typing import Optional
+from datetime import UTC, datetime
 from urllib.parse import urlsplit
 
 import httpx
@@ -35,7 +34,7 @@ class FetchResult:
     not_modified: bool
     body: bytes
     headers: dict[str, str]
-    capture: Optional[Capture]
+    capture: Capture | None
     etag: str | None
     last_modified: str | None
     retrieved_at: str
@@ -176,7 +175,7 @@ class Fetcher:
                         body = b"".join(chunks)
                     resp_headers = {k.lower(): v for k, v in r.headers.items()}
                     final_url = str(r.url)
-            except httpx.HTTPError as e:
+            except httpx.HTTPError:
                 self._note_failure(url)
                 raise
             retrieved_at = utcnow()
@@ -226,4 +225,4 @@ class Fetcher:
 
 
 def http_date(dt: datetime) -> str:
-    return dt.astimezone(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
+    return dt.astimezone(UTC).strftime("%a, %d %b %Y %H:%M:%S GMT")

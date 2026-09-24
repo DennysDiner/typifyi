@@ -13,9 +13,10 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Callable, ClassVar, Iterable, Protocol
+from typing import ClassVar, Protocol
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from dateutil import parser as dateparser
@@ -103,7 +104,16 @@ def register(name: str) -> Callable[[type[Adapter]], type[Adapter]]:
 
 def get_adapter(name: str) -> Adapter:
     # ensure built-ins are imported
-    from . import html_table, html_list, pdf_index, per_release_pages, auto, ombudsman_decisions, annual_report, hansard  # noqa: F401
+    from . import (  # noqa: F401
+        annual_report,
+        auto,
+        hansard,
+        html_list,
+        html_table,
+        ombudsman_decisions,
+        pdf_index,
+        per_release_pages,
+    )
     try:
         from . import bespoke  # noqa: F401  (optional package of site-specific adapters)
     except ImportError:
@@ -134,8 +144,8 @@ def is_doc_url(url: str) -> bool:
 
 _DATE_PATTERNS = [
     re.compile(r"\b(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b"),
-    re.compile(r"\b(\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{4})\b", re.I),
-    re.compile(r"\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{4})\b", re.I),
+    re.compile(r"\b(\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{4})\b", re.IGNORECASE),
+    re.compile(r"\b((?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s+\d{4})\b", re.IGNORECASE),
     re.compile(r"\b(\d{4}-\d{2}-\d{2})\b"),
 ]
 

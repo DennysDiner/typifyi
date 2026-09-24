@@ -12,7 +12,17 @@ import re
 
 from pypdf import PdfReader
 
-from .base import Adapter, ListedItem, canon_url, dedupe, find_date, find_reference, norm_ws, register, stable_key
+from .base import (
+    Adapter,
+    ListedItem,
+    canon_url,
+    dedupe,
+    find_date,
+    find_reference,
+    norm_ws,
+    register,
+    stable_key,
+)
 
 DEFAULT_LINE = re.compile(
     r"^(?P<reference>(?:RTI|FOI)?[\s-]?\d[\d/-]{2,})?\s*(?P<title>.+?)\s+(?P<date>\d{1,2}[/ -](?:\d{1,2}|[A-Za-z]{3,9})[/ -]\d{2,4})\s*$"

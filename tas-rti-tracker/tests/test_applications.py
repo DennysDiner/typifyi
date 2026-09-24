@@ -1,8 +1,7 @@
-import json
 from datetime import date
 
-from rti_tracker.applications import add_event, create, due_deadline_alerts, link_releases, mark_alert_sent, status_for
-from rti_tracker.deadlines import EV_ACCEPTED, DeadlineEngine
+from rti_tracker.applications import create, due_deadline_alerts, link_releases, mark_alert_sent, status_for
+from rti_tracker.deadlines import DeadlineEngine
 
 
 def _auth(conn):

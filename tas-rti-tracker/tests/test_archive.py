@@ -1,4 +1,4 @@
-from rti_tracker.archive import Archive, sha256_bytes
+from rti_tracker.archive import sha256_bytes
 
 
 def test_store_is_content_addressed_and_immutable(archive, conn):

@@ -13,7 +13,7 @@ from .base import ListedItem, register
 from .html_list import HtmlListAdapter
 
 REF = re.compile(r"\b([ROD]\d{4}-\d{3})\b")
-VS = re.compile(r"^(?P<applicant>.+?)\s+(?:and|v\.?|vs\.?)\s+(?P<authority>.+?)(?:\s*[-–(]|$)", re.I)
+VS = re.compile(r"^(?P<applicant>.+?)\s+(?:and|v\.?|vs\.?)\s+(?P<authority>.+?)(?:\s*[-–(]|$)", re.IGNORECASE)
 
 
 @register("ombudsman_decisions")

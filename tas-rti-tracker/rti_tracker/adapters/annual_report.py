@@ -15,7 +15,7 @@ import sqlite3
 from pypdf import PdfReader
 
 from ..db import tx, utcnow
-from .base import ListedItem, canon_url, find_date, is_doc_url, norm_ws, register, stable_key
+from .base import ListedItem, norm_ws, register
 from .html_list import HtmlListAdapter
 
 YEAR = re.compile(r"(20\d{2})\s*[-–/]\s*(\d{2,4})")

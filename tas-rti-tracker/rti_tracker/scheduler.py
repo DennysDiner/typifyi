@@ -10,9 +10,8 @@ from __future__ import annotations
 import sqlite3
 import time
 from dataclasses import dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
-from .db import utcnow
 from .monitor import Monitor, PollReport
 
 
@@ -24,7 +23,7 @@ class SchedulerConfig:
     max_failure_backoff_minutes: int = 720
 
     @classmethod
-    def from_dict(cls, d: dict) -> "SchedulerConfig":
+    def from_dict(cls, d: dict) -> SchedulerConfig:
         return cls(
             tier1_interval_minutes=int(d.get("tier1_interval_minutes", 60)),
             tier2_interval_minutes=int(d.get("tier2_interval_minutes", 360)),
@@ -34,7 +33,7 @@ class SchedulerConfig:
 
 
 def due_sources(conn: sqlite3.Connection, cfg: SchedulerConfig, now: datetime | None = None, tier: int | None = None) -> list[sqlite3.Row]:
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     rows = conn.execute("SELECT * FROM sources WHERE enabled=1 AND blocked=0" + (" AND tier=?" if tier else ""), (tier,) if tier else ()).fetchall()
     due = []
     for r in rows:
@@ -50,7 +49,7 @@ def due_sources(conn: sqlite3.Connection, cfg: SchedulerConfig, now: datetime | 
 
 
 def schedule_next(conn: sqlite3.Connection, cfg: SchedulerConfig, source_id: int, report: PollReport, now: datetime | None = None) -> str:
-    now = now or datetime.now(timezone.utc)
+    now = now or datetime.now(UTC)
     row = conn.execute("SELECT tier, consecutive_failures FROM sources WHERE id=?", (source_id,)).fetchone()
     base = cfg.tier1_interval_minutes if row["tier"] == 1 else cfg.tier2_interval_minutes
     if report.status in ("error",):

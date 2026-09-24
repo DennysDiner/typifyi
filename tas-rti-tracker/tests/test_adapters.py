@@ -1,7 +1,7 @@
-from tests.conftest import fixture_bytes
 from make_pdf import simple_pdf
 
 from rti_tracker.adapters.base import get_adapter
+from tests.conftest import fixture_bytes
 
 BASE = "https://example.tas.gov.au/rti/log"
 

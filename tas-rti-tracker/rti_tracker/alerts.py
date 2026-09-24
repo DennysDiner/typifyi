@@ -51,18 +51,18 @@ def dispatch(conn: sqlite3.Connection, st: Settings, title: str, body: str, *, r
     for ch in channels:
         cur = conn.execute("INSERT INTO alerts(change_id,channel,rule,payload,status) VALUES (?,?,?,?,'pending')", (change_id, ch, rule, j({"title": title, "body": body})))
         aid = cur.lastrowid
+        configured = ch == "stdout" or (ch == "ntfy" and bool(st.ntfy_url)) or (ch == "email" and bool(st.smtp_host and st.alert_email_to))
         try:
+            if not configured:
+                conn.execute("UPDATE alerts SET status='skipped', error='channel not configured' WHERE id=?", (aid,))
+                if dry_run:
+                    print(f"[alert:{ch} — not configured, would skip] {title}")
+                continue
             if dry_run or ch == "stdout":
-                print(f"[alert:{ch}] {title}\n{body}\n")
+                print(f"[alert:{ch}{' dry-run' if dry_run and ch != 'stdout' else ''}] {title}\n{body}\n")
             elif ch == "ntfy":
-                if not st.ntfy_url:
-                    conn.execute("UPDATE alerts SET status='skipped', error='channel not configured' WHERE id=?", (aid,))
-                    continue
                 send_ntfy(st, title, body, priority)
             elif ch == "email":
-                if not (st.smtp_host and st.alert_email_to):
-                    conn.execute("UPDATE alerts SET status='skipped', error='channel not configured' WHERE id=?", (aid,))
-                    continue
                 send_email(st, title, body)
             conn.execute("UPDATE alerts SET status='sent', sent_at=? WHERE id=?", (utcnow(), aid))
             sent.append(ch)
